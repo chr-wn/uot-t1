@@ -35,30 +35,15 @@ for sp in args.stimuli:
     prompts, spans, keep = [], [], []
     for it in items:
         p = it.prompt
-        sp_d = {"last": (len(p) - 1, len(p))}
-        ok = True
-        # locate each input quantity "<value> <unit rendering>" in the prompt
-        vals = it.meta["values"]
-        pos = 0
-        for k, v in enumerate(vals):
-            m = re.search(rf"(?<![\w.]){re.escape(fmt_value(v))}\s+", p[pos:])
-            if not m:
-                ok = False; break
-            start = pos + m.end()
-            # unit rendering ends before the next space-delimited stop word / punctuation; use the
-            # slot rendering length via the candidate-style rendering stored in meta when possible
-            m2 = re.match(r"[^,;.]+?(?=(,|;|\.|\s+(in|over|by|to|through|on|with|and|has|is|gives|equals|of|at|for|so|the|its|carrying|carries|acts|pushes|does|from|multiplied|divided|equals)\b))", p[start:])
-            if not m2:
-                ok = False; break
-            end = start + len(m2.group(0).rstrip())
-            sp_d[f"u{k}_unit"] = (start, end)
-            pos = end
-        if ok and len(vals) == 1:
-            sp_d["u1_unit"] = sp_d["u0_unit"]
-        if ok:
-            prompts.append(p); spans.append(sp_d); keep.append(it.item_id)
+        qs = it.meta.get("q_spans")
+        if not qs or any(q is None for q in qs):
+            continue
+        sp_d = {"last": (len(p) - 1, len(p)), "u0_unit": tuple(qs[0]["unit"]), "u0_value": tuple(qs[0]["value"])}
+        q1 = qs[1] if len(qs) > 1 else qs[0]
+        sp_d["u1_unit"] = tuple(q1["unit"]); sp_d["u1_value"] = tuple(q1["value"])
+        prompts.append(p); spans.append(sp_d); keep.append(it.item_id)
     print(f"{sp}: {len(keep)}/{len(items)} items with located spans", flush=True)
-    cache_residuals(model, tok, prompts, spans, layers=layers, position_names=["u0_unit", "u1_unit", "last"],
+    cache_residuals(model, tok, prompts, spans, layers=layers, position_names=["u0_value", "u0_unit", "u1_value", "u1_unit", "last"],
                     out_path=outp, batch_size=args.batch, device=args.device,
                     meta=dict(model=args.model, stimuli=str(sp), item_ids=keep))
     print("wrote", outp)

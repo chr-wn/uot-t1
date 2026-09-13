@@ -300,6 +300,13 @@ def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=N
             prefix = "" if cond.endswith("NODEF") else definitions_prefix(lexemes)
             body = text.format(v=fmt_value(vout), name=qname or "", **rendered)
             prompt = (prefix + body).strip()
+            # character spans of each rendered input quantity (value, unit) in the prompt
+            q_spans = []
+            for k in range(len(qs)):
+                r = rendered[f"q{k}"]
+                st = prompt.find(r)
+                vlen = len(fmt_value(qs[k].value))
+                q_spans.append(dict(value=(st, st + vlen), unit=(st + vlen + 1, st + len(r))) if st >= 0 else None)
             surf, comp = _surface_order(text), _composition_order(rel)
             swapped = len(surf) > 1 and surf != comp
             d = correct.dim
@@ -310,7 +317,7 @@ def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=N
                 meta=dict(relation=rel.name, formula_given=formula_given, order_swapped=swapped, style=style,
                           values=vals, out_value=vout, slot_units=[ex.render("symbol") for ex in exprs],
                           slot_dims=[str(ex.dim) for ex in exprs], invented=invented,
-                          n_lexemes=len(lexemes), twin_of=None, x_quantity=qname),
+                          n_lexemes=len(lexemes), twin_of=None, x_quantity=qname, q_spans=q_spans),
             ))
             counter += 1
     return items
@@ -346,12 +353,19 @@ def make_familiar_twins(items: list[Item], seed: int) -> list[Item]:
             raise RuntimeError(f"not enough non-prefix distractors for {cstr}")
         cands, idx, roles = finalize_candidates(rng, cstr, dstr)
         body = text.format(v=fmt_value(vout), name="mass", **rendered)
+        prompt_t = body.strip()
+        q_spans = []
+        for k in range(len(qs)):
+            r = rendered[f"q{k}"]
+            st = prompt_t.find(r)
+            vlen = len(fmt_value(qs[k].value))
+            q_spans.append(dict(value=(st, st + vlen), unit=(st + vlen + 1, st + len(r))) if st >= 0 else None)
         d = correct.dim
         twins.append(Item(
             item_id=it.item_id.replace("T1-", "T1-TWIN-"), task="T1", condition=it.condition + "-TWIN",
             template_id=tid, prompt=body.strip(), candidates=cands, answer_index=idx, candidate_roles=roles,
             **dim_fields(d), unit_strings=correct.renderings(),
             meta=dict(it.meta, style=style, slot_units=[ex.render("symbol") for ex in exprs],
-                      slot_dims=[str(ex.dim) for ex in exprs], invented=False, twin_of=it.item_id, x_quantity=None),
+                      slot_dims=[str(ex.dim) for ex in exprs], invented=False, twin_of=it.item_id, x_quantity=None, q_spans=q_spans),
         ))
     return twins
