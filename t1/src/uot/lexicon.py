@@ -15,12 +15,29 @@ _QUANTITY_NAMES = ["flarn", "quell", "brasp", "tholm", "vrindle", "skoop", "plur
                    "kresh", "molvane", "tarrick", "zephod", "wumble", "orrin", "spandle", "caddox", "ferrule", "nubbin"]
 
 
+def _load_verified() -> list[str]:
+    """Lexemes verified to have Dolma-1.7 count <= threshold (data/lexemes/verified.json), if built."""
+    import json
+    from pathlib import Path
+    p = Path(__file__).resolve().parents[2] / "data" / "lexemes" / "verified.json"
+    if p.exists():
+        return json.load(open(p))["lexemes"]
+    return []
+
+
 class LexemePool:
     """Deterministic pool of nonsense lexemes for a stimulus set."""
 
     def __init__(self, seed: int, n: int = 4000):
         self.rng = random.Random(seed)
-        self.pool = generate_lexemes(n, self.rng)
+        verified = _load_verified()
+        if verified:
+            # deterministic per-seed shuffle of the corpus-verified pool
+            pool = list(verified)
+            self.rng.shuffle(pool)
+            self.pool = pool
+        else:
+            self.pool = generate_lexemes(n, self.rng)
         self.i = 0
 
     def take(self, k: int) -> list[str]:

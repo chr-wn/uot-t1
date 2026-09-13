@@ -239,11 +239,13 @@ def _english_words() -> set[str]:
     global _COMMON_ENGLISH
     if _COMMON_ENGLISH is None:
         words = set()
-        try:
-            with open("/usr/share/dict/words") as f:
-                words = {w.strip().lower() for w in f if w.strip()}
-        except OSError:
-            pass
+        from pathlib import Path
+        for wl in (Path(__file__).resolve().parents[2] / "data" / "wordlists" / "words_alpha.txt", Path("/usr/share/dict/words")):
+            try:
+                with open(wl) as f:
+                    words |= {w.strip().lower() for w in f if w.strip()}
+            except OSError:
+                pass
         words |= {"bar", "gram", "ton", "watt", "volt", "ohm", "mole", "foot", "inch", "yard", "mile", "stone",
                   "grain", "slug", "knot", "day", "week", "year", "hour", "gal", "pound", "ounce", "cup", "pint",
                   "quart", "dram", "chain", "rod", "link", "span", "hand", "palm", "ell", "pace", "step"}
