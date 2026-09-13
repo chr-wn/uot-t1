@@ -34,7 +34,7 @@ class LexemePool:
         lex = self.take(len(dims))
         return [make_invented_unit(l, d) for l, d in zip(lex, dims)]
 
-    def invented_base(self, sym: str = "X1") -> tuple[Dimension, Unit, str]:
+    def invented_base(self, sym: str = "X") -> tuple[Dimension, Unit, str]:
         qname = self.rng.choice(_QUANTITY_NAMES)
         (ulex,) = self.take(1)
         dim, u = make_invented_base(qname, ulex, sym)
