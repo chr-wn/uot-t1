@@ -29,11 +29,13 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--cache", required=True); ap.add_argument("--stimuli", required=True); ap.add_argument("--out", required=True)
 ap.add_argument("--sites", default="unit:16,mention_end:12,anaphor:12,last:36")
 ap.add_argument("--pca", type=int, default=512); ap.add_argument("--seed", type=int, default=0)
+ap.add_argument("--conditions", default="REAL-BASE,REAL-NAMED,REAL-LATTICE"); ap.add_argument("--tag", default="main")
 args = ap.parse_args()
 C = load_cache(args.cache); items = from_jsonl(args.stimuli)
 V = np.array([it.vector for it in items])
 inlat = (np.abs(V[:, 3:]).sum(1) == 0)
-main = np.array([it.condition in ("REAL-BASE", "REAL-NAMED", "REAL-LATTICE") and it.family in ("neutral", "revealing") for it in items]) & inlat
+_conds = set(args.conditions.split(","))
+main = np.array([it.condition in _conds and it.family in ("neutral", "revealing") for it in items]) & inlat
 dimless = np.array([it.condition == "DIMLESS" and it.family in ("neutral", "revealing") for it in items])
 Y = V[main][:, :3]; units = [it.unit_id for it, s in zip(items, main) if s]
 named = np.array([it.named_point is not None for it, s in zip(items, main) if s])
@@ -98,5 +100,5 @@ for site in args.sites.split(","):
                                                                    base_mean_abs=float(np.abs(lin.predict(Xte)[np.abs(Y[te]).sum(1) == 1]).mean()))
     results[site] = res
     print(site, json.dumps({k: (v if not isinstance(v, dict) else {kk: (round(vv, 3) if isinstance(vv, float) else vv) for kk, vv in v.items() if kk != 'r2_per_axis'}) for k, v in res.items()}, default=str)[:900], flush=True)
-json.dump(results, open(out / f"geometry_{Path(args.cache).stem}.json", "w"), indent=1, default=str)
+json.dump(results, open(out / f"geometry_{Path(args.cache).parent.name}_{Path(args.cache).stem}_{args.tag}.json", "w"), indent=1, default=str)
 print("wrote", out)

@@ -1,0 +1,2 @@
+value        L  0 lex: nearest=0.017 axis=0.233 r2=-0.006 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.018
+value        L  4 lex: nearest=0.039 axis=0.233 r2=-0.012 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.027
