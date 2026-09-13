@@ -60,6 +60,24 @@ for l in [int(x) for x in args.layers.split(",")]:
     r = regression_metrics(preds, Yt, np.unique(Yt, axis=0))
     res["T1:last cross-relation"] = dict(r2=round(r["r2_mean"], 3), axis=round(r["axis_acc"], 3), nearest=round(r["nearest_acc"], 3), exact=round(r["exact_acc"], 3))
     print(f"L{l:2d} T1:last direct cross-relation probe r2={r['r2_mean']:.2f} axis={r['axis_acc']:.2f} nearest={r['nearest_acc']:.2f}", flush=True)
+    # within-relation random split (ceiling: is the answer dimension decodable at all at the pre-answer token?)
+    rng = np.random.default_rng(0); perm = rng.permutation(len(X)); tr, te = perm[: int(0.8 * len(X))], perm[int(0.8 * len(X)):]
+    sc = StandardScaler().fit(X[tr]); p = RidgeCV(alphas=ALPHAS).fit(sc.transform(X[tr]), Yt[tr]).predict(sc.transform(X[te]))
+    r = regression_metrics(p, Yt[te], np.unique(Yt, axis=0))
+    res["T1:last random-split"] = dict(r2=round(r["r2_mean"], 3), axis=round(r["axis_acc"], 3), nearest=round(r["nearest_acc"], 3))
+    print(f"L{l:2d} T1:last random-split probe r2={r['r2_mean']:.2f} axis={r['axis_acc']:.2f} nearest={r['nearest_acc']:.2f}", flush=True)
+    # base-dimension 3-way transfer: mention REAL-BASE (L/M/T single units) -> T1 input-unit tokens whose slot is a base dim
+    from sklearn.linear_model import LogisticRegression
+    bsel = np.array([it.condition == "REAL-BASE" and it.family in ("neutral", "revealing") and it.dimension in ("L", "M", "T") for it in mitems])
+    Xb = Cm["resid"][bsel, Cm["position_names"].index("unit"), lj_m].astype(np.float32); yb = Vm[bsel][:, :3].argmax(1)
+    mub = Xb.mean(0); pcab = PCA(n_components=min(args.pca, len(Xb) - 1), random_state=0).fit(Xb - mub); scb = StandardScaler().fit(pcab.transform(Xb - mub))
+    clf = LogisticRegression(C=0.5, max_iter=3000).fit(scb.transform(pcab.transform(Xb - mub)), yb)
+    for tpos, Yu in (("u0_unit", Yu0), ("u1_unit", Yu1)):
+        base_mask = (np.abs(Yu).sum(1) == 1) & (Yu.max(1) == 1) & tsel
+        Xt = Ct["resid"][base_mask, Ct["position_names"].index(tpos), lj_t].astype(np.float32)
+        acc = float((clf.predict(scb.transform(pcab.transform(Xt - mub))) == Yu[base_mask].argmax(1)).mean())
+        res[f"base3way mention:unit->T1:{tpos}"] = dict(acc=round(acc, 3), n=int(base_mask.sum()))
+        print(f"L{l:2d} base 3-way transfer mention:unit -> T1:{tpos} acc={acc:.2f} (n={base_mask.sum()})", flush=True)
     results[l] = res
 json.dump(results, open(out / f"preanswer_{args.model}_{args.t1}.json", "w"), indent=1)
 print("wrote", out)

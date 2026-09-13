@@ -1,2 +1,5 @@
 mention_end  L  0 lex: nearest=0.018 axis=0.233 r2=-0.006 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.019
 mention_end  L  4 lex: nearest=0.086 axis=0.389 r2=0.409 ctrl_axis=0.203 | lattice-holdout: nearest=0.070 axis=0.356 r2=0.414
+mention_end  L  8 lex: nearest=0.081 axis=0.387 r2=0.456 ctrl_axis=0.200 | lattice-holdout: nearest=0.060 axis=0.347 r2=0.440
+mention_end  L 12 lex: nearest=0.070 axis=0.373 r2=0.452 ctrl_axis=0.197 | lattice-holdout: nearest=0.050 axis=0.337 r2=0.404
+mention_end  L 16 lex: nearest=0.055 axis=0.336 r2=0.403 ctrl_axis=0.206 | lattice-holdout: nearest=0.027 axis=0.284 r2=0.344

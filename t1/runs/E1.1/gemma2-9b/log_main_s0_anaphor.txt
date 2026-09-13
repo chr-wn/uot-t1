@@ -1,2 +1,5 @@
 anaphor      L  0 lex: nearest=0.025 axis=0.233 r2=-0.005 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.017
 anaphor      L  4 lex: nearest=0.046 axis=0.322 r2=0.314 ctrl_axis=0.206 | lattice-holdout: nearest=0.022 axis=0.281 r2=0.285
+anaphor      L  8 lex: nearest=0.053 axis=0.348 r2=0.417 ctrl_axis=0.196 | lattice-holdout: nearest=0.032 axis=0.302 r2=0.367
+anaphor      L 12 lex: nearest=0.054 axis=0.347 r2=0.447 ctrl_axis=0.204 | lattice-holdout: nearest=0.039 axis=0.309 r2=0.399
+anaphor      L 16 lex: nearest=0.073 axis=0.367 r2=0.455 ctrl_axis=0.206 | lattice-holdout: nearest=0.044 axis=0.317 r2=0.412
