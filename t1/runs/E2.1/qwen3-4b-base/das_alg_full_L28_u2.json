@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 28,
+ "position": "u2",
+ "variable": "alg",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.01654362678527832,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.022916666666666665,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.98125,
+   "n": 480
+  },
+  "balanced_iia": 0.5020833333333333
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.00847457627118644,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.9473684210526315,
+   "n": 38
+  },
+  "balanced_iia": 0.47792149866190897
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.03571428571428571,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.9761904761904762,
+   "n": 84
+  },
+  "balanced_iia": 0.5059523809523809
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.043010752688172046,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.976878612716763,
+   "n": 173
+  },
+  "balanced_iia": 0.5099446827024675
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.025,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.98,
+   "n": 800
+  },
+  "balanced_iia": 0.5025
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.03900709219858156,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9867256637168141,
+   "n": 678
+  },
+  "balanced_iia": 0.5128663779576978
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.0125,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.49895833333333334
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.010416666666666666,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.4979166666666667
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.025,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.5052083333333334
+ }
+}

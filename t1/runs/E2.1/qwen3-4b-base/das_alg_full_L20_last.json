@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 20,
+ "position": "last",
+ "variable": "alg",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.02812051773071289,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.06458333333333334,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9458333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.5052083333333334
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.01694915254237288,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.8421052631578947,
+   "n": 38
+  },
+  "balanced_iia": 0.42952720785013376
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.03571428571428571,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.8690476190476191,
+   "n": 84
+  },
+  "balanced_iia": 0.4523809523809524
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.053763440860215055,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.976878612716763,
+   "n": 173
+  },
+  "balanced_iia": 0.515321026788489
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.05875,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9275,
+   "n": 800
+  },
+  "balanced_iia": 0.493125
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.11702127659574468,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9646017699115044,
+   "n": 678
+  },
+  "balanced_iia": 0.5408115232536246
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.020833333333333332,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9916666666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.50625
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.041666666666666664,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9625,
+   "n": 480
+  },
+  "balanced_iia": 0.5020833333333333
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.04791666666666667,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.95625,
+   "n": 480
+  },
+  "balanced_iia": 0.5020833333333333
+ }
+}

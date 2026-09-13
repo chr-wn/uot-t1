@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 4,
+ "position": "u1",
+ "variable": "heur",
+ "mode": "learned",
+ "rank": 16,
+ "steps": 1000,
+ "train_time": 800.8612585067749,
+ "final_train_acc": 0.728125,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.20567375886524822,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9542772861356932,
+   "n": 678
+  },
+  "balanced_iia": 0.5799755225004707
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.10526315789473684,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.9703389830508474,
+   "n": 236
+  },
+  "balanced_iia": 0.5378010704727921
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.16393442622950818,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.9259259259259259,
+   "n": 135
+  },
+  "balanced_iia": 0.5449301760777171
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.19658119658119658,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.9628099173553719,
+   "n": 242
+  },
+  "balanced_iia": 0.5796955569682842
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.02125,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.97,
+   "n": 800
+  },
+  "balanced_iia": 0.495625
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.125,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9395833333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.5322916666666666
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.0425531914893617,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9808259587020649,
+   "n": 678
+  },
+  "balanced_iia": 0.5116895750957133
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.08156028368794327,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9734513274336283,
+   "n": 678
+  },
+  "balanced_iia": 0.5275058055607857
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.15602836879432624,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9631268436578171,
+   "n": 678
+  },
+  "balanced_iia": 0.5595776062260717
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 8,
+ "position": "u1",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.015033960342407227,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.599290780141844,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9646017699115044,
+   "n": 678
+  },
+  "balanced_iia": 0.7819462750266741
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.42105263157894735,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.9449152542372882,
+   "n": 236
+  },
+  "balanced_iia": 0.6829839429081177
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.4262295081967213,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.9333333333333333,
+   "n": 135
+  },
+  "balanced_iia": 0.6797814207650273
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.5897435897435898,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.9710743801652892,
+   "n": 242
+  },
+  "balanced_iia": 0.7804089849544396
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.05125,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.96,
+   "n": 800
+  },
+  "balanced_iia": 0.505625
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.34791666666666665,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9458333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.646875
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.05673758865248227,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9778761061946902,
+   "n": 678
+  },
+  "balanced_iia": 0.5173068474235862
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.3191489361702128,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9557522123893806,
+   "n": 678
+  },
+  "balanced_iia": 0.6374505742797967
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.5815602836879432,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9660766961651918,
+   "n": 678
+  },
+  "balanced_iia": 0.7738184899265674
+ }
+}

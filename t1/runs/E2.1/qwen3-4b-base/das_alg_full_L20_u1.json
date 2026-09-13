@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 20,
+ "position": "u1",
+ "variable": "alg",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.014843463897705078,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.0125,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.975,
+   "n": 480
+  },
+  "balanced_iia": 0.49374999999999997
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.012711864406779662,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.9736842105263158,
+   "n": 38
+  },
+  "balanced_iia": 0.4931980374665477
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.017857142857142856,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.9404761904761905,
+   "n": 84
+  },
+  "balanced_iia": 0.4791666666666667
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.016129032258064516,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.9826589595375722,
+   "n": 173
+  },
+  "balanced_iia": 0.49939399589781835
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.0325,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9775,
+   "n": 800
+  },
+  "balanced_iia": 0.505
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.01773049645390071,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9808259587020649,
+   "n": 678
+  },
+  "balanced_iia": 0.4992782275779828
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.016666666666666666,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9791666666666666,
+   "n": 480
+  },
+  "balanced_iia": 0.4979166666666667
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.020833333333333332,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.503125
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.016666666666666666,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.98125,
+   "n": 480
+  },
+  "balanced_iia": 0.49895833333333334
+ }
+}

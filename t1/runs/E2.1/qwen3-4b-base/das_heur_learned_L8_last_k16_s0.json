@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 8,
+ "position": "last",
+ "variable": "heur",
+ "mode": "learned",
+ "rank": 16,
+ "steps": 1000,
+ "train_time": 674.6141879558563,
+ "final_train_acc": 0.725,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.04609929078014184,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9867256637168141,
+   "n": 678
+  },
+  "balanced_iia": 0.5164124772484779
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.05263157894736842,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.9915254237288136,
+   "n": 236
+  },
+  "balanced_iia": 0.522078501338091
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.01639344262295082,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.9851851851851852,
+   "n": 135
+  },
+  "balanced_iia": 0.500789313904068
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.05128205128205128,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.9793388429752066,
+   "n": 242
+  },
+  "balanced_iia": 0.515310447128629
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.0225,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9775,
+   "n": 800
+  },
+  "balanced_iia": 0.5
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.027083333333333334,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.98125,
+   "n": 480
+  },
+  "balanced_iia": 0.5041666666666667
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.028368794326241134,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9911504424778761,
+   "n": 678
+  },
+  "balanced_iia": 0.5097596184020586
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.02127659574468085,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9896755162241888,
+   "n": 678
+  },
+  "balanced_iia": 0.5054760559844348
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.028368794326241134,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9867256637168141,
+   "n": 678
+  },
+  "balanced_iia": 0.5075472290215276
+ }
+}

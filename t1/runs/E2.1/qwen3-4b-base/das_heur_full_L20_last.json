@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 20,
+ "position": "last",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.01207113265991211,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.11702127659574468,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9646017699115044,
+   "n": 678
+  },
+  "balanced_iia": 0.5408115232536246
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.15789473684210525,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.9830508474576272,
+   "n": 236
+  },
+  "balanced_iia": 0.5704727921498662
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.11475409836065574,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.9407407407407408,
+   "n": 135
+  },
+  "balanced_iia": 0.5277474195506983
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.07692307692307693,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.9793388429752066,
+   "n": 242
+  },
+  "balanced_iia": 0.5281309599491417
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.05875,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9275,
+   "n": 800
+  },
+  "balanced_iia": 0.493125
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.06458333333333334,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9458333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.5052083333333334
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.03546099290780142,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9941002949852508,
+   "n": 678
+  },
+  "balanced_iia": 0.5147806439465261
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.07801418439716312,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.976401179941003,
+   "n": 678
+  },
+  "balanced_iia": 0.527207682169083
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.0851063829787234,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9705014749262537,
+   "n": 678
+  },
+  "balanced_iia": 0.5278039289524885
+ }
+}

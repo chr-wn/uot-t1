@@ -210,3 +210,14 @@ Deliverables: `reports/G1_gate_report.md`, `reports/G1_red_team.md`, `decisions/
 
 ### E2.1 pipeline test and the multi-token lesson (2026-09-13 15:30; v0 set, before PREDICTIONS_phase2 headline runs)
 Full-residual patching of quantity 1's *last* unit token (v0 set, long-form units) changes the judgment lawfully under M_alg in only 22–37% of output-changing cases at layer 4 — because many long-form units span several tokens ("pounds per square inch") and patching the last token leaves the others readable. All Phase-2 lexemes were therefore restricted to single-token surface forms (audited on the Qwen3 tokeniser: 43 lexemes over 10 lattice points), the pair table and interchange set were rebuilt, and the sweep/ceiling relaunched (v1). v0 results are kept under `runs/E2.1/v0/` as a record only.
+
+### E2.2 — full-residual patching ceiling, Qwen3-4B, single-token set (v1), balanced IIA (changing / preserving)
+| site | M_alg labels | M_heur labels | invented (alg) |
+|---|---|---|---|
+| u1 L4 | 0.67 (0.40 / 0.94) | **0.85 (0.73 / 0.97)** | 0.50 (0.05) |
+| u1 L8 | 0.65 (0.35 / 0.95) | 0.78 (0.60 / 0.97) | 0.51 |
+| u1 L12 | 0.57 (0.18) | 0.63 (0.30) | 0.51 |
+| u1 L16–28 | ≈ 0.50 (≤ 0.03) | ≈ 0.50 | 0.50 |
+| u2 L4–16 | 0.52–0.55 (0.21–0.27) | 0.63–0.66 (0.38–0.45) | 0.50 |
+| last L24–28 | 0.50 (0.28–0.29 / 0.71) | 0.64 (0.48 / 0.79–0.81) | 0.51 (0.26–0.29) |
+Observations: (i) quantity 1's unit representation is read out of the u1 position by layer ≈ 12 — later patches there do nothing; (ii) even replacing the *entire* residual at u1 L4 makes the judgment follow dimension equality in only 40% of changing cases, but follow the model's own pair table in 73% — the model's judgments are not equality-based, so the attainable IIA for M_alg is bounded (~0.65) at any site by the model's behaviour, and M_heur's ceiling is 0.85; (iii) for invented units, patching the lexeme token has no effect (0.05): their dimension is carried by the definition sentence; (iv) a late decision variable at the answer token (L24–28) is patchable (28–48% flips) but that is the answer, not D1. Consequence for the sweep: the only sites where a D1 subspace can matter are u1 at layers 4–8 (and u2 similarly); Phase-2 headline comparisons are made there, with the ceiling as the denominator.

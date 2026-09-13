@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 8,
+ "position": "u2",
+ "variable": "alg",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.015286922454833984,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.27291666666666664,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.8166666666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.5447916666666667
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.09322033898305085,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.5263157894736842,
+   "n": 38
+  },
+  "balanced_iia": 0.3097680642283675
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.09821428571428571,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.42857142857142855,
+   "n": 84
+  },
+  "balanced_iia": 0.26339285714285715
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.2956989247311828,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.9017341040462428,
+   "n": 173
+  },
+  "balanced_iia": 0.5987165143887128
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.0725,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9375,
+   "n": 800
+  },
+  "balanced_iia": 0.505
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.450354609929078,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.8628318584070797,
+   "n": 678
+  },
+  "balanced_iia": 0.6565932341680788
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.03125,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9645833333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.4979166666666667
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.18958333333333333,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9,
+   "n": 480
+  },
+  "balanced_iia": 0.5447916666666667
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.24166666666666667,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.8354166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.5385416666666667
+ }
+}

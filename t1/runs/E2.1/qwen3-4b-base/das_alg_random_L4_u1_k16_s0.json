@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 4,
+ "position": "u1",
+ "variable": "alg",
+ "mode": "random",
+ "rank": 16,
+ "steps": 300,
+ "train_time": 0.006541013717651367,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.014583333333333334,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9791666666666666,
+   "n": 480
+  },
+  "balanced_iia": 0.49687499999999996
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.00847457627118644,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.9736842105263158,
+   "n": 38
+  },
+  "balanced_iia": 0.4910793933987511
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.017857142857142856,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.9880952380952381,
+   "n": 84
+  },
+  "balanced_iia": 0.5029761904761905
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.016129032258064516,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.9653179190751445,
+   "n": 173
+  },
+  "balanced_iia": 0.4907234756666045
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.02875,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9725,
+   "n": 800
+  },
+  "balanced_iia": 0.500625
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.02127659574468085,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9837758112094396,
+   "n": 678
+  },
+  "balanced_iia": 0.5025262034770602
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.0125,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.49895833333333334
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.010416666666666666,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.4979166666666667
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.00625,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9833333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.49479166666666663
+ }
+}

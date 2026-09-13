@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 8,
+ "position": "last",
+ "variable": "alg",
+ "mode": "random",
+ "rank": 64,
+ "steps": 300,
+ "train_time": 0.01575779914855957,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.01875,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9833333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.5010416666666666
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.00847457627118644,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.9736842105263158,
+   "n": 38
+  },
+  "balanced_iia": 0.4910793933987511
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.03571428571428571,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.9880952380952381,
+   "n": 84
+  },
+  "balanced_iia": 0.511904761904762
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.03225806451612903,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.9710982658959537,
+   "n": 173
+  },
+  "balanced_iia": 0.5016781652060414
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.0325,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.97875,
+   "n": 800
+  },
+  "balanced_iia": 0.505625
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.028368794326241134,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9867256637168141,
+   "n": 678
+  },
+  "balanced_iia": 0.5075472290215276
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.008333333333333333,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9895833333333334,
+   "n": 480
+  },
+  "balanced_iia": 0.49895833333333334
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.016666666666666666,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9770833333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.496875
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.016666666666666666,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9833333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.5
+ }
+}

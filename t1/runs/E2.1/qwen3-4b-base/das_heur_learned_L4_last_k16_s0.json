@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 4,
+ "position": "last",
+ "variable": "heur",
+ "mode": "learned",
+ "rank": 16,
+ "steps": 1000,
+ "train_time": 799.5081448554993,
+ "final_train_acc": 0.721875,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.03900709219858156,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9852507374631269,
+   "n": 678
+  },
+  "balanced_iia": 0.5121289148308542
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.02631578947368421,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.9915254237288136,
+   "n": 236
+  },
+  "balanced_iia": 0.5089206066012489
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.03278688524590164,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.9777777777777777,
+   "n": 135
+  },
+  "balanced_iia": 0.5052823315118397
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.05128205128205128,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.9834710743801653,
+   "n": 242
+  },
+  "balanced_iia": 0.5173765628311083
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.02625,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9775,
+   "n": 800
+  },
+  "balanced_iia": 0.5018750000000001
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.022916666666666665,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9791666666666666,
+   "n": 480
+  },
+  "balanced_iia": 0.5010416666666666
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.028368794326241134,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9882005899705014,
+   "n": 678
+  },
+  "balanced_iia": 0.5082846921483712
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.02127659574468085,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9867256637168141,
+   "n": 678
+  },
+  "balanced_iia": 0.5040011297307475
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.028368794326241134,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9852507374631269,
+   "n": 678
+  },
+  "balanced_iia": 0.506809765894684
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 24,
+ "position": "last",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.014950275421142578,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.4787234042553192,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.8082595870206489,
+   "n": 678
+  },
+  "balanced_iia": 0.643491495637984
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.7368421052631579,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.8898305084745762,
+   "n": 236
+  },
+  "balanced_iia": 0.813336306868867
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.4262295081967213,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.7555555555555555,
+   "n": 135
+  },
+  "balanced_iia": 0.5908925318761384
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.49572649572649574,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.8471074380165289,
+   "n": 242
+  },
+  "balanced_iia": 0.6714169668715123
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.26375,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.75,
+   "n": 800
+  },
+  "balanced_iia": 0.506875
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.2791666666666667,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.7270833333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.503125
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.1453900709219858,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9749262536873157,
+   "n": 678
+  },
+  "balanced_iia": 0.5601581623046508
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.31560283687943264,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9100294985250738,
+   "n": 678
+  },
+  "balanced_iia": 0.6128161677022532
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.4219858156028369,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.8495575221238938,
+   "n": 678
+  },
+  "balanced_iia": 0.6357716688633653
+ }
+}

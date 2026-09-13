@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 28,
+ "position": "last",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.017508745193481445,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.48226950354609927,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.7890855457227138,
+   "n": 678
+  },
+  "balanced_iia": 0.6356775246344065
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.7105263157894737,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.8771186440677966,
+   "n": 236
+  },
+  "balanced_iia": 0.7938224799286351
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.4098360655737705,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.7333333333333333,
+   "n": 135
+  },
+  "balanced_iia": 0.5715846994535518
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.5042735042735043,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.8181818181818182,
+   "n": 242
+  },
+  "balanced_iia": 0.6612276612276613
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.285,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.7375,
+   "n": 800
+  },
+  "balanced_iia": 0.51125
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.2916666666666667,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.7083333333333334,
+   "n": 480
+  },
+  "balanced_iia": 0.5
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.1347517730496454,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9690265486725663,
+   "n": 678
+  },
+  "balanced_iia": 0.5518891608611058
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.30141843971631205,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9011799410029498,
+   "n": 678
+  },
+  "balanced_iia": 0.601299190359631
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.42907801418439717,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.8466076696165191,
+   "n": 678
+  },
+  "balanced_iia": 0.6378428419004581
+ }
+}

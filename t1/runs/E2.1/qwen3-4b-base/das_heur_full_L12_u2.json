@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 12,
+ "position": "u2",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.019499778747558594,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.43617021276595747,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.8687315634218289,
+   "n": 678
+  },
+  "balanced_iia": 0.6524508880938932
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.5,
+   "n": 38
+  },
+  "preserving": {
+   "iia": 0.940677966101695,
+   "n": 236
+  },
+  "balanced_iia": 0.7203389830508475
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.36065573770491804,
+   "n": 61
+  },
+  "preserving": {
+   "iia": 0.8074074074074075,
+   "n": 135
+  },
+  "balanced_iia": 0.5840315725561628
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.41025641025641024,
+   "n": 117
+  },
+  "preserving": {
+   "iia": 0.9008264462809917,
+   "n": 242
+  },
+  "balanced_iia": 0.655541428268701
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.08125,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.9425,
+   "n": 800
+  },
+  "balanced_iia": 0.511875
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.24583333333333332,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.8041666666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.525
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.07092198581560284,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9690265486725663,
+   "n": 678
+  },
+  "balanced_iia": 0.5199742672440846
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.2872340425531915,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9188790560471977,
+   "n": 678
+  },
+  "balanced_iia": 0.6030565493001946
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.4078014184397163,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.8775811209439528,
+   "n": 678
+  },
+  "balanced_iia": 0.6426912696918345
+ }
+}

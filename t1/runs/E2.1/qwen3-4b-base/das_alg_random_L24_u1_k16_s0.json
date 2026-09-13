@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 24,
+ "position": "u1",
+ "variable": "alg",
+ "mode": "random",
+ "rank": 16,
+ "steps": 300,
+ "train_time": 0.021567821502685547,
+ "final_train_acc": null,
+ "base_acc_real": 0.6883333333333334,
+ "base_yes_rate_real": 0.23166666666666666,
+ "iia_all": {
+  "changing": {
+   "iia": 0.020833333333333332,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9854166666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.503125
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.01694915254237288,
+   "n": 236
+  },
+  "preserving": {
+   "iia": 0.9736842105263158,
+   "n": 38
+  },
+  "balanced_iia": 0.4953166815343443
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.017857142857142856,
+   "n": 112
+  },
+  "preserving": {
+   "iia": 0.9761904761904762,
+   "n": 84
+  },
+  "balanced_iia": 0.49702380952380953
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.03225806451612903,
+   "n": 186
+  },
+  "preserving": {
+   "iia": 0.9826589595375722,
+   "n": 173
+  },
+  "balanced_iia": 0.5074585120268507
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.03125,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.98125,
+   "n": 800
+  },
+  "balanced_iia": 0.50625
+ },
+ "iia_other_labels(y_heur)": {
+  "changing": {
+   "iia": 0.024822695035460994,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9852507374631269,
+   "n": 678
+  },
+  "balanced_iia": 0.5050367162492939
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.014583333333333334,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9875,
+   "n": 480
+  },
+  "balanced_iia": 0.5010416666666667
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.014583333333333334,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.98125,
+   "n": 480
+  },
+  "balanced_iia": 0.4979166666666666
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.020833333333333332,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.975,
+   "n": 480
+  },
+  "balanced_iia": 0.4979166666666667
+ }
+}
