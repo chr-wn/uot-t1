@@ -30,6 +30,7 @@ ap.add_argument("--alpha", type=float, default=None, help="ridge alpha; default 
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--tag", default="main")
 ap.add_argument("--axes", default="0,1,2", help="indices into the exponent vector to predict (L,M,T,...)")
+ap.add_argument("--pca", type=int, default=512, help="project residuals to this many PCs (fit on the selected items) before probing; 0 = none")
 args = ap.parse_args()
 
 C = load_cache(args.cache)
@@ -54,6 +55,9 @@ for pname in positions:
     for l in layers:
         lj = C["layers"].index(l)
         X = C["resid"][sel, pj, lj].astype(np.float32)
+        if args.pca and args.pca < X.shape[1]:
+            from sklearn.decomposition import PCA
+            X = PCA(n_components=args.pca, random_state=0).fit_transform(X - X.mean(0))
         r = run_probe_suite(X, Y, units, seed=args.seed, alpha=args.alpha)
         row = dict(position=pname, layer=l, n=int(sel.sum()), tag=args.tag)
         for k, v in r.items():
