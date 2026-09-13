@@ -17,10 +17,22 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--model", required=True); ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--n-base", type=int, default=1200); ap.add_argument("--n-inv", type=int, default=400)
 ap.add_argument("--heldout-lex", default="mile,ounce,week,dyne,erg,horsepower,torr,becquerel,barrel,kph")
-ap.add_argument("--heur-thr", type=float, default=0.0, help="margin threshold for M_heur labels (0 = the model's own yes/no preference)")
+ap.add_argument("--heur-thr", default="auto", help="margin threshold for M_heur labels: 'auto' = rank-calibrated to the same-dimension base rate, or a number")
 args = ap.parse_args()
 root = Path(__file__).resolve().parents[2]
-pt = json.load(open(root / "runs/E2.0" / args.model / "pair_table.json")); table, med = pt["table"], args.heur_thr
+pt = json.load(open(root / "runs/E2.0" / args.model / "pair_table.json")); table = pt["table"]
+if args.heur_thr == "auto" or args.heur_thr is None:
+    # rank-calibrated threshold: yes-rate of the lexical table = true same-dimension rate (keeps the model's
+    # ranking, removes its constant yes/no bias)
+    import numpy as np
+    from uot.units import get_registry
+    reg = get_registry()
+    marg = np.array([m for t in table.values() for d in t.values() for m in d.values()])
+    same = np.array([reg[a].dim == reg[b].dim for t in table.values() for a, d in t.items() for b in d])
+    med = float(np.quantile(marg, 1 - same.mean()))
+else:
+    med = float(args.heur_thr)
+print("M_heur threshold:", med)
 rng = random.Random(args.seed)
 real = generate(args.n_base, args.seed, styles=("long",)); inv = generate(args.n_inv, args.seed + 1, invented=True)
 heldout = set(args.heldout_lex.split(","))
