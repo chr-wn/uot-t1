@@ -92,6 +92,20 @@ def parse_unit_expression(text: str, extra_units: Iterable[Unit] = ()) -> Dimens
     return dim if found else None
 
 
+def invented_units_from_meta(meta: dict) -> list[Unit]:
+    """Recover invented lexemes + dimensions from T1 item metadata (slot_units renderings and slot_dims)."""
+    from .units import make_invented_unit, get_registry
+    known = get_registry().all_symbols()
+    out = []
+    for su, sd in zip(meta.get("slot_units", []), meta.get("slot_dims", [])):
+        # slot_units are symbol renderings like "blork/zim^2"; every alphabetic token not in the registry
+        # is an invented lexeme; its dimension is unknown individually, so assign from the slot only if single
+        toks = [t for t in re.findall(r"[A-Za-z]+", su) if t not in known and t.lower() not in known]
+        if len(toks) == 1:
+            out.append(make_invented_unit(toks[0], Dimension.parse(sd)))
+    return out
+
+
 _KIND_TO_DIM = {"length": "L", "mass": "M", "time": "T", "electric current": "I", "temperature": "Th",
                 "amount of substance": "N", "luminous intensity": "J"}
 
@@ -114,9 +128,11 @@ def invented_units_from_prompt(prompt: str) -> list[Unit]:
     return out
 
 
-def generation_dimension_correct(gen: str, prompt: str, answer_dimension: str) -> bool | None:
-    """True/False if a unit expression was parsed and matches/mismatches; None if nothing parsed."""
-    d = parse_unit_expression(gen, invented_units_from_prompt(prompt))
+def generation_dimension_correct(gen: str, prompt: str, answer_dimension: str, extra_units=()) -> bool | None:
+    """True/False if a unit expression was parsed and matches/mismatches; None if nothing parsed.
+    `extra_units`: additional Unit objects (e.g. invented lexemes known from item metadata when the
+    prompt carries no definitions)."""
+    d = parse_unit_expression(gen, list(invented_units_from_prompt(prompt)) + list(extra_units))
     if d is None:
         return None
     return d == Dimension.parse(answer_dimension)

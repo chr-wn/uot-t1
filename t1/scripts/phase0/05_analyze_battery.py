@@ -59,7 +59,7 @@ for sp in Path(args.stimuli_dir).glob("*.jsonl"):
         cands_by_id[it.item_id] = it.candidates
 # recompute generation correctness from stored generations with the current matcher
 from uot.lm.scoring import generation_matches  # noqa: E402
-from uot.parse_units import generation_dimension_correct  # noqa: E402
+from uot.parse_units import generation_dimension_correct, invented_units_from_meta  # noqa: E402
 prompts = {}
 for sp in Path(args.stimuli_dir).glob("*.jsonl"):
     for it in items_from_jsonl(str(sp)):
@@ -91,10 +91,10 @@ if "generation" in df:
     df["gen_choice"] = ch
     df["correct_gen_choice"] = [(c == a) if c is not None else np.nan for c, a in zip(ch, df["answer_index"])]
     # dimension-level generation correctness: parsed dimension == answer dimension (None -> False)
-    df["correct_gen_dim"] = [(generation_dimension_correct(g, prompts.get(i, ""), ad) is True) if isinstance(g, str) else np.nan
-                             for g, i, ad in zip(df["generation"], df["item_id"], df["answer_dimension"])]
-    df["gen_parsed"] = [(generation_dimension_correct(g, prompts.get(i, ""), ad) is not None) if isinstance(g, str) else np.nan
-                        for g, i, ad in zip(df["generation"], df["item_id"], df["answer_dimension"])]
+    _gd = [generation_dimension_correct(g, prompts.get(i, ""), ad, invented_units_from_meta(m)) if isinstance(g, str) else None
+           for g, i, ad, m in zip(df["generation"], df["item_id"], df["answer_dimension"], df["meta"])]
+    df["correct_gen_dim"] = [(x is True) if isinstance(g, str) else np.nan for x, g in zip(_gd, df["generation"])]
+    df["gen_parsed"] = [(x is not None) if isinstance(g, str) else np.nan for x, g in zip(_gd, df["generation"])]
 if fc is not None:
     def lf(iid):
         ss = [s for s in ustr.get(iid, []) if s.strip() in fc.counts]
