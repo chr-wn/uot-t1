@@ -98,3 +98,17 @@ acc_cand by condition: FAM-NAMED 0.92, FAM-UNNAMED 0.88, INV-LEX 0.92, INV-BASE 
 
 ### Generation readout, first look (Qwen3-4B-Base, T1_s0 INV-LEX; 2026-09-13 09:20)
 Free greedy generation after the prompt (which ends in the output *number*) is a noisy readout: 80/240 generations contain no unit at all (the model either continues the digits of the number, e.g. "0.004458" → "529032258064", or closes the sentence and starts a new question), 109 are dimensionally correct, 51 are dimensionally wrong. The wrong ones are systematically *simplified* compositions: exponents dropped or a factor omitted ("snoorp per shoath" for a force whose correct unit is "vraunt snoorp per shoath²"; "skeesp" for a volume "skeesp³"). Two consequences: (i) the candidate readout stays primary (as pre-registered), reported alongside `acc_gen_dim|parsed` (dimension-correct among generations that contain a unit); (ii) exponent handling is the weak spot of free composition — worth a dedicated Phase-1 look (is the exponent *magnitude* represented, or only which lexemes participate and on which side of the slash?). Also implemented: a dimension-aware parser (`uot/parse_units.py`) so any dimensionally-correct surface form ("N", "kg-cm", "wrults cubed") counts.
+
+### E0.3b — prior-only controls, Qwen3-4B-Base, T1_s0 (2026-09-13 09:30)
+| condition | full prompt | no units in scenario (relation + definitions kept) | no context (definitions + "The unit is") | chance |
+|---|---|---|---|---|
+| FAM-NAMED | 0.92 | 0.59 | 0.16 | 0.25 |
+| FAM-UNNAMED | 0.88 | 0.42 | 0.08 | 0.25 |
+| INV-LEX | 0.92 | 0.70 | 0.44 | 0.25 |
+| INV-BASE | 0.95 | 0.76 | 0.31 | 0.25 |
+| INV-LEX-TWIN | 0.87 | 0.50 | 0.14 | 0.25 |
+| INV-BASE-TWIN | 0.87 | 0.41 | 0.03 | 0.25 |
+
+**Observation.** Candidate prior alone is at or below chance for real units (the composed correct string is not favoured a priori). Removing the units from the scenario but keeping the relation sentence (and, for INV, the lexeme definitions) retains 0.42–0.76: the model can select the right lattice point from the *verbal* relation ("mass squared times length" → "kg² mi") plus the candidate strings, without any slot binding. The full prompt adds +0.19 to +0.46 on top.
+**Interpretation (suggestive).** Two routes contribute to T1 candidate accuracy: (R1) relation-words → exponent pattern over the available lexemes (a verbal/A1-style route that never needs a dimension variable attached to the mentioned quantities), and (R2) binding the mentioned quantities' units to slots and composing. The G0 criterion is about competence, and it passes regardless; but the red-team appendix must carry this: Phase-1/2 must probe the *quantities'* dimension representations (positions at/after the unit tokens and at the pre-answer token), and the causal tests must swap dimension at the quantity, not the relation words. A cleaner behavioural cell for R2 alone is also worth adding: relation *not* verbalised and *not* named (e.g. "Q = 12 blorks × 3 zims" style definitions by example) — deferred to Phase 1 (E1.0) rather than reopening Phase 0.
+**What would change my mind:** if the full-prompt increment over "no units" vanished on order-swapped items (it does not: swapped ≥ in-order), R2 would be absent.
