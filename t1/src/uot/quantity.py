@@ -11,7 +11,9 @@ from .units import Unit, UnitExpr
 def fmt_value(v: float) -> str:
     if float(v).is_integer():
         return str(int(v))
-    s = f"{v:.2f}".rstrip("0").rstrip(".")
+    s = f"{v:.4g}"
+    if "e" in s:
+        s = f"{v:.6f}".rstrip("0").rstrip(".")
     return s
 
 

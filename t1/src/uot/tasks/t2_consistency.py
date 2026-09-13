@@ -32,8 +32,11 @@ NEAR_MISS = [
 
 
 def _expr(reg, spec) -> UnitExpr:
+    """spec: unit id | (unit id, exp) | tuple of those (product)."""
     if isinstance(spec, str):
         return UnitExpr.of(reg[spec])
+    if len(spec) == 2 and isinstance(spec[0], str) and isinstance(spec[1], int):
+        return UnitExpr.of((reg[spec[0]], spec[1]))
     fs = []
     for s in spec:
         if isinstance(s, str):

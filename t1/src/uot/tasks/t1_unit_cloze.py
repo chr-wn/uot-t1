@@ -171,16 +171,15 @@ def _composition_order(rel: Relation) -> tuple[int, ...]:
 
 def _values(rng: random.Random, rel: Relation) -> tuple[list[int], float]:
     """Input values and the (approximately) consistent output value."""
-    vals = [rng.randint(2, 60) for _ in rel.slots]
+    hi = 9 if max(abs(e) for e in rel.exps) >= 3 else 60
+    vals = [rng.randint(2, hi) for _ in rel.slots]
     if len(rel.slots) == 2 and rel.exps == (1, -1):
         vals[1] = rng.randint(2, 12)
         vals[0] = vals[1] * rng.randint(2, 30)
     out = 1.0
     for v, e in zip(vals, rel.exps):
         out *= float(v) ** e
-    if out > 1e6 or out < 1e-3:
-        out = round(out, 3)
-    return vals, round(out, 2)
+    return vals, float(f"{out:.4g}")
 
 
 def _slot_units(rng: random.Random, rel: Relation, condition: str, pool: LexemePool, name_dim: Dimension | None,
@@ -189,7 +188,7 @@ def _slot_units(rng: random.Random, rel: Relation, condition: str, pool: LexemeP
     exprs: list[UnitExpr] = []
     if condition.startswith("FAM"):
         for s in rel.slots:
-            exprs.append(pick_unit(rng, Dimension.parse(s)))
+            exprs.append(pick_unit(rng, Dimension.parse(s), pool="natural"))
         return exprs
     if condition == "INV-LEX":
         # every base symbol appearing in any slot gets one invented unit (shared across slots)
@@ -208,7 +207,7 @@ def _slot_units(rng: random.Random, rel: Relation, condition: str, pool: LexemeP
             if d == name_dim:
                 exprs.append(UnitExpr.of(x_unit))
             else:
-                exprs.append(pick_unit(rng, d))
+                exprs.append(pick_unit(rng, d, pool="natural"))
         return exprs
     raise ValueError(condition)
 
@@ -282,7 +281,7 @@ def make_familiar_twins(items: list[Item], seed: int) -> list[Item]:
             d = Dimension.parse(s)
             if "X" in d.symbols():
                 d = Dimension.parse(s.replace("X", "M"))
-            exprs.append(pick_unit(rng, d))
+            exprs.append(pick_unit(rng, d, pool="natural"))
         vals, vout = it.meta["values"], it.meta["out_value"]
         style = rng.choice(("symbol", "long", "slash", "per"))
         qs = [Quantity(float(v), ex) for v, ex in zip(vals, exprs)]

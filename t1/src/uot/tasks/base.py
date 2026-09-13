@@ -64,6 +64,12 @@ CORE_UNITS = {
     "M": ["milligram", "gram", "kilogram", "tonne", "ounce", "pound"],
     "T": ["millisecond", "second", "minute", "hour", "day", "year"],
 }
+# Natural, everyday units used inside compound expressions and in T1 (keeps prompts plausible).
+NATURAL_UNITS = {
+    "L": ["meter", "kilometer", "centimeter", "foot", "mile", "inch"],
+    "M": ["kilogram", "gram", "pound", "tonne"],
+    "T": ["second", "minute", "hour"],
+}
 # Named-derived units used as inputs for composite slots (FAM conditions).
 NAMED_FOR_DIM = {
     "M L/T2": ["newton", "kilonewton", "pound_force"],
@@ -88,6 +94,8 @@ def pick_unit(rng: random.Random, dim: Dimension, *, pool: str = "core") -> Unit
     if dim.distance() == 1 and len(syms) == 1:
         if syms[0] in CORE_UNITS and pool == "core":
             ids = CORE_UNITS[syms[0]]
+        elif syms[0] in NATURAL_UNITS and pool == "natural":
+            ids = NATURAL_UNITS[syms[0]]
         else:
             ids = [u.id for u in reg.base_units(syms[0], invented=False)]
         if not ids:
@@ -96,7 +104,8 @@ def pick_unit(rng: random.Random, dim: Dimension, *, pool: str = "core") -> Unit
     named = NAMED_FOR_DIM.get(str(dim))
     if named and (rng.random() < 0.5 or dim.distance() > 4):
         return UnitExpr.of(reg[rng.choice(named)])
-    return compose_from_base(rng, dim, lambda s: pick_unit(rng, Dimension({s: 1}), pool=pool).factors[0][0])
+    # compound expressions are always composed from natural units
+    return compose_from_base(rng, dim, lambda s: pick_unit(rng, Dimension({s: 1}), pool="natural").factors[0][0])
 
 
 def compose_from_base(rng: random.Random, dim: Dimension, base_unit_for) -> UnitExpr:
