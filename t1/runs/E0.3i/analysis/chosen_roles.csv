@@ -1,0 +1,13 @@
+model,condition,correct,exp_perturbed,exp_swapped,inverted,sign_flip
+qwen3-4b,FAM-NAMED,422,0,9,30,19
+qwen3-4b,FAM-UNNAMED,335,0,51,39,55
+qwen3-4b,INV-BASE,433,0,9,4,34
+qwen3-4b,INV-BASE-TWIN,422,0,11,11,36
+qwen3-4b,INV-LEX,413,6,19,27,15
+qwen3-4b,INV-LEX-TWIN,389,0,37,27,27
+qwen3-8b,FAM-NAMED,417,0,6,38,19
+qwen3-8b,FAM-UNNAMED,283,0,61,78,58
+qwen3-8b,INV-BASE,421,0,6,5,48
+qwen3-8b,INV-BASE-TWIN,337,0,28,54,61
+qwen3-8b,INV-LEX,330,10,33,77,30
+qwen3-8b,INV-LEX-TWIN,375,0,35,39,31
