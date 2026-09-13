@@ -11,7 +11,7 @@ label set), and selectivity = task − control.
 from __future__ import annotations
 
 import numpy as np
-from sklearn.linear_model import Ridge, LogisticRegression
+from sklearn.linear_model import Ridge, RidgeCV, LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
 
@@ -20,9 +20,13 @@ def _prep(Xtr, Xte):
     return sc.transform(Xtr), sc.transform(Xte)
 
 
-def fit_ridge(Xtr, Ytr, Xte, alpha: float = 10.0):
+ALPHAS = (1.0, 10.0, 100.0, 1000.0, 10000.0)
+
+
+def fit_ridge(Xtr, Ytr, Xte, alpha: float | None = None):
+    """Ridge with alpha chosen by efficient leave-one-out CV on the training fold (alpha=None)."""
     Xtr_, Xte_ = _prep(Xtr, Xte)
-    m = Ridge(alpha=alpha).fit(Xtr_, Ytr)
+    m = (RidgeCV(alphas=ALPHAS) if alpha is None else Ridge(alpha=alpha)).fit(Xtr_, Ytr)
     return m.predict(Xte_), m
 
 
@@ -37,8 +41,12 @@ def regression_metrics(pred: np.ndarray, Y: np.ndarray, points: np.ndarray | Non
     ss_res = ((Y - pred) ** 2).sum(0)
     ss_tot = ((Y - Y.mean(0)) ** 2).sum(0)
     r2 = np.where(ss_tot > 0, 1 - ss_res / np.maximum(ss_tot, 1e-12), np.nan)
+    R = np.rint(pred)
     out = dict(r2_per_axis=r2.tolist(), r2_mean=float(np.nanmean(r2)),
-               exact_acc=float((np.rint(pred) == Y).all(1).mean()), mae=float(np.abs(pred - Y).mean()))
+               exact_acc=float((R == Y).all(1).mean()), mae=float(np.abs(pred - Y).mean()),
+               axis_acc=float((R == Y).mean()),                      # per-axis rounded accuracy
+               sign_acc=float((np.sign(R) == np.sign(Y)).mean()),    # per-axis sign (incl. zero) accuracy
+               nonzero_axis_acc=float((R[Y != 0] == Y[Y != 0]).mean()) if (Y != 0).any() else np.nan)
     if points is not None:
         idx = nearest_point(pred, points)
         out["nearest_acc"] = float((points[idx] == Y).all(1).mean())
@@ -91,7 +99,7 @@ def lattice_holdout_folds(Y: np.ndarray, k: int, seed: int, *, keep_spanning: bo
     return folds
 
 
-def run_probe_suite(X: np.ndarray, Y: np.ndarray, unit_ids: list[str], *, seed: int = 0, alpha: float = 10.0,
+def run_probe_suite(X: np.ndarray, Y: np.ndarray, unit_ids: list[str], *, seed: int = 0, alpha: float | None = None,
                     k_lex: int = 5, k_lat: int = 5) -> dict:
     """Task and control probes under random / cross-lexeme / lattice-holdout splits."""
     Y = np.asarray(Y, dtype=float)

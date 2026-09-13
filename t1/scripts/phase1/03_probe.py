@@ -26,7 +26,7 @@ ap.add_argument("--conditions", default="REAL-BASE,REAL-NAMED,REAL-LATTICE")
 ap.add_argument("--families", default="neutral,revealing")
 ap.add_argument("--positions", default=None)
 ap.add_argument("--layers", default=None)
-ap.add_argument("--alpha", type=float, default=10.0)
+ap.add_argument("--alpha", type=float, default=None, help="ridge alpha; default = CV-selected")
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--tag", default="main")
 ap.add_argument("--axes", default="0,1,2", help="indices into the exponent vector to predict (L,M,T,...)")
@@ -37,9 +37,12 @@ items = from_jsonl(args.stimuli)
 assert len(items) == C["resid"].shape[0]
 conds = set(args.conditions.split(","))
 fams = set(args.families.split(","))
-sel = np.array([it.condition in conds and it.family in fams for it in items])
 axes = [int(a) for a in args.axes.split(",")]
-Y = np.array([it.vector for it in items])[sel][:, axes]
+V = np.array([it.vector for it in items])
+other = [i for i in range(V.shape[1]) if i not in axes]
+# keep only items whose dimension lies in the sub-lattice spanned by the selected axes
+sel = np.array([it.condition in conds and it.family in fams for it in items]) & (np.abs(V[:, other]).sum(1) == 0)
+Y = V[sel][:, axes]
 units = [it.unit_id or "none" for it in items]
 units = [u for u, s in zip(units, sel) if s]
 positions = args.positions.split(",") if args.positions else C["position_names"]
@@ -62,8 +65,8 @@ for pname in positions:
             else:
                 row[k] = v
         rows.append(row)
-        print(f"{pname:12s} L{l:3d} task/lex nearest={r['cross_lexeme/task']['nearest_acc']:.3f} ctrl={r['cross_lexeme/control']['nearest_acc']:.3f} "
-              f"lattice-holdout nearest={r['lattice_holdout/task']['nearest_acc']:.3f} r2={r['lattice_holdout/task']['r2_mean']:.3f}", flush=True)
+        print(f"{pname:12s} L{l:3d} lex: nearest={r['cross_lexeme/task']['nearest_acc']:.3f} axis={r['cross_lexeme/task']['axis_acc']:.3f} r2={r['cross_lexeme/task']['r2_mean']:.3f} ctrl_axis={r['cross_lexeme/control']['axis_acc']:.3f} | "
+              f"lattice-holdout: nearest={r['lattice_holdout/task']['nearest_acc']:.3f} axis={r['lattice_holdout/task']['axis_acc']:.3f} r2={r['lattice_holdout/task']['r2_mean']:.3f}", flush=True)
 df = pd.DataFrame(rows)
 df.to_csv(out / f"probes_{Path(args.cache).stem}_{args.tag}.csv", index=False)
 print("wrote", out)
