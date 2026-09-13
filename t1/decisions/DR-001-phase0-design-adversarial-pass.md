@@ -18,3 +18,8 @@ Frequency and lattice distance are confounded for familiar units (unnamed lattic
 ## Residual risks accepted
 - Invented lexemes are defined in context; failures there can be binding failures, not algebra failures. Twins (requirement 6) separate these only partially; Phase 2's binding-contamination checks are the real test.
 - Base-model log-prob readouts over multi-token candidates favour short candidates; mean-per-token log-prob (as the rival paper) reduces but does not eliminate length bias. We will report a length-matched subset.
+
+## Addendum (2026-09-13, after inspecting generated items, before any model run)
+- **Length confound found and fixed.** With the original distractor set (inverted, exponent-dropped, product, single unit) the correct candidate was the longest string in 62% of T1 items and never the shortest. Distractors are now built from *all* lexemes of the correct answer with different exponents (inverted, exponent-permuted, random lattice point), so candidates differ only in exponents/arrangement. The `single`/`product` roles remain only as last-resort fallbacks.
+- **Unnatural unit pairings** ("126 yd in 9 ms", "foot kilograms") replaced by natural, system-consistent choices for T1 and for all compound compositions. T2/T4/T5 single-unit picks still draw from the broader core set (ms, yr, oz …) because plausibility matters less for yes/no judgments and the broader set widens lexeme coverage.
+- Neither change touches a threshold in PREDICTIONS_phase0.md.

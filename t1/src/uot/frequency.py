@@ -22,10 +22,10 @@ class FrequencyCache:
         if self.path.exists():
             self.counts = json.load(open(self.path))
 
-    def _query(self, s: str) -> int:
-        for attempt in range(5):
+    def _query(self, s: str) -> int | None:
+        for attempt in range(8):
             try:
-                r = requests.post(API, json={"index": self.index, "query_type": "count", "query": s}, timeout=60)
+                r = requests.post(API, json={"index": self.index, "query_type": "count", "query": s}, timeout=90)
                 j = r.json()
                 if "count" in j:
                     return int(j["count"])
@@ -33,14 +33,17 @@ class FrequencyCache:
                     raise RuntimeError(j["error"])
             except (requests.RequestException, ValueError):
                 pass
-            time.sleep(1.5 * (attempt + 1))
-        raise RuntimeError(f"infini-gram query failed for {s!r}")
+            time.sleep(3.0 * (attempt + 1))
+        return None  # recorded as missing; re-queried on the next run
 
-    def count(self, s: str) -> int:
+    def count(self, s: str) -> int | None:
         s = s.strip()
-        if s not in self.counts:
+        if self.counts.get(s) is None:
             self.counts[s] = self._query(s)
         return self.counts[s]
+
+    def missing(self) -> list[str]:
+        return [k for k, v in self.counts.items() if v is None]
 
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -49,4 +52,5 @@ class FrequencyCache:
     def log_freq(self, strings: list[str]) -> float:
         """log10(1 + max count over renderings)."""
         import math
-        return math.log10(1 + max(self.count(s) for s in strings))
+        cs = [c for c in (self.count(s) for s in strings) if c is not None]
+        return math.log10(1 + max(cs)) if cs else float("nan")

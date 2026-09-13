@@ -1,0 +1,7578 @@
+{
+ "qwen3-4b-base": {
+  "real:millimeter:short": {
+   "n": 1,
+   "toks": [
+    "Ġmm"
+   ]
+  },
+  "real:millimeter:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġmill",
+    "imeters"
+   ]
+  },
+  "real:centimeter:short": {
+   "n": 1,
+   "toks": [
+    "Ġcm"
+   ]
+  },
+  "real:centimeter:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġcent",
+    "imeters"
+   ]
+  },
+  "real:meter:short": {
+   "n": 1,
+   "toks": [
+    "Ġm"
+   ]
+  },
+  "real:meter:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġmeters"
+   ]
+  },
+  "real:kilometer:short": {
+   "n": 1,
+   "toks": [
+    "Ġkm"
+   ]
+  },
+  "real:kilometer:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġkilometers"
+   ]
+  },
+  "real:micrometer:short": {
+   "n": 2,
+   "toks": [
+    "ĠÂµ",
+    "m"
+   ]
+  },
+  "real:micrometer:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġmic",
+    "rom",
+    "eters"
+   ]
+  },
+  "real:inch:short": {
+   "n": 1,
+   "toks": [
+    "Ġin"
+   ]
+  },
+  "real:inch:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġinches"
+   ]
+  },
+  "real:foot:short": {
+   "n": 1,
+   "toks": [
+    "Ġft"
+   ]
+  },
+  "real:foot:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġfeet"
+   ]
+  },
+  "real:yard:short": {
+   "n": 2,
+   "toks": [
+    "Ġy",
+    "d"
+   ]
+  },
+  "real:yard:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġyards"
+   ]
+  },
+  "real:mile:short": {
+   "n": 1,
+   "toks": [
+    "Ġmi"
+   ]
+  },
+  "real:mile:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġmiles"
+   ]
+  },
+  "real:nautical_mile:short": {
+   "n": 2,
+   "toks": [
+    "Ġn",
+    "mi"
+   ]
+  },
+  "real:nautical_mile:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġn",
+    "autical",
+    "Ġmiles"
+   ]
+  },
+  "real:fathom:short": {
+   "n": 2,
+   "toks": [
+    "Ġft",
+    "m"
+   ]
+  },
+  "real:fathom:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġf",
+    "ath",
+    "oms"
+   ]
+  },
+  "real:furlong:short": {
+   "n": 1,
+   "toks": [
+    "Ġfur"
+   ]
+  },
+  "real:furlong:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġf",
+    "url",
+    "ongs"
+   ]
+  },
+  "real:league:short": {
+   "n": 2,
+   "toks": [
+    "Ġle",
+    "a"
+   ]
+  },
+  "real:league:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġleagues"
+   ]
+  },
+  "real:rod:short": {
+   "n": 1,
+   "toks": [
+    "Ġrd"
+   ]
+  },
+  "real:rod:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġrods"
+   ]
+  },
+  "real:chain:short": {
+   "n": 1,
+   "toks": [
+    "Ġch"
+   ]
+  },
+  "real:chain:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġchains"
+   ]
+  },
+  "real:angstrom:short": {
+   "n": 1,
+   "toks": [
+    "ĠÃħ"
+   ]
+  },
+  "real:angstrom:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġang",
+    "strom",
+    "s"
+   ]
+  },
+  "real:parsec:short": {
+   "n": 1,
+   "toks": [
+    "Ġpc"
+   ]
+  },
+  "real:parsec:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġparse",
+    "cs"
+   ]
+  },
+  "real:light_year:short": {
+   "n": 1,
+   "toks": [
+    "Ġly"
+   ]
+  },
+  "real:light_year:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġlight",
+    "-years"
+   ]
+  },
+  "real:astronomical_unit:short": {
+   "n": 1,
+   "toks": [
+    "Ġau"
+   ]
+  },
+  "real:astronomical_unit:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġastronomical",
+    "Ġunits"
+   ]
+  },
+  "real:milligram:short": {
+   "n": 1,
+   "toks": [
+    "Ġmg"
+   ]
+  },
+  "real:milligram:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġmill",
+    "igrams"
+   ]
+  },
+  "real:gram:short": {
+   "n": 1,
+   "toks": [
+    "Ġg"
+   ]
+  },
+  "real:gram:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġgrams"
+   ]
+  },
+  "real:kilogram:short": {
+   "n": 1,
+   "toks": [
+    "Ġkg"
+   ]
+  },
+  "real:kilogram:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġkilograms"
+   ]
+  },
+  "real:tonne:short": {
+   "n": 1,
+   "toks": [
+    "Ġt"
+   ]
+  },
+  "real:tonne:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġtonnes"
+   ]
+  },
+  "real:ounce:short": {
+   "n": 1,
+   "toks": [
+    "Ġoz"
+   ]
+  },
+  "real:ounce:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġounces"
+   ]
+  },
+  "real:pound:short": {
+   "n": 1,
+   "toks": [
+    "Ġlb"
+   ]
+  },
+  "real:pound:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġpounds"
+   ]
+  },
+  "real:stone:short": {
+   "n": 1,
+   "toks": [
+    "Ġst"
+   ]
+  },
+  "real:stone:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġstone"
+   ]
+  },
+  "real:grain:short": {
+   "n": 1,
+   "toks": [
+    "Ġgr"
+   ]
+  },
+  "real:grain:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġgrains"
+   ]
+  },
+  "real:slug:short": {
+   "n": 1,
+   "toks": [
+    "Ġslug"
+   ]
+  },
+  "real:slug:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġsl",
+    "ugs"
+   ]
+  },
+  "real:carat:short": {
+   "n": 1,
+   "toks": [
+    "Ġct"
+   ]
+  },
+  "real:carat:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġcar",
+    "ats"
+   ]
+  },
+  "real:dalton:short": {
+   "n": 1,
+   "toks": [
+    "ĠDa"
+   ]
+  },
+  "real:dalton:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġdal",
+    "tons"
+   ]
+  },
+  "real:millisecond:short": {
+   "n": 1,
+   "toks": [
+    "Ġms"
+   ]
+  },
+  "real:millisecond:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġmilliseconds"
+   ]
+  },
+  "real:second:short": {
+   "n": 1,
+   "toks": [
+    "Ġs"
+   ]
+  },
+  "real:second:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġseconds"
+   ]
+  },
+  "real:minute:short": {
+   "n": 1,
+   "toks": [
+    "Ġmin"
+   ]
+  },
+  "real:minute:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġminutes"
+   ]
+  },
+  "real:hour:short": {
+   "n": 1,
+   "toks": [
+    "Ġh"
+   ]
+  },
+  "real:hour:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġhours"
+   ]
+  },
+  "real:day:short": {
+   "n": 1,
+   "toks": [
+    "Ġd"
+   ]
+  },
+  "real:day:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġdays"
+   ]
+  },
+  "real:week:short": {
+   "n": 1,
+   "toks": [
+    "Ġwk"
+   ]
+  },
+  "real:week:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġweeks"
+   ]
+  },
+  "real:fortnight:short": {
+   "n": 1,
+   "toks": [
+    "Ġfn"
+   ]
+  },
+  "real:fortnight:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġfortn",
+    "ights"
+   ]
+  },
+  "real:year:short": {
+   "n": 1,
+   "toks": [
+    "Ġyr"
+   ]
+  },
+  "real:year:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġyears"
+   ]
+  },
+  "real:ampere:short": {
+   "n": 1,
+   "toks": [
+    "ĠA"
+   ]
+  },
+  "real:ampere:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġam",
+    "per",
+    "es"
+   ]
+  },
+  "real:milliampere:short": {
+   "n": 1,
+   "toks": [
+    "ĠmA"
+   ]
+  },
+  "real:milliampere:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġmill",
+    "iam",
+    "per",
+    "es"
+   ]
+  },
+  "real:kelvin:short": {
+   "n": 1,
+   "toks": [
+    "ĠK"
+   ]
+  },
+  "real:kelvin:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġkel",
+    "v",
+    "ins"
+   ]
+  },
+  "real:mole:short": {
+   "n": 1,
+   "toks": [
+    "Ġmol"
+   ]
+  },
+  "real:mole:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġmo",
+    "les"
+   ]
+  },
+  "real:candela:short": {
+   "n": 1,
+   "toks": [
+    "Ġcd"
+   ]
+  },
+  "real:candela:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġc",
+    "andel",
+    "as"
+   ]
+  },
+  "real:newton:short": {
+   "n": 1,
+   "toks": [
+    "ĠN"
+   ]
+  },
+  "real:newton:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġnew",
+    "tons"
+   ]
+  },
+  "real:kilonewton:short": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "N"
+   ]
+  },
+  "real:kilonewton:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "on",
+    "ew",
+    "tons"
+   ]
+  },
+  "real:dyne:short": {
+   "n": 1,
+   "toks": [
+    "Ġdyn"
+   ]
+  },
+  "real:dyne:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġdyn",
+    "es"
+   ]
+  },
+  "real:pound_force:short": {
+   "n": 2,
+   "toks": [
+    "Ġl",
+    "bf"
+   ]
+  },
+  "real:pound_force:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġpounds",
+    "-force"
+   ]
+  },
+  "real:kilogram_force:short": {
+   "n": 2,
+   "toks": [
+    "Ġkg",
+    "f"
+   ]
+  },
+  "real:kilogram_force:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġkilograms",
+    "-force"
+   ]
+  },
+  "real:joule:short": {
+   "n": 1,
+   "toks": [
+    "ĠJ"
+   ]
+  },
+  "real:joule:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġjou",
+    "les"
+   ]
+  },
+  "real:kilojoule:short": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "J"
+   ]
+  },
+  "real:kilojoule:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "oj",
+    "ou",
+    "les"
+   ]
+  },
+  "real:erg:short": {
+   "n": 1,
+   "toks": [
+    "Ġerg"
+   ]
+  },
+  "real:erg:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġerg",
+    "s"
+   ]
+  },
+  "real:calorie:short": {
+   "n": 1,
+   "toks": [
+    "Ġcal"
+   ]
+  },
+  "real:calorie:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġcalories"
+   ]
+  },
+  "real:kilowatt_hour:short": {
+   "n": 1,
+   "toks": [
+    "ĠkWh"
+   ]
+  },
+  "real:kilowatt_hour:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "ow",
+    "att",
+    "-hours"
+   ]
+  },
+  "real:electronvolt:short": {
+   "n": 2,
+   "toks": [
+    "Ġe",
+    "V"
+   ]
+  },
+  "real:electronvolt:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġelectron",
+    "vol",
+    "ts"
+   ]
+  },
+  "real:watt:short": {
+   "n": 1,
+   "toks": [
+    "ĠW"
+   ]
+  },
+  "real:watt:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġwatts"
+   ]
+  },
+  "real:kilowatt:short": {
+   "n": 1,
+   "toks": [
+    "ĠkW"
+   ]
+  },
+  "real:kilowatt:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġkil",
+    "ow",
+    "atts"
+   ]
+  },
+  "real:horsepower:short": {
+   "n": 1,
+   "toks": [
+    "Ġhp"
+   ]
+  },
+  "real:horsepower:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġhorsepower"
+   ]
+  },
+  "real:pascal:short": {
+   "n": 1,
+   "toks": [
+    "ĠPa"
+   ]
+  },
+  "real:pascal:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "asc",
+    "als"
+   ]
+  },
+  "real:kilopascal:short": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "Pa"
+   ]
+  },
+  "real:kilopascal:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "op",
+    "asc",
+    "als"
+   ]
+  },
+  "real:psi:short": {
+   "n": 1,
+   "toks": [
+    "Ġpsi"
+   ]
+  },
+  "real:psi:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġpounds",
+    "Ġper",
+    "Ġsquare",
+    "Ġinch"
+   ]
+  },
+  "real:bar:short": {
+   "n": 1,
+   "toks": [
+    "Ġbar"
+   ]
+  },
+  "real:bar:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġbars"
+   ]
+  },
+  "real:atmosphere:short": {
+   "n": 1,
+   "toks": [
+    "Ġatm"
+   ]
+  },
+  "real:atmosphere:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġatmos",
+    "pheres"
+   ]
+  },
+  "real:hertz:short": {
+   "n": 1,
+   "toks": [
+    "ĠHz"
+   ]
+  },
+  "real:hertz:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġh",
+    "ertz"
+   ]
+  },
+  "real:kilohertz:short": {
+   "n": 1,
+   "toks": [
+    "ĠkHz"
+   ]
+  },
+  "real:kilohertz:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġkil",
+    "oh",
+    "ertz"
+   ]
+  },
+  "real:becquerel:short": {
+   "n": 2,
+   "toks": [
+    "ĠB",
+    "q"
+   ]
+  },
+  "real:becquerel:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġbe",
+    "c",
+    "quer",
+    "els"
+   ]
+  },
+  "real:coulomb:short": {
+   "n": 1,
+   "toks": [
+    "ĠC"
+   ]
+  },
+  "real:coulomb:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġcou",
+    "l",
+    "ombs"
+   ]
+  },
+  "real:volt:short": {
+   "n": 1,
+   "toks": [
+    "ĠV"
+   ]
+  },
+  "real:volt:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġvolts"
+   ]
+  },
+  "real:ohm:short": {
+   "n": 2,
+   "toks": [
+    "ĠÎ",
+    "©"
+   ]
+  },
+  "real:ohm:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġoh",
+    "ms"
+   ]
+  },
+  "real:farad:short": {
+   "n": 1,
+   "toks": [
+    "ĠF"
+   ]
+  },
+  "real:farad:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġfar",
+    "ads"
+   ]
+  },
+  "real:tesla:short": {
+   "n": 1,
+   "toks": [
+    "ĠT"
+   ]
+  },
+  "real:tesla:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġtes",
+    "las"
+   ]
+  },
+  "real:weber:short": {
+   "n": 2,
+   "toks": [
+    "ĠW",
+    "b"
+   ]
+  },
+  "real:weber:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġwe",
+    "bers"
+   ]
+  },
+  "real:gray:short": {
+   "n": 1,
+   "toks": [
+    "ĠGy"
+   ]
+  },
+  "real:gray:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "ays"
+   ]
+  },
+  "real:sievert:short": {
+   "n": 1,
+   "toks": [
+    "ĠSv"
+   ]
+  },
+  "real:sievert:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġsie",
+    "verts"
+   ]
+  },
+  "real:knot:short": {
+   "n": 1,
+   "toks": [
+    "Ġkn"
+   ]
+  },
+  "real:knot:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġknots"
+   ]
+  },
+  "real:liter:short": {
+   "n": 1,
+   "toks": [
+    "ĠL"
+   ]
+  },
+  "real:liter:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġliters"
+   ]
+  },
+  "real:milliliter:short": {
+   "n": 1,
+   "toks": [
+    "ĠmL"
+   ]
+  },
+  "real:milliliter:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġmill",
+    "ilit",
+    "ers"
+   ]
+  },
+  "real:gallon:short": {
+   "n": 1,
+   "toks": [
+    "Ġgal"
+   ]
+  },
+  "real:gallon:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġgallons"
+   ]
+  },
+  "real:hectare:short": {
+   "n": 1,
+   "toks": [
+    "Ġha"
+   ]
+  },
+  "real:hectare:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġhectares"
+   ]
+  },
+  "real:acre:short": {
+   "n": 1,
+   "toks": [
+    "Ġac"
+   ]
+  },
+  "real:acre:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġacres"
+   ]
+  },
+  "compound:symbol": {
+   "n": 5,
+   "toks": [
+    "Ġkg",
+    "Â·",
+    "m",
+    "/s",
+    "Â²"
+   ]
+  },
+  "compound:ascii": {
+   "n": 5,
+   "toks": [
+    "Ġkg",
+    "*m",
+    "/s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:slash": {
+   "n": 5,
+   "toks": [
+    "Ġkg",
+    "Ġm",
+    "/s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:per": {
+   "n": 6,
+   "toks": [
+    "Ġkg",
+    "Ġm",
+    "Ġper",
+    "Ġs",
+    "^",
+    "2"
+   ]
+  },
+  "compound:long": {
+   "n": 6,
+   "toks": [
+    "Ġkil",
+    "ogram",
+    "Ġmeters",
+    "Ġper",
+    "Ġsecond",
+    "Ġsquared"
+   ]
+  },
+  "inv:tauf": {
+   "n": 2,
+   "toks": [
+    "Ġta",
+    "uf"
+   ]
+  },
+  "inv:tauf:pl": {
+   "n": 2,
+   "toks": [
+    "Ġta",
+    "ufs"
+   ]
+  },
+  "inv:pleert": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "ert"
+   ]
+  },
+  "inv:pleert:pl": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "erts"
+   ]
+  },
+  "inv:trurp": {
+   "n": 3,
+   "toks": [
+    "Ġtr",
+    "ur",
+    "p"
+   ]
+  },
+  "inv:trurp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġtr",
+    "ur",
+    "ps"
+   ]
+  },
+  "inv:stooz": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "oo",
+    "z"
+   ]
+  },
+  "inv:stooz:pl": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "oo",
+    "zs"
+   ]
+  },
+  "inv:wrilp": {
+   "n": 3,
+   "toks": [
+    "Ġwr",
+    "il",
+    "p"
+   ]
+  },
+  "inv:wrilp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġwr",
+    "il",
+    "ps"
+   ]
+  },
+  "inv:gleng": {
+   "n": 2,
+   "toks": [
+    "Ġgl",
+    "eng"
+   ]
+  },
+  "inv:gleng:pl": {
+   "n": 3,
+   "toks": [
+    "Ġgl",
+    "eng",
+    "s"
+   ]
+  },
+  "inv:pleex": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "ex"
+   ]
+  },
+  "inv:pleex:pl": {
+   "n": 3,
+   "toks": [
+    "Ġple",
+    "ex",
+    "s"
+   ]
+  },
+  "inv:grum": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "um"
+   ]
+  },
+  "inv:grum:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "ums"
+   ]
+  },
+  "inv:dround": {
+   "n": 2,
+   "toks": [
+    "Ġd",
+    "round"
+   ]
+  },
+  "inv:dround:pl": {
+   "n": 3,
+   "toks": [
+    "Ġd",
+    "round",
+    "s"
+   ]
+  },
+  "inv:sheem": {
+   "n": 2,
+   "toks": [
+    "Ġshe",
+    "em"
+   ]
+  },
+  "inv:sheem:pl": {
+   "n": 2,
+   "toks": [
+    "Ġshe",
+    "ems"
+   ]
+  },
+  "inv:staump": {
+   "n": 2,
+   "toks": [
+    "Ġsta",
+    "ump"
+   ]
+  },
+  "inv:staump:pl": {
+   "n": 2,
+   "toks": [
+    "Ġsta",
+    "umps"
+   ]
+  },
+  "inv:rouz": {
+   "n": 2,
+   "toks": [
+    "Ġrou",
+    "z"
+   ]
+  },
+  "inv:rouz:pl": {
+   "n": 2,
+   "toks": [
+    "Ġrou",
+    "zs"
+   ]
+  },
+  "inv:yearm": {
+   "n": 2,
+   "toks": [
+    "Ġyear",
+    "m"
+   ]
+  },
+  "inv:yearm:pl": {
+   "n": 2,
+   "toks": [
+    "Ġyear",
+    "ms"
+   ]
+  },
+  "inv:troab": {
+   "n": 2,
+   "toks": [
+    "Ġtro",
+    "ab"
+   ]
+  },
+  "inv:troab:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtro",
+    "abs"
+   ]
+  },
+  "inv:reand": {
+   "n": 2,
+   "toks": [
+    "Ġre",
+    "and"
+   ]
+  },
+  "inv:reand:pl": {
+   "n": 2,
+   "toks": [
+    "Ġre",
+    "ands"
+   ]
+  },
+  "inv:poamp": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "amp"
+   ]
+  },
+  "inv:poamp:pl": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "amps"
+   ]
+  },
+  "inv:drosh": {
+   "n": 2,
+   "toks": [
+    "Ġdro",
+    "sh"
+   ]
+  },
+  "inv:drosh:pl": {
+   "n": 3,
+   "toks": [
+    "Ġdro",
+    "sh",
+    "s"
+   ]
+  },
+  "inv:queal": {
+   "n": 2,
+   "toks": [
+    "Ġque",
+    "al"
+   ]
+  },
+  "inv:queal:pl": {
+   "n": 2,
+   "toks": [
+    "Ġque",
+    "als"
+   ]
+  },
+  "inv:flaisk": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ais",
+    "k"
+   ]
+  },
+  "inv:flaisk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ais",
+    "ks"
+   ]
+  },
+  "inv:chelt": {
+   "n": 2,
+   "toks": [
+    "Ġch",
+    "elt"
+   ]
+  },
+  "inv:chelt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġch",
+    "elts"
+   ]
+  },
+  "inv:yaist": {
+   "n": 2,
+   "toks": [
+    "Ġya",
+    "ist"
+   ]
+  },
+  "inv:yaist:pl": {
+   "n": 2,
+   "toks": [
+    "Ġya",
+    "ists"
+   ]
+  },
+  "inv:mooth": {
+   "n": 2,
+   "toks": [
+    "Ġm",
+    "ooth"
+   ]
+  },
+  "inv:mooth:pl": {
+   "n": 3,
+   "toks": [
+    "Ġm",
+    "ooth",
+    "s"
+   ]
+  },
+  "inv:hurm": {
+   "n": 2,
+   "toks": [
+    "Ġhur",
+    "m"
+   ]
+  },
+  "inv:hurm:pl": {
+   "n": 2,
+   "toks": [
+    "Ġhur",
+    "ms"
+   ]
+  },
+  "inv:floopt": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "opt"
+   ]
+  },
+  "inv:floopt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "opts"
+   ]
+  },
+  "inv:snooft": {
+   "n": 2,
+   "toks": [
+    "Ġsno",
+    "oft"
+   ]
+  },
+  "inv:snooft:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsno",
+    "oft",
+    "s"
+   ]
+  },
+  "inv:skiv": {
+   "n": 2,
+   "toks": [
+    "Ġsk",
+    "iv"
+   ]
+  },
+  "inv:skiv:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsk",
+    "iv",
+    "s"
+   ]
+  },
+  "inv:klang": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "lang"
+   ]
+  },
+  "inv:klang:pl": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "langs"
+   ]
+  },
+  "inv:pleak": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "ak"
+   ]
+  },
+  "inv:pleak:pl": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "aks"
+   ]
+  },
+  "inv:floup": {
+   "n": 2,
+   "toks": [
+    "Ġfl",
+    "oup"
+   ]
+  },
+  "inv:floup:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ou",
+    "ps"
+   ]
+  },
+  "inv:gral": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "al"
+   ]
+  },
+  "inv:gral:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "als"
+   ]
+  },
+  "inv:quourb": {
+   "n": 3,
+   "toks": [
+    "Ġqu",
+    "our",
+    "b"
+   ]
+  },
+  "inv:quourb:pl": {
+   "n": 3,
+   "toks": [
+    "Ġqu",
+    "our",
+    "bs"
+   ]
+  },
+  "inv:jusp": {
+   "n": 2,
+   "toks": [
+    "Ġj",
+    "usp"
+   ]
+  },
+  "inv:jusp:pl": {
+   "n": 2,
+   "toks": [
+    "Ġjus",
+    "ps"
+   ]
+  },
+  "inv:poch": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "ch"
+   ]
+  },
+  "inv:poch:pl": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "chs"
+   ]
+  },
+  "inv:voolm": {
+   "n": 3,
+   "toks": [
+    "Ġv",
+    "ool",
+    "m"
+   ]
+  },
+  "inv:voolm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġv",
+    "ool",
+    "ms"
+   ]
+  },
+  "inv:zeank": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "ank"
+   ]
+  },
+  "inv:zeank:pl": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "anks"
+   ]
+  },
+  "inv:flaing": {
+   "n": 2,
+   "toks": [
+    "Ġfla",
+    "ing"
+   ]
+  },
+  "inv:flaing:pl": {
+   "n": 2,
+   "toks": [
+    "Ġfla",
+    "ings"
+   ]
+  },
+  "inv:geach": {
+   "n": 2,
+   "toks": [
+    "Ġge",
+    "ach"
+   ]
+  },
+  "inv:geach:pl": {
+   "n": 2,
+   "toks": [
+    "Ġge",
+    "achs"
+   ]
+  },
+  "inv:spoft": {
+   "n": 2,
+   "toks": [
+    "Ġsp",
+    "oft"
+   ]
+  },
+  "inv:spoft:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsp",
+    "oft",
+    "s"
+   ]
+  },
+  "inv:bloalm": {
+   "n": 2,
+   "toks": [
+    "Ġblo",
+    "alm"
+   ]
+  },
+  "inv:bloalm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġblo",
+    "al",
+    "ms"
+   ]
+  },
+  "inv:goack": {
+   "n": 2,
+   "toks": [
+    "Ġgo",
+    "ack"
+   ]
+  },
+  "inv:goack:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgo",
+    "acks"
+   ]
+  },
+  "inv:strind": {
+   "n": 2,
+   "toks": [
+    "Ġstr",
+    "ind"
+   ]
+  },
+  "inv:strind:pl": {
+   "n": 2,
+   "toks": [
+    "Ġstr",
+    "inds"
+   ]
+  },
+  "inv:vram": {
+   "n": 2,
+   "toks": [
+    "Ġv",
+    "ram"
+   ]
+  },
+  "inv:vram:pl": {
+   "n": 2,
+   "toks": [
+    "Ġv",
+    "rams"
+   ]
+  },
+  "inv:groack": {
+   "n": 2,
+   "toks": [
+    "Ġgro",
+    "ack"
+   ]
+  },
+  "inv:groack:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgro",
+    "acks"
+   ]
+  },
+  "inv:broost": {
+   "n": 2,
+   "toks": [
+    "Ġbro",
+    "ost"
+   ]
+  },
+  "inv:broost:pl": {
+   "n": 3,
+   "toks": [
+    "Ġbro",
+    "ost",
+    "s"
+   ]
+  },
+  "inv:louk": {
+   "n": 2,
+   "toks": [
+    "Ġlou",
+    "k"
+   ]
+  },
+  "inv:louk:pl": {
+   "n": 2,
+   "toks": [
+    "Ġlou",
+    "ks"
+   ]
+  },
+  "inv:blev": {
+   "n": 1,
+   "toks": [
+    "Ġblev"
+   ]
+  },
+  "inv:blev:pl": {
+   "n": 2,
+   "toks": [
+    "Ġblev",
+    "s"
+   ]
+  },
+  "inv:loon": {
+   "n": 2,
+   "toks": [
+    "Ġlo",
+    "on"
+   ]
+  },
+  "inv:loon:pl": {
+   "n": 2,
+   "toks": [
+    "Ġlo",
+    "ons"
+   ]
+  },
+  "inv:trent": {
+   "n": 2,
+   "toks": [
+    "Ġtre",
+    "nt"
+   ]
+  },
+  "inv:trent:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtre",
+    "nts"
+   ]
+  },
+  "inv:blot": {
+   "n": 1,
+   "toks": [
+    "Ġblot"
+   ]
+  },
+  "inv:blot:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbl",
+    "ots"
+   ]
+  },
+  "inv:geaz": {
+   "n": 2,
+   "toks": [
+    "Ġge",
+    "az"
+   ]
+  },
+  "inv:geaz:pl": {
+   "n": 3,
+   "toks": [
+    "Ġge",
+    "az",
+    "s"
+   ]
+  },
+  "inv:doud": {
+   "n": 2,
+   "toks": [
+    "Ġd",
+    "oud"
+   ]
+  },
+  "inv:doud:pl": {
+   "n": 3,
+   "toks": [
+    "Ġd",
+    "oud",
+    "s"
+   ]
+  },
+  "inv:quaung": {
+   "n": 2,
+   "toks": [
+    "Ġqua",
+    "ung"
+   ]
+  },
+  "inv:quaung:pl": {
+   "n": 2,
+   "toks": [
+    "Ġqua",
+    "ungs"
+   ]
+  },
+  "inv:fruk": {
+   "n": 2,
+   "toks": [
+    "Ġfr",
+    "uk"
+   ]
+  },
+  "inv:fruk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfr",
+    "u",
+    "ks"
+   ]
+  },
+  "inv:nelt": {
+   "n": 2,
+   "toks": [
+    "Ġn",
+    "elt"
+   ]
+  },
+  "inv:nelt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġnel",
+    "ts"
+   ]
+  },
+  "inv:staut": {
+   "n": 2,
+   "toks": [
+    "Ġst",
+    "aut"
+   ]
+  },
+  "inv:staut:pl": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "aut",
+    "s"
+   ]
+  },
+  "inv:deern": {
+   "n": 2,
+   "toks": [
+    "Ġde",
+    "ern"
+   ]
+  },
+  "inv:deern:pl": {
+   "n": 3,
+   "toks": [
+    "Ġde",
+    "ern",
+    "s"
+   ]
+  },
+  "inv:broom": {
+   "n": 2,
+   "toks": [
+    "Ġbro",
+    "om"
+   ]
+  },
+  "inv:broom:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbro",
+    "oms"
+   ]
+  },
+  "inv:trolk": {
+   "n": 3,
+   "toks": [
+    "Ġt",
+    "rol",
+    "k"
+   ]
+  },
+  "inv:trolk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġt",
+    "rol",
+    "ks"
+   ]
+  },
+  "inv:stoarp": {
+   "n": 2,
+   "toks": [
+    "Ġsto",
+    "arp"
+   ]
+  },
+  "inv:stoarp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsto",
+    "ar",
+    "ps"
+   ]
+  },
+  "inv:dous": {
+   "n": 2,
+   "toks": [
+    "Ġd",
+    "ous"
+   ]
+  },
+  "inv:dous:pl": {
+   "n": 2,
+   "toks": [
+    "Ġdou",
+    "ss"
+   ]
+  },
+  "inv:kaisp": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ais",
+    "p"
+   ]
+  },
+  "inv:kaisp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ais",
+    "ps"
+   ]
+  },
+  "inv:plex": {
+   "n": 2,
+   "toks": [
+    "Ġp",
+    "lex"
+   ]
+  },
+  "inv:plex:pl": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "lex",
+    "s"
+   ]
+  },
+  "inv:zout": {
+   "n": 2,
+   "toks": [
+    "Ġz",
+    "out"
+   ]
+  },
+  "inv:zout:pl": {
+   "n": 2,
+   "toks": [
+    "Ġz",
+    "outs"
+   ]
+  },
+  "inv:beard": {
+   "n": 1,
+   "toks": [
+    "Ġbeard"
+   ]
+  },
+  "inv:beard:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbe",
+    "ards"
+   ]
+  },
+  "inv:weelt": {
+   "n": 2,
+   "toks": [
+    "Ġwe",
+    "elt"
+   ]
+  },
+  "inv:weelt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġwe",
+    "elts"
+   ]
+  },
+  "inv:staulk": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "aul",
+    "k"
+   ]
+  },
+  "inv:staulk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "aul",
+    "ks"
+   ]
+  },
+  "inv:greeb": {
+   "n": 3,
+   "toks": [
+    "Ġg",
+    "ree",
+    "b"
+   ]
+  },
+  "inv:greeb:pl": {
+   "n": 3,
+   "toks": [
+    "Ġg",
+    "ree",
+    "bs"
+   ]
+  },
+  "inv:thoal": {
+   "n": 2,
+   "toks": [
+    "Ġtho",
+    "al"
+   ]
+  },
+  "inv:thoal:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtho",
+    "als"
+   ]
+  },
+  "inv:spoaf": {
+   "n": 2,
+   "toks": [
+    "Ġspo",
+    "af"
+   ]
+  },
+  "inv:spoaf:pl": {
+   "n": 2,
+   "toks": [
+    "Ġspo",
+    "afs"
+   ]
+  },
+  "inv:quup": {
+   "n": 2,
+   "toks": [
+    "Ġqu",
+    "up"
+   ]
+  },
+  "inv:quup:pl": {
+   "n": 2,
+   "toks": [
+    "Ġqu",
+    "ups"
+   ]
+  },
+  "inv:peank": {
+   "n": 2,
+   "toks": [
+    "Ġpe",
+    "ank"
+   ]
+  },
+  "inv:peank:pl": {
+   "n": 2,
+   "toks": [
+    "Ġpe",
+    "anks"
+   ]
+  },
+  "inv:runk": {
+   "n": 2,
+   "toks": [
+    "Ġrun",
+    "k"
+   ]
+  },
+  "inv:runk:pl": {
+   "n": 2,
+   "toks": [
+    "Ġrun",
+    "ks"
+   ]
+  },
+  "inv:houng": {
+   "n": 3,
+   "toks": [
+    "Ġh",
+    "ou",
+    "ng"
+   ]
+  },
+  "inv:houng:pl": {
+   "n": 4,
+   "toks": [
+    "Ġh",
+    "ou",
+    "ng",
+    "s"
+   ]
+  },
+  "inv:gloalt": {
+   "n": 2,
+   "toks": [
+    "Ġglo",
+    "alt"
+   ]
+  },
+  "inv:gloalt:pl": {
+   "n": 3,
+   "toks": [
+    "Ġglo",
+    "al",
+    "ts"
+   ]
+  },
+  "inv:toard": {
+   "n": 2,
+   "toks": [
+    "Ġto",
+    "ard"
+   ]
+  },
+  "inv:toard:pl": {
+   "n": 2,
+   "toks": [
+    "Ġto",
+    "ards"
+   ]
+  },
+  "inv:flax": {
+   "n": 2,
+   "toks": [
+    "Ġfl",
+    "ax"
+   ]
+  },
+  "inv:flax:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ax",
+    "s"
+   ]
+  },
+  "inv:kroand": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ro",
+    "and"
+   ]
+  },
+  "inv:kroand:pl": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ro",
+    "ands"
+   ]
+  },
+  "inv:kock": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "ock"
+   ]
+  },
+  "inv:kock:pl": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "ocks"
+   ]
+  },
+  "inv:zaush": {
+   "n": 2,
+   "toks": [
+    "Ġza",
+    "ush"
+   ]
+  },
+  "inv:zaush:pl": {
+   "n": 3,
+   "toks": [
+    "Ġza",
+    "ush",
+    "s"
+   ]
+  },
+  "inv:varb": {
+   "n": 2,
+   "toks": [
+    "Ġvar",
+    "b"
+   ]
+  },
+  "inv:varb:pl": {
+   "n": 2,
+   "toks": [
+    "Ġvar",
+    "bs"
+   ]
+  },
+  "inv:wauf": {
+   "n": 2,
+   "toks": [
+    "Ġwa",
+    "uf"
+   ]
+  },
+  "inv:wauf:pl": {
+   "n": 2,
+   "toks": [
+    "Ġwa",
+    "ufs"
+   ]
+  },
+  "inv:keak": {
+   "n": 2,
+   "toks": [
+    "Ġke",
+    "ak"
+   ]
+  },
+  "inv:keak:pl": {
+   "n": 2,
+   "toks": [
+    "Ġke",
+    "aks"
+   ]
+  },
+  "inv:ploas": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "lo",
+    "as"
+   ]
+  },
+  "inv:ploas:pl": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "lo",
+    "ass"
+   ]
+  },
+  "inv:zeert": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "ert"
+   ]
+  },
+  "inv:zeert:pl": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "erts"
+   ]
+  },
+  "inv:yoob": {
+   "n": 2,
+   "toks": [
+    "Ġyo",
+    "ob"
+   ]
+  },
+  "inv:yoob:pl": {
+   "n": 2,
+   "toks": [
+    "Ġyo",
+    "obs"
+   ]
+  },
+  "inv:breamp": {
+   "n": 2,
+   "toks": [
+    "Ġbre",
+    "amp"
+   ]
+  },
+  "inv:breamp:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbre",
+    "amps"
+   ]
+  },
+  "inv:sleag": {
+   "n": 2,
+   "toks": [
+    "Ġsle",
+    "ag"
+   ]
+  },
+  "inv:sleag:pl": {
+   "n": 2,
+   "toks": [
+    "Ġsle",
+    "ags"
+   ]
+  },
+  "inv:voth": {
+   "n": 2,
+   "toks": [
+    "Ġvo",
+    "th"
+   ]
+  },
+  "inv:voth:pl": {
+   "n": 2,
+   "toks": [
+    "Ġvo",
+    "ths"
+   ]
+  },
+  "inv:floap": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "ap"
+   ]
+  },
+  "inv:floap:pl": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "aps"
+   ]
+  },
+  "inv:baurd": {
+   "n": 3,
+   "toks": [
+    "Ġb",
+    "aur",
+    "d"
+   ]
+  },
+  "inv:baurd:pl": {
+   "n": 3,
+   "toks": [
+    "Ġb",
+    "aur",
+    "ds"
+   ]
+  },
+  "inv:snaz": {
+   "n": 2,
+   "toks": [
+    "Ġsn",
+    "az"
+   ]
+  },
+  "inv:snaz:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsn",
+    "az",
+    "s"
+   ]
+  },
+  "inv:boab": {
+   "n": 2,
+   "toks": [
+    "Ġbo",
+    "ab"
+   ]
+  },
+  "inv:boab:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbo",
+    "abs"
+   ]
+  },
+  "inv:joom": {
+   "n": 2,
+   "toks": [
+    "Ġj",
+    "oom"
+   ]
+  },
+  "inv:joom:pl": {
+   "n": 3,
+   "toks": [
+    "Ġj",
+    "oom",
+    "s"
+   ]
+  },
+  "inv:krex": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "rex"
+   ]
+  },
+  "inv:krex:pl": {
+   "n": 2,
+   "toks": [
+    "Ġkre",
+    "xs"
+   ]
+  },
+  "inv:krulm": {
+   "n": 3,
+   "toks": [
+    "Ġkr",
+    "ul",
+    "m"
+   ]
+  },
+  "inv:krulm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġkr",
+    "ul",
+    "ms"
+   ]
+  },
+  "inv:klerp": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ler",
+    "p"
+   ]
+  },
+  "inv:klerp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ler",
+    "ps"
+   ]
+  },
+  "inv:troul": {
+   "n": 2,
+   "toks": [
+    "Ġtr",
+    "oul"
+   ]
+  },
+  "inv:troul:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtrou",
+    "ls"
+   ]
+  },
+  "inv:blurm": {
+   "n": 2,
+   "toks": [
+    "Ġblur",
+    "m"
+   ]
+  },
+  "inv:blurm:pl": {
+   "n": 2,
+   "toks": [
+    "Ġblur",
+    "ms"
+   ]
+  },
+  "inv:jounk": {
+   "n": 3,
+   "toks": [
+    "Ġj",
+    "oun",
+    "k"
+   ]
+  },
+  "inv:jounk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġj",
+    "oun",
+    "ks"
+   ]
+  },
+  "inv:gilm": {
+   "n": 2,
+   "toks": [
+    "Ġg",
+    "ilm"
+   ]
+  },
+  "inv:gilm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġg",
+    "il",
+    "ms"
+   ]
+  }
+ },
+ "olmo3-7b": {
+  "real:millimeter:short": {
+   "n": 1,
+   "toks": [
+    "Ġmm"
+   ]
+  },
+  "real:millimeter:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġmill",
+    "imeters"
+   ]
+  },
+  "real:centimeter:short": {
+   "n": 1,
+   "toks": [
+    "Ġcm"
+   ]
+  },
+  "real:centimeter:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġcent",
+    "imeters"
+   ]
+  },
+  "real:meter:short": {
+   "n": 1,
+   "toks": [
+    "Ġm"
+   ]
+  },
+  "real:meter:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġmeters"
+   ]
+  },
+  "real:kilometer:short": {
+   "n": 1,
+   "toks": [
+    "Ġkm"
+   ]
+  },
+  "real:kilometer:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġkilometers"
+   ]
+  },
+  "real:micrometer:short": {
+   "n": 2,
+   "toks": [
+    "ĠÂµ",
+    "m"
+   ]
+  },
+  "real:micrometer:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġmic",
+    "rom",
+    "eters"
+   ]
+  },
+  "real:inch:short": {
+   "n": 1,
+   "toks": [
+    "Ġin"
+   ]
+  },
+  "real:inch:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġinches"
+   ]
+  },
+  "real:foot:short": {
+   "n": 1,
+   "toks": [
+    "Ġft"
+   ]
+  },
+  "real:foot:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġfeet"
+   ]
+  },
+  "real:yard:short": {
+   "n": 2,
+   "toks": [
+    "Ġy",
+    "d"
+   ]
+  },
+  "real:yard:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġyards"
+   ]
+  },
+  "real:mile:short": {
+   "n": 1,
+   "toks": [
+    "Ġmi"
+   ]
+  },
+  "real:mile:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġmiles"
+   ]
+  },
+  "real:nautical_mile:short": {
+   "n": 2,
+   "toks": [
+    "Ġn",
+    "mi"
+   ]
+  },
+  "real:nautical_mile:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġn",
+    "autical",
+    "Ġmiles"
+   ]
+  },
+  "real:fathom:short": {
+   "n": 2,
+   "toks": [
+    "Ġft",
+    "m"
+   ]
+  },
+  "real:fathom:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġf",
+    "ath",
+    "oms"
+   ]
+  },
+  "real:furlong:short": {
+   "n": 1,
+   "toks": [
+    "Ġfur"
+   ]
+  },
+  "real:furlong:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġf",
+    "url",
+    "ongs"
+   ]
+  },
+  "real:league:short": {
+   "n": 2,
+   "toks": [
+    "Ġle",
+    "a"
+   ]
+  },
+  "real:league:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġleagues"
+   ]
+  },
+  "real:rod:short": {
+   "n": 1,
+   "toks": [
+    "Ġrd"
+   ]
+  },
+  "real:rod:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġrods"
+   ]
+  },
+  "real:chain:short": {
+   "n": 1,
+   "toks": [
+    "Ġch"
+   ]
+  },
+  "real:chain:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġchains"
+   ]
+  },
+  "real:angstrom:short": {
+   "n": 1,
+   "toks": [
+    "ĠÃħ"
+   ]
+  },
+  "real:angstrom:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġang",
+    "strom",
+    "s"
+   ]
+  },
+  "real:parsec:short": {
+   "n": 1,
+   "toks": [
+    "Ġpc"
+   ]
+  },
+  "real:parsec:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġparse",
+    "cs"
+   ]
+  },
+  "real:light_year:short": {
+   "n": 1,
+   "toks": [
+    "Ġly"
+   ]
+  },
+  "real:light_year:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġlight",
+    "-years"
+   ]
+  },
+  "real:astronomical_unit:short": {
+   "n": 1,
+   "toks": [
+    "Ġau"
+   ]
+  },
+  "real:astronomical_unit:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġastronomical",
+    "Ġunits"
+   ]
+  },
+  "real:milligram:short": {
+   "n": 1,
+   "toks": [
+    "Ġmg"
+   ]
+  },
+  "real:milligram:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġmill",
+    "igrams"
+   ]
+  },
+  "real:gram:short": {
+   "n": 1,
+   "toks": [
+    "Ġg"
+   ]
+  },
+  "real:gram:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġgrams"
+   ]
+  },
+  "real:kilogram:short": {
+   "n": 1,
+   "toks": [
+    "Ġkg"
+   ]
+  },
+  "real:kilogram:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġkilograms"
+   ]
+  },
+  "real:tonne:short": {
+   "n": 1,
+   "toks": [
+    "Ġt"
+   ]
+  },
+  "real:tonne:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġtonnes"
+   ]
+  },
+  "real:ounce:short": {
+   "n": 1,
+   "toks": [
+    "Ġoz"
+   ]
+  },
+  "real:ounce:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġounces"
+   ]
+  },
+  "real:pound:short": {
+   "n": 1,
+   "toks": [
+    "Ġlb"
+   ]
+  },
+  "real:pound:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġpounds"
+   ]
+  },
+  "real:stone:short": {
+   "n": 1,
+   "toks": [
+    "Ġst"
+   ]
+  },
+  "real:stone:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġstone"
+   ]
+  },
+  "real:grain:short": {
+   "n": 1,
+   "toks": [
+    "Ġgr"
+   ]
+  },
+  "real:grain:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġgrains"
+   ]
+  },
+  "real:slug:short": {
+   "n": 1,
+   "toks": [
+    "Ġslug"
+   ]
+  },
+  "real:slug:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġsl",
+    "ugs"
+   ]
+  },
+  "real:carat:short": {
+   "n": 1,
+   "toks": [
+    "Ġct"
+   ]
+  },
+  "real:carat:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġcar",
+    "ats"
+   ]
+  },
+  "real:dalton:short": {
+   "n": 1,
+   "toks": [
+    "ĠDa"
+   ]
+  },
+  "real:dalton:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġdal",
+    "tons"
+   ]
+  },
+  "real:millisecond:short": {
+   "n": 1,
+   "toks": [
+    "Ġms"
+   ]
+  },
+  "real:millisecond:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġmilliseconds"
+   ]
+  },
+  "real:second:short": {
+   "n": 1,
+   "toks": [
+    "Ġs"
+   ]
+  },
+  "real:second:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġseconds"
+   ]
+  },
+  "real:minute:short": {
+   "n": 1,
+   "toks": [
+    "Ġmin"
+   ]
+  },
+  "real:minute:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġminutes"
+   ]
+  },
+  "real:hour:short": {
+   "n": 1,
+   "toks": [
+    "Ġh"
+   ]
+  },
+  "real:hour:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġhours"
+   ]
+  },
+  "real:day:short": {
+   "n": 1,
+   "toks": [
+    "Ġd"
+   ]
+  },
+  "real:day:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġdays"
+   ]
+  },
+  "real:week:short": {
+   "n": 1,
+   "toks": [
+    "Ġwk"
+   ]
+  },
+  "real:week:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġweeks"
+   ]
+  },
+  "real:fortnight:short": {
+   "n": 1,
+   "toks": [
+    "Ġfn"
+   ]
+  },
+  "real:fortnight:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġfortn",
+    "ights"
+   ]
+  },
+  "real:year:short": {
+   "n": 1,
+   "toks": [
+    "Ġyr"
+   ]
+  },
+  "real:year:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġyears"
+   ]
+  },
+  "real:ampere:short": {
+   "n": 1,
+   "toks": [
+    "ĠA"
+   ]
+  },
+  "real:ampere:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġam",
+    "per",
+    "es"
+   ]
+  },
+  "real:milliampere:short": {
+   "n": 1,
+   "toks": [
+    "ĠmA"
+   ]
+  },
+  "real:milliampere:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġmill",
+    "iam",
+    "per",
+    "es"
+   ]
+  },
+  "real:kelvin:short": {
+   "n": 1,
+   "toks": [
+    "ĠK"
+   ]
+  },
+  "real:kelvin:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġkel",
+    "v",
+    "ins"
+   ]
+  },
+  "real:mole:short": {
+   "n": 1,
+   "toks": [
+    "Ġmol"
+   ]
+  },
+  "real:mole:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġmo",
+    "les"
+   ]
+  },
+  "real:candela:short": {
+   "n": 1,
+   "toks": [
+    "Ġcd"
+   ]
+  },
+  "real:candela:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġc",
+    "andel",
+    "as"
+   ]
+  },
+  "real:newton:short": {
+   "n": 1,
+   "toks": [
+    "ĠN"
+   ]
+  },
+  "real:newton:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġnew",
+    "tons"
+   ]
+  },
+  "real:kilonewton:short": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "N"
+   ]
+  },
+  "real:kilonewton:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "on",
+    "ew",
+    "tons"
+   ]
+  },
+  "real:dyne:short": {
+   "n": 1,
+   "toks": [
+    "Ġdyn"
+   ]
+  },
+  "real:dyne:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġdyn",
+    "es"
+   ]
+  },
+  "real:pound_force:short": {
+   "n": 2,
+   "toks": [
+    "Ġl",
+    "bf"
+   ]
+  },
+  "real:pound_force:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġpounds",
+    "-force"
+   ]
+  },
+  "real:kilogram_force:short": {
+   "n": 2,
+   "toks": [
+    "Ġkg",
+    "f"
+   ]
+  },
+  "real:kilogram_force:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġkilograms",
+    "-force"
+   ]
+  },
+  "real:joule:short": {
+   "n": 1,
+   "toks": [
+    "ĠJ"
+   ]
+  },
+  "real:joule:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġjou",
+    "les"
+   ]
+  },
+  "real:kilojoule:short": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "J"
+   ]
+  },
+  "real:kilojoule:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "oj",
+    "ou",
+    "les"
+   ]
+  },
+  "real:erg:short": {
+   "n": 1,
+   "toks": [
+    "Ġerg"
+   ]
+  },
+  "real:erg:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġerg",
+    "s"
+   ]
+  },
+  "real:calorie:short": {
+   "n": 1,
+   "toks": [
+    "Ġcal"
+   ]
+  },
+  "real:calorie:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġcalories"
+   ]
+  },
+  "real:kilowatt_hour:short": {
+   "n": 1,
+   "toks": [
+    "ĠkWh"
+   ]
+  },
+  "real:kilowatt_hour:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "ow",
+    "att",
+    "-hours"
+   ]
+  },
+  "real:electronvolt:short": {
+   "n": 2,
+   "toks": [
+    "Ġe",
+    "V"
+   ]
+  },
+  "real:electronvolt:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġelectron",
+    "vol",
+    "ts"
+   ]
+  },
+  "real:watt:short": {
+   "n": 1,
+   "toks": [
+    "ĠW"
+   ]
+  },
+  "real:watt:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġwatts"
+   ]
+  },
+  "real:kilowatt:short": {
+   "n": 1,
+   "toks": [
+    "ĠkW"
+   ]
+  },
+  "real:kilowatt:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġkil",
+    "ow",
+    "atts"
+   ]
+  },
+  "real:horsepower:short": {
+   "n": 1,
+   "toks": [
+    "Ġhp"
+   ]
+  },
+  "real:horsepower:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġhorsepower"
+   ]
+  },
+  "real:pascal:short": {
+   "n": 1,
+   "toks": [
+    "ĠPa"
+   ]
+  },
+  "real:pascal:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "asc",
+    "als"
+   ]
+  },
+  "real:kilopascal:short": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "Pa"
+   ]
+  },
+  "real:kilopascal:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġkil",
+    "op",
+    "asc",
+    "als"
+   ]
+  },
+  "real:psi:short": {
+   "n": 1,
+   "toks": [
+    "Ġpsi"
+   ]
+  },
+  "real:psi:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġpounds",
+    "Ġper",
+    "Ġsquare",
+    "Ġinch"
+   ]
+  },
+  "real:bar:short": {
+   "n": 1,
+   "toks": [
+    "Ġbar"
+   ]
+  },
+  "real:bar:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġbars"
+   ]
+  },
+  "real:atmosphere:short": {
+   "n": 1,
+   "toks": [
+    "Ġatm"
+   ]
+  },
+  "real:atmosphere:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġatmos",
+    "pheres"
+   ]
+  },
+  "real:hertz:short": {
+   "n": 1,
+   "toks": [
+    "ĠHz"
+   ]
+  },
+  "real:hertz:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġh",
+    "ertz"
+   ]
+  },
+  "real:kilohertz:short": {
+   "n": 1,
+   "toks": [
+    "ĠkHz"
+   ]
+  },
+  "real:kilohertz:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġkil",
+    "oh",
+    "ertz"
+   ]
+  },
+  "real:becquerel:short": {
+   "n": 2,
+   "toks": [
+    "ĠB",
+    "q"
+   ]
+  },
+  "real:becquerel:long_pl": {
+   "n": 4,
+   "toks": [
+    "Ġbe",
+    "c",
+    "quer",
+    "els"
+   ]
+  },
+  "real:coulomb:short": {
+   "n": 1,
+   "toks": [
+    "ĠC"
+   ]
+  },
+  "real:coulomb:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġcou",
+    "l",
+    "ombs"
+   ]
+  },
+  "real:volt:short": {
+   "n": 1,
+   "toks": [
+    "ĠV"
+   ]
+  },
+  "real:volt:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġvolts"
+   ]
+  },
+  "real:ohm:short": {
+   "n": 2,
+   "toks": [
+    "ĠÎ",
+    "©"
+   ]
+  },
+  "real:ohm:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġoh",
+    "ms"
+   ]
+  },
+  "real:farad:short": {
+   "n": 1,
+   "toks": [
+    "ĠF"
+   ]
+  },
+  "real:farad:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġfar",
+    "ads"
+   ]
+  },
+  "real:tesla:short": {
+   "n": 1,
+   "toks": [
+    "ĠT"
+   ]
+  },
+  "real:tesla:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġtes",
+    "las"
+   ]
+  },
+  "real:weber:short": {
+   "n": 2,
+   "toks": [
+    "ĠW",
+    "b"
+   ]
+  },
+  "real:weber:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġwe",
+    "bers"
+   ]
+  },
+  "real:gray:short": {
+   "n": 1,
+   "toks": [
+    "ĠGy"
+   ]
+  },
+  "real:gray:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "ays"
+   ]
+  },
+  "real:sievert:short": {
+   "n": 1,
+   "toks": [
+    "ĠSv"
+   ]
+  },
+  "real:sievert:long_pl": {
+   "n": 2,
+   "toks": [
+    "Ġsie",
+    "verts"
+   ]
+  },
+  "real:knot:short": {
+   "n": 1,
+   "toks": [
+    "Ġkn"
+   ]
+  },
+  "real:knot:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġknots"
+   ]
+  },
+  "real:liter:short": {
+   "n": 1,
+   "toks": [
+    "ĠL"
+   ]
+  },
+  "real:liter:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġliters"
+   ]
+  },
+  "real:milliliter:short": {
+   "n": 1,
+   "toks": [
+    "ĠmL"
+   ]
+  },
+  "real:milliliter:long_pl": {
+   "n": 3,
+   "toks": [
+    "Ġmill",
+    "ilit",
+    "ers"
+   ]
+  },
+  "real:gallon:short": {
+   "n": 1,
+   "toks": [
+    "Ġgal"
+   ]
+  },
+  "real:gallon:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġgallons"
+   ]
+  },
+  "real:hectare:short": {
+   "n": 1,
+   "toks": [
+    "Ġha"
+   ]
+  },
+  "real:hectare:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġhectares"
+   ]
+  },
+  "real:acre:short": {
+   "n": 1,
+   "toks": [
+    "Ġac"
+   ]
+  },
+  "real:acre:long_pl": {
+   "n": 1,
+   "toks": [
+    "Ġacres"
+   ]
+  },
+  "compound:symbol": {
+   "n": 5,
+   "toks": [
+    "Ġkg",
+    "Â·",
+    "m",
+    "/s",
+    "Â²"
+   ]
+  },
+  "compound:ascii": {
+   "n": 5,
+   "toks": [
+    "Ġkg",
+    "*m",
+    "/s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:slash": {
+   "n": 5,
+   "toks": [
+    "Ġkg",
+    "Ġm",
+    "/s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:per": {
+   "n": 6,
+   "toks": [
+    "Ġkg",
+    "Ġm",
+    "Ġper",
+    "Ġs",
+    "^",
+    "2"
+   ]
+  },
+  "compound:long": {
+   "n": 6,
+   "toks": [
+    "Ġkil",
+    "ogram",
+    "Ġmeters",
+    "Ġper",
+    "Ġsecond",
+    "Ġsquared"
+   ]
+  },
+  "inv:tauf": {
+   "n": 2,
+   "toks": [
+    "Ġta",
+    "uf"
+   ]
+  },
+  "inv:tauf:pl": {
+   "n": 2,
+   "toks": [
+    "Ġta",
+    "ufs"
+   ]
+  },
+  "inv:pleert": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "ert"
+   ]
+  },
+  "inv:pleert:pl": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "erts"
+   ]
+  },
+  "inv:trurp": {
+   "n": 3,
+   "toks": [
+    "Ġtr",
+    "ur",
+    "p"
+   ]
+  },
+  "inv:trurp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġtr",
+    "ur",
+    "ps"
+   ]
+  },
+  "inv:stooz": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "oo",
+    "z"
+   ]
+  },
+  "inv:stooz:pl": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "oo",
+    "zs"
+   ]
+  },
+  "inv:wrilp": {
+   "n": 3,
+   "toks": [
+    "Ġwr",
+    "il",
+    "p"
+   ]
+  },
+  "inv:wrilp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġwr",
+    "il",
+    "ps"
+   ]
+  },
+  "inv:gleng": {
+   "n": 2,
+   "toks": [
+    "Ġgl",
+    "eng"
+   ]
+  },
+  "inv:gleng:pl": {
+   "n": 3,
+   "toks": [
+    "Ġgl",
+    "eng",
+    "s"
+   ]
+  },
+  "inv:pleex": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "ex"
+   ]
+  },
+  "inv:pleex:pl": {
+   "n": 3,
+   "toks": [
+    "Ġple",
+    "ex",
+    "s"
+   ]
+  },
+  "inv:grum": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "um"
+   ]
+  },
+  "inv:grum:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "ums"
+   ]
+  },
+  "inv:dround": {
+   "n": 2,
+   "toks": [
+    "Ġd",
+    "round"
+   ]
+  },
+  "inv:dround:pl": {
+   "n": 3,
+   "toks": [
+    "Ġd",
+    "round",
+    "s"
+   ]
+  },
+  "inv:sheem": {
+   "n": 2,
+   "toks": [
+    "Ġshe",
+    "em"
+   ]
+  },
+  "inv:sheem:pl": {
+   "n": 2,
+   "toks": [
+    "Ġshe",
+    "ems"
+   ]
+  },
+  "inv:staump": {
+   "n": 2,
+   "toks": [
+    "Ġsta",
+    "ump"
+   ]
+  },
+  "inv:staump:pl": {
+   "n": 2,
+   "toks": [
+    "Ġsta",
+    "umps"
+   ]
+  },
+  "inv:rouz": {
+   "n": 2,
+   "toks": [
+    "Ġrou",
+    "z"
+   ]
+  },
+  "inv:rouz:pl": {
+   "n": 2,
+   "toks": [
+    "Ġrou",
+    "zs"
+   ]
+  },
+  "inv:yearm": {
+   "n": 2,
+   "toks": [
+    "Ġyear",
+    "m"
+   ]
+  },
+  "inv:yearm:pl": {
+   "n": 2,
+   "toks": [
+    "Ġyear",
+    "ms"
+   ]
+  },
+  "inv:troab": {
+   "n": 2,
+   "toks": [
+    "Ġtro",
+    "ab"
+   ]
+  },
+  "inv:troab:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtro",
+    "abs"
+   ]
+  },
+  "inv:reand": {
+   "n": 2,
+   "toks": [
+    "Ġre",
+    "and"
+   ]
+  },
+  "inv:reand:pl": {
+   "n": 2,
+   "toks": [
+    "Ġre",
+    "ands"
+   ]
+  },
+  "inv:poamp": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "amp"
+   ]
+  },
+  "inv:poamp:pl": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "amps"
+   ]
+  },
+  "inv:drosh": {
+   "n": 2,
+   "toks": [
+    "Ġdro",
+    "sh"
+   ]
+  },
+  "inv:drosh:pl": {
+   "n": 3,
+   "toks": [
+    "Ġdro",
+    "sh",
+    "s"
+   ]
+  },
+  "inv:queal": {
+   "n": 2,
+   "toks": [
+    "Ġque",
+    "al"
+   ]
+  },
+  "inv:queal:pl": {
+   "n": 2,
+   "toks": [
+    "Ġque",
+    "als"
+   ]
+  },
+  "inv:flaisk": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ais",
+    "k"
+   ]
+  },
+  "inv:flaisk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ais",
+    "ks"
+   ]
+  },
+  "inv:chelt": {
+   "n": 2,
+   "toks": [
+    "Ġch",
+    "elt"
+   ]
+  },
+  "inv:chelt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġch",
+    "elts"
+   ]
+  },
+  "inv:yaist": {
+   "n": 2,
+   "toks": [
+    "Ġya",
+    "ist"
+   ]
+  },
+  "inv:yaist:pl": {
+   "n": 2,
+   "toks": [
+    "Ġya",
+    "ists"
+   ]
+  },
+  "inv:mooth": {
+   "n": 2,
+   "toks": [
+    "Ġm",
+    "ooth"
+   ]
+  },
+  "inv:mooth:pl": {
+   "n": 3,
+   "toks": [
+    "Ġm",
+    "ooth",
+    "s"
+   ]
+  },
+  "inv:hurm": {
+   "n": 2,
+   "toks": [
+    "Ġhur",
+    "m"
+   ]
+  },
+  "inv:hurm:pl": {
+   "n": 2,
+   "toks": [
+    "Ġhur",
+    "ms"
+   ]
+  },
+  "inv:floopt": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "opt"
+   ]
+  },
+  "inv:floopt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "opts"
+   ]
+  },
+  "inv:snooft": {
+   "n": 2,
+   "toks": [
+    "Ġsno",
+    "oft"
+   ]
+  },
+  "inv:snooft:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsno",
+    "oft",
+    "s"
+   ]
+  },
+  "inv:skiv": {
+   "n": 2,
+   "toks": [
+    "Ġsk",
+    "iv"
+   ]
+  },
+  "inv:skiv:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsk",
+    "iv",
+    "s"
+   ]
+  },
+  "inv:klang": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "lang"
+   ]
+  },
+  "inv:klang:pl": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "langs"
+   ]
+  },
+  "inv:pleak": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "ak"
+   ]
+  },
+  "inv:pleak:pl": {
+   "n": 2,
+   "toks": [
+    "Ġple",
+    "aks"
+   ]
+  },
+  "inv:floup": {
+   "n": 2,
+   "toks": [
+    "Ġfl",
+    "oup"
+   ]
+  },
+  "inv:floup:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ou",
+    "ps"
+   ]
+  },
+  "inv:gral": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "al"
+   ]
+  },
+  "inv:gral:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgr",
+    "als"
+   ]
+  },
+  "inv:quourb": {
+   "n": 3,
+   "toks": [
+    "Ġqu",
+    "our",
+    "b"
+   ]
+  },
+  "inv:quourb:pl": {
+   "n": 3,
+   "toks": [
+    "Ġqu",
+    "our",
+    "bs"
+   ]
+  },
+  "inv:jusp": {
+   "n": 2,
+   "toks": [
+    "Ġj",
+    "usp"
+   ]
+  },
+  "inv:jusp:pl": {
+   "n": 2,
+   "toks": [
+    "Ġjus",
+    "ps"
+   ]
+  },
+  "inv:poch": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "ch"
+   ]
+  },
+  "inv:poch:pl": {
+   "n": 2,
+   "toks": [
+    "Ġpo",
+    "chs"
+   ]
+  },
+  "inv:voolm": {
+   "n": 3,
+   "toks": [
+    "Ġv",
+    "ool",
+    "m"
+   ]
+  },
+  "inv:voolm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġv",
+    "ool",
+    "ms"
+   ]
+  },
+  "inv:zeank": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "ank"
+   ]
+  },
+  "inv:zeank:pl": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "anks"
+   ]
+  },
+  "inv:flaing": {
+   "n": 2,
+   "toks": [
+    "Ġfla",
+    "ing"
+   ]
+  },
+  "inv:flaing:pl": {
+   "n": 2,
+   "toks": [
+    "Ġfla",
+    "ings"
+   ]
+  },
+  "inv:geach": {
+   "n": 2,
+   "toks": [
+    "Ġge",
+    "ach"
+   ]
+  },
+  "inv:geach:pl": {
+   "n": 2,
+   "toks": [
+    "Ġge",
+    "achs"
+   ]
+  },
+  "inv:spoft": {
+   "n": 2,
+   "toks": [
+    "Ġsp",
+    "oft"
+   ]
+  },
+  "inv:spoft:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsp",
+    "oft",
+    "s"
+   ]
+  },
+  "inv:bloalm": {
+   "n": 2,
+   "toks": [
+    "Ġblo",
+    "alm"
+   ]
+  },
+  "inv:bloalm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġblo",
+    "al",
+    "ms"
+   ]
+  },
+  "inv:goack": {
+   "n": 2,
+   "toks": [
+    "Ġgo",
+    "ack"
+   ]
+  },
+  "inv:goack:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgo",
+    "acks"
+   ]
+  },
+  "inv:strind": {
+   "n": 2,
+   "toks": [
+    "Ġstr",
+    "ind"
+   ]
+  },
+  "inv:strind:pl": {
+   "n": 2,
+   "toks": [
+    "Ġstr",
+    "inds"
+   ]
+  },
+  "inv:vram": {
+   "n": 2,
+   "toks": [
+    "Ġv",
+    "ram"
+   ]
+  },
+  "inv:vram:pl": {
+   "n": 2,
+   "toks": [
+    "Ġv",
+    "rams"
+   ]
+  },
+  "inv:groack": {
+   "n": 2,
+   "toks": [
+    "Ġgro",
+    "ack"
+   ]
+  },
+  "inv:groack:pl": {
+   "n": 2,
+   "toks": [
+    "Ġgro",
+    "acks"
+   ]
+  },
+  "inv:broost": {
+   "n": 2,
+   "toks": [
+    "Ġbro",
+    "ost"
+   ]
+  },
+  "inv:broost:pl": {
+   "n": 3,
+   "toks": [
+    "Ġbro",
+    "ost",
+    "s"
+   ]
+  },
+  "inv:louk": {
+   "n": 2,
+   "toks": [
+    "Ġlou",
+    "k"
+   ]
+  },
+  "inv:louk:pl": {
+   "n": 2,
+   "toks": [
+    "Ġlou",
+    "ks"
+   ]
+  },
+  "inv:blev": {
+   "n": 1,
+   "toks": [
+    "Ġblev"
+   ]
+  },
+  "inv:blev:pl": {
+   "n": 2,
+   "toks": [
+    "Ġblev",
+    "s"
+   ]
+  },
+  "inv:loon": {
+   "n": 2,
+   "toks": [
+    "Ġlo",
+    "on"
+   ]
+  },
+  "inv:loon:pl": {
+   "n": 2,
+   "toks": [
+    "Ġlo",
+    "ons"
+   ]
+  },
+  "inv:trent": {
+   "n": 2,
+   "toks": [
+    "Ġtre",
+    "nt"
+   ]
+  },
+  "inv:trent:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtre",
+    "nts"
+   ]
+  },
+  "inv:blot": {
+   "n": 1,
+   "toks": [
+    "Ġblot"
+   ]
+  },
+  "inv:blot:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbl",
+    "ots"
+   ]
+  },
+  "inv:geaz": {
+   "n": 2,
+   "toks": [
+    "Ġge",
+    "az"
+   ]
+  },
+  "inv:geaz:pl": {
+   "n": 3,
+   "toks": [
+    "Ġge",
+    "az",
+    "s"
+   ]
+  },
+  "inv:doud": {
+   "n": 2,
+   "toks": [
+    "Ġd",
+    "oud"
+   ]
+  },
+  "inv:doud:pl": {
+   "n": 3,
+   "toks": [
+    "Ġd",
+    "oud",
+    "s"
+   ]
+  },
+  "inv:quaung": {
+   "n": 2,
+   "toks": [
+    "Ġqua",
+    "ung"
+   ]
+  },
+  "inv:quaung:pl": {
+   "n": 2,
+   "toks": [
+    "Ġqua",
+    "ungs"
+   ]
+  },
+  "inv:fruk": {
+   "n": 2,
+   "toks": [
+    "Ġfr",
+    "uk"
+   ]
+  },
+  "inv:fruk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfr",
+    "u",
+    "ks"
+   ]
+  },
+  "inv:nelt": {
+   "n": 2,
+   "toks": [
+    "Ġn",
+    "elt"
+   ]
+  },
+  "inv:nelt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġnel",
+    "ts"
+   ]
+  },
+  "inv:staut": {
+   "n": 2,
+   "toks": [
+    "Ġst",
+    "aut"
+   ]
+  },
+  "inv:staut:pl": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "aut",
+    "s"
+   ]
+  },
+  "inv:deern": {
+   "n": 2,
+   "toks": [
+    "Ġde",
+    "ern"
+   ]
+  },
+  "inv:deern:pl": {
+   "n": 3,
+   "toks": [
+    "Ġde",
+    "ern",
+    "s"
+   ]
+  },
+  "inv:broom": {
+   "n": 2,
+   "toks": [
+    "Ġbro",
+    "om"
+   ]
+  },
+  "inv:broom:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbro",
+    "oms"
+   ]
+  },
+  "inv:trolk": {
+   "n": 3,
+   "toks": [
+    "Ġt",
+    "rol",
+    "k"
+   ]
+  },
+  "inv:trolk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġt",
+    "rol",
+    "ks"
+   ]
+  },
+  "inv:stoarp": {
+   "n": 2,
+   "toks": [
+    "Ġsto",
+    "arp"
+   ]
+  },
+  "inv:stoarp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsto",
+    "ar",
+    "ps"
+   ]
+  },
+  "inv:dous": {
+   "n": 2,
+   "toks": [
+    "Ġd",
+    "ous"
+   ]
+  },
+  "inv:dous:pl": {
+   "n": 2,
+   "toks": [
+    "Ġdou",
+    "ss"
+   ]
+  },
+  "inv:kaisp": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ais",
+    "p"
+   ]
+  },
+  "inv:kaisp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ais",
+    "ps"
+   ]
+  },
+  "inv:plex": {
+   "n": 2,
+   "toks": [
+    "Ġp",
+    "lex"
+   ]
+  },
+  "inv:plex:pl": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "lex",
+    "s"
+   ]
+  },
+  "inv:zout": {
+   "n": 2,
+   "toks": [
+    "Ġz",
+    "out"
+   ]
+  },
+  "inv:zout:pl": {
+   "n": 2,
+   "toks": [
+    "Ġz",
+    "outs"
+   ]
+  },
+  "inv:beard": {
+   "n": 1,
+   "toks": [
+    "Ġbeard"
+   ]
+  },
+  "inv:beard:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbe",
+    "ards"
+   ]
+  },
+  "inv:weelt": {
+   "n": 2,
+   "toks": [
+    "Ġwe",
+    "elt"
+   ]
+  },
+  "inv:weelt:pl": {
+   "n": 2,
+   "toks": [
+    "Ġwe",
+    "elts"
+   ]
+  },
+  "inv:staulk": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "aul",
+    "k"
+   ]
+  },
+  "inv:staulk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġst",
+    "aul",
+    "ks"
+   ]
+  },
+  "inv:greeb": {
+   "n": 3,
+   "toks": [
+    "Ġg",
+    "ree",
+    "b"
+   ]
+  },
+  "inv:greeb:pl": {
+   "n": 3,
+   "toks": [
+    "Ġg",
+    "ree",
+    "bs"
+   ]
+  },
+  "inv:thoal": {
+   "n": 2,
+   "toks": [
+    "Ġtho",
+    "al"
+   ]
+  },
+  "inv:thoal:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtho",
+    "als"
+   ]
+  },
+  "inv:spoaf": {
+   "n": 2,
+   "toks": [
+    "Ġspo",
+    "af"
+   ]
+  },
+  "inv:spoaf:pl": {
+   "n": 2,
+   "toks": [
+    "Ġspo",
+    "afs"
+   ]
+  },
+  "inv:quup": {
+   "n": 2,
+   "toks": [
+    "Ġqu",
+    "up"
+   ]
+  },
+  "inv:quup:pl": {
+   "n": 2,
+   "toks": [
+    "Ġqu",
+    "ups"
+   ]
+  },
+  "inv:peank": {
+   "n": 2,
+   "toks": [
+    "Ġpe",
+    "ank"
+   ]
+  },
+  "inv:peank:pl": {
+   "n": 2,
+   "toks": [
+    "Ġpe",
+    "anks"
+   ]
+  },
+  "inv:runk": {
+   "n": 2,
+   "toks": [
+    "Ġrun",
+    "k"
+   ]
+  },
+  "inv:runk:pl": {
+   "n": 2,
+   "toks": [
+    "Ġrun",
+    "ks"
+   ]
+  },
+  "inv:houng": {
+   "n": 3,
+   "toks": [
+    "Ġh",
+    "ou",
+    "ng"
+   ]
+  },
+  "inv:houng:pl": {
+   "n": 4,
+   "toks": [
+    "Ġh",
+    "ou",
+    "ng",
+    "s"
+   ]
+  },
+  "inv:gloalt": {
+   "n": 2,
+   "toks": [
+    "Ġglo",
+    "alt"
+   ]
+  },
+  "inv:gloalt:pl": {
+   "n": 3,
+   "toks": [
+    "Ġglo",
+    "al",
+    "ts"
+   ]
+  },
+  "inv:toard": {
+   "n": 2,
+   "toks": [
+    "Ġto",
+    "ard"
+   ]
+  },
+  "inv:toard:pl": {
+   "n": 2,
+   "toks": [
+    "Ġto",
+    "ards"
+   ]
+  },
+  "inv:flax": {
+   "n": 2,
+   "toks": [
+    "Ġfl",
+    "ax"
+   ]
+  },
+  "inv:flax:pl": {
+   "n": 3,
+   "toks": [
+    "Ġfl",
+    "ax",
+    "s"
+   ]
+  },
+  "inv:kroand": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ro",
+    "and"
+   ]
+  },
+  "inv:kroand:pl": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ro",
+    "ands"
+   ]
+  },
+  "inv:kock": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "ock"
+   ]
+  },
+  "inv:kock:pl": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "ocks"
+   ]
+  },
+  "inv:zaush": {
+   "n": 2,
+   "toks": [
+    "Ġza",
+    "ush"
+   ]
+  },
+  "inv:zaush:pl": {
+   "n": 3,
+   "toks": [
+    "Ġza",
+    "ush",
+    "s"
+   ]
+  },
+  "inv:varb": {
+   "n": 2,
+   "toks": [
+    "Ġvar",
+    "b"
+   ]
+  },
+  "inv:varb:pl": {
+   "n": 2,
+   "toks": [
+    "Ġvar",
+    "bs"
+   ]
+  },
+  "inv:wauf": {
+   "n": 2,
+   "toks": [
+    "Ġwa",
+    "uf"
+   ]
+  },
+  "inv:wauf:pl": {
+   "n": 2,
+   "toks": [
+    "Ġwa",
+    "ufs"
+   ]
+  },
+  "inv:keak": {
+   "n": 2,
+   "toks": [
+    "Ġke",
+    "ak"
+   ]
+  },
+  "inv:keak:pl": {
+   "n": 2,
+   "toks": [
+    "Ġke",
+    "aks"
+   ]
+  },
+  "inv:ploas": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "lo",
+    "as"
+   ]
+  },
+  "inv:ploas:pl": {
+   "n": 3,
+   "toks": [
+    "Ġp",
+    "lo",
+    "ass"
+   ]
+  },
+  "inv:zeert": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "ert"
+   ]
+  },
+  "inv:zeert:pl": {
+   "n": 2,
+   "toks": [
+    "Ġze",
+    "erts"
+   ]
+  },
+  "inv:yoob": {
+   "n": 2,
+   "toks": [
+    "Ġyo",
+    "ob"
+   ]
+  },
+  "inv:yoob:pl": {
+   "n": 2,
+   "toks": [
+    "Ġyo",
+    "obs"
+   ]
+  },
+  "inv:breamp": {
+   "n": 2,
+   "toks": [
+    "Ġbre",
+    "amp"
+   ]
+  },
+  "inv:breamp:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbre",
+    "amps"
+   ]
+  },
+  "inv:sleag": {
+   "n": 2,
+   "toks": [
+    "Ġsle",
+    "ag"
+   ]
+  },
+  "inv:sleag:pl": {
+   "n": 2,
+   "toks": [
+    "Ġsle",
+    "ags"
+   ]
+  },
+  "inv:voth": {
+   "n": 2,
+   "toks": [
+    "Ġvo",
+    "th"
+   ]
+  },
+  "inv:voth:pl": {
+   "n": 2,
+   "toks": [
+    "Ġvo",
+    "ths"
+   ]
+  },
+  "inv:floap": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "ap"
+   ]
+  },
+  "inv:floap:pl": {
+   "n": 2,
+   "toks": [
+    "Ġflo",
+    "aps"
+   ]
+  },
+  "inv:baurd": {
+   "n": 3,
+   "toks": [
+    "Ġb",
+    "aur",
+    "d"
+   ]
+  },
+  "inv:baurd:pl": {
+   "n": 3,
+   "toks": [
+    "Ġb",
+    "aur",
+    "ds"
+   ]
+  },
+  "inv:snaz": {
+   "n": 2,
+   "toks": [
+    "Ġsn",
+    "az"
+   ]
+  },
+  "inv:snaz:pl": {
+   "n": 3,
+   "toks": [
+    "Ġsn",
+    "az",
+    "s"
+   ]
+  },
+  "inv:boab": {
+   "n": 2,
+   "toks": [
+    "Ġbo",
+    "ab"
+   ]
+  },
+  "inv:boab:pl": {
+   "n": 2,
+   "toks": [
+    "Ġbo",
+    "abs"
+   ]
+  },
+  "inv:joom": {
+   "n": 2,
+   "toks": [
+    "Ġj",
+    "oom"
+   ]
+  },
+  "inv:joom:pl": {
+   "n": 3,
+   "toks": [
+    "Ġj",
+    "oom",
+    "s"
+   ]
+  },
+  "inv:krex": {
+   "n": 2,
+   "toks": [
+    "Ġk",
+    "rex"
+   ]
+  },
+  "inv:krex:pl": {
+   "n": 2,
+   "toks": [
+    "Ġkre",
+    "xs"
+   ]
+  },
+  "inv:krulm": {
+   "n": 3,
+   "toks": [
+    "Ġkr",
+    "ul",
+    "m"
+   ]
+  },
+  "inv:krulm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġkr",
+    "ul",
+    "ms"
+   ]
+  },
+  "inv:klerp": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ler",
+    "p"
+   ]
+  },
+  "inv:klerp:pl": {
+   "n": 3,
+   "toks": [
+    "Ġk",
+    "ler",
+    "ps"
+   ]
+  },
+  "inv:troul": {
+   "n": 2,
+   "toks": [
+    "Ġtr",
+    "oul"
+   ]
+  },
+  "inv:troul:pl": {
+   "n": 2,
+   "toks": [
+    "Ġtrou",
+    "ls"
+   ]
+  },
+  "inv:blurm": {
+   "n": 2,
+   "toks": [
+    "Ġblur",
+    "m"
+   ]
+  },
+  "inv:blurm:pl": {
+   "n": 2,
+   "toks": [
+    "Ġblur",
+    "ms"
+   ]
+  },
+  "inv:jounk": {
+   "n": 3,
+   "toks": [
+    "Ġj",
+    "oun",
+    "k"
+   ]
+  },
+  "inv:jounk:pl": {
+   "n": 3,
+   "toks": [
+    "Ġj",
+    "oun",
+    "ks"
+   ]
+  },
+  "inv:gilm": {
+   "n": 2,
+   "toks": [
+    "Ġg",
+    "ilm"
+   ]
+  },
+  "inv:gilm:pl": {
+   "n": 3,
+   "toks": [
+    "Ġg",
+    "il",
+    "ms"
+   ]
+  }
+ },
+ "gemma2-9b": {
+  "real:millimeter:short": {
+   "n": 1,
+   "toks": [
+    "▁mm"
+   ]
+  },
+  "real:millimeter:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁millimeters"
+   ]
+  },
+  "real:centimeter:short": {
+   "n": 1,
+   "toks": [
+    "▁cm"
+   ]
+  },
+  "real:centimeter:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁centimeters"
+   ]
+  },
+  "real:meter:short": {
+   "n": 1,
+   "toks": [
+    "▁m"
+   ]
+  },
+  "real:meter:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁meters"
+   ]
+  },
+  "real:kilometer:short": {
+   "n": 1,
+   "toks": [
+    "▁km"
+   ]
+  },
+  "real:kilometer:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁kilometers"
+   ]
+  },
+  "real:micrometer:short": {
+   "n": 2,
+   "toks": [
+    "▁µ",
+    "m"
+   ]
+  },
+  "real:micrometer:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁mic",
+    "rometers"
+   ]
+  },
+  "real:inch:short": {
+   "n": 1,
+   "toks": [
+    "▁in"
+   ]
+  },
+  "real:inch:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁inches"
+   ]
+  },
+  "real:foot:short": {
+   "n": 1,
+   "toks": [
+    "▁ft"
+   ]
+  },
+  "real:foot:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁feet"
+   ]
+  },
+  "real:yard:short": {
+   "n": 1,
+   "toks": [
+    "▁yd"
+   ]
+  },
+  "real:yard:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁yards"
+   ]
+  },
+  "real:mile:short": {
+   "n": 1,
+   "toks": [
+    "▁mi"
+   ]
+  },
+  "real:mile:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁miles"
+   ]
+  },
+  "real:nautical_mile:short": {
+   "n": 2,
+   "toks": [
+    "▁n",
+    "mi"
+   ]
+  },
+  "real:nautical_mile:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁nautical",
+    "▁miles"
+   ]
+  },
+  "real:fathom:short": {
+   "n": 2,
+   "toks": [
+    "▁ft",
+    "m"
+   ]
+  },
+  "real:fathom:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁fathoms"
+   ]
+  },
+  "real:furlong:short": {
+   "n": 1,
+   "toks": [
+    "▁fur"
+   ]
+  },
+  "real:furlong:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁furl",
+    "ongs"
+   ]
+  },
+  "real:league:short": {
+   "n": 1,
+   "toks": [
+    "▁lea"
+   ]
+  },
+  "real:league:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁leagues"
+   ]
+  },
+  "real:rod:short": {
+   "n": 1,
+   "toks": [
+    "▁rd"
+   ]
+  },
+  "real:rod:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁rods"
+   ]
+  },
+  "real:chain:short": {
+   "n": 1,
+   "toks": [
+    "▁ch"
+   ]
+  },
+  "real:chain:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁chains"
+   ]
+  },
+  "real:angstrom:short": {
+   "n": 1,
+   "toks": [
+    "▁Å"
+   ]
+  },
+  "real:angstrom:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁ang",
+    "strom",
+    "s"
+   ]
+  },
+  "real:parsec:short": {
+   "n": 1,
+   "toks": [
+    "▁pc"
+   ]
+  },
+  "real:parsec:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁parse",
+    "cs"
+   ]
+  },
+  "real:light_year:short": {
+   "n": 1,
+   "toks": [
+    "▁ly"
+   ]
+  },
+  "real:light_year:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁light",
+    "-",
+    "years"
+   ]
+  },
+  "real:astronomical_unit:short": {
+   "n": 1,
+   "toks": [
+    "▁au"
+   ]
+  },
+  "real:astronomical_unit:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁astronomical",
+    "▁units"
+   ]
+  },
+  "real:milligram:short": {
+   "n": 1,
+   "toks": [
+    "▁mg"
+   ]
+  },
+  "real:milligram:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁milligrams"
+   ]
+  },
+  "real:gram:short": {
+   "n": 1,
+   "toks": [
+    "▁g"
+   ]
+  },
+  "real:gram:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁grams"
+   ]
+  },
+  "real:kilogram:short": {
+   "n": 1,
+   "toks": [
+    "▁kg"
+   ]
+  },
+  "real:kilogram:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁kilograms"
+   ]
+  },
+  "real:tonne:short": {
+   "n": 1,
+   "toks": [
+    "▁t"
+   ]
+  },
+  "real:tonne:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁tonnes"
+   ]
+  },
+  "real:ounce:short": {
+   "n": 1,
+   "toks": [
+    "▁oz"
+   ]
+  },
+  "real:ounce:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁ounces"
+   ]
+  },
+  "real:pound:short": {
+   "n": 1,
+   "toks": [
+    "▁lb"
+   ]
+  },
+  "real:pound:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁pounds"
+   ]
+  },
+  "real:stone:short": {
+   "n": 1,
+   "toks": [
+    "▁st"
+   ]
+  },
+  "real:stone:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁stone"
+   ]
+  },
+  "real:grain:short": {
+   "n": 1,
+   "toks": [
+    "▁gr"
+   ]
+  },
+  "real:grain:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁grains"
+   ]
+  },
+  "real:slug:short": {
+   "n": 1,
+   "toks": [
+    "▁slug"
+   ]
+  },
+  "real:slug:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁slugs"
+   ]
+  },
+  "real:carat:short": {
+   "n": 1,
+   "toks": [
+    "▁ct"
+   ]
+  },
+  "real:carat:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁carats"
+   ]
+  },
+  "real:dalton:short": {
+   "n": 1,
+   "toks": [
+    "▁Da"
+   ]
+  },
+  "real:dalton:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁d",
+    "alt",
+    "ons"
+   ]
+  },
+  "real:millisecond:short": {
+   "n": 1,
+   "toks": [
+    "▁ms"
+   ]
+  },
+  "real:millisecond:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁milliseconds"
+   ]
+  },
+  "real:second:short": {
+   "n": 1,
+   "toks": [
+    "▁s"
+   ]
+  },
+  "real:second:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁seconds"
+   ]
+  },
+  "real:minute:short": {
+   "n": 1,
+   "toks": [
+    "▁min"
+   ]
+  },
+  "real:minute:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁minutes"
+   ]
+  },
+  "real:hour:short": {
+   "n": 1,
+   "toks": [
+    "▁h"
+   ]
+  },
+  "real:hour:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁hours"
+   ]
+  },
+  "real:day:short": {
+   "n": 1,
+   "toks": [
+    "▁d"
+   ]
+  },
+  "real:day:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁days"
+   ]
+  },
+  "real:week:short": {
+   "n": 1,
+   "toks": [
+    "▁wk"
+   ]
+  },
+  "real:week:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁weeks"
+   ]
+  },
+  "real:fortnight:short": {
+   "n": 1,
+   "toks": [
+    "▁fn"
+   ]
+  },
+  "real:fortnight:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁fortn",
+    "ights"
+   ]
+  },
+  "real:year:short": {
+   "n": 1,
+   "toks": [
+    "▁yr"
+   ]
+  },
+  "real:year:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁years"
+   ]
+  },
+  "real:ampere:short": {
+   "n": 1,
+   "toks": [
+    "▁A"
+   ]
+  },
+  "real:ampere:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁amperes"
+   ]
+  },
+  "real:milliampere:short": {
+   "n": 1,
+   "toks": [
+    "▁mA"
+   ]
+  },
+  "real:milliampere:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁milli",
+    "amper",
+    "es"
+   ]
+  },
+  "real:kelvin:short": {
+   "n": 1,
+   "toks": [
+    "▁K"
+   ]
+  },
+  "real:kelvin:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁kel",
+    "vins"
+   ]
+  },
+  "real:mole:short": {
+   "n": 1,
+   "toks": [
+    "▁mol"
+   ]
+  },
+  "real:mole:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁moles"
+   ]
+  },
+  "real:candela:short": {
+   "n": 1,
+   "toks": [
+    "▁cd"
+   ]
+  },
+  "real:candela:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁can",
+    "de",
+    "las"
+   ]
+  },
+  "real:newton:short": {
+   "n": 1,
+   "toks": [
+    "▁N"
+   ]
+  },
+  "real:newton:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁new",
+    "tons"
+   ]
+  },
+  "real:kilonewton:short": {
+   "n": 1,
+   "toks": [
+    "▁kN"
+   ]
+  },
+  "real:kilonewton:long_pl": {
+   "n": 4,
+   "toks": [
+    "▁kil",
+    "one",
+    "w",
+    "tons"
+   ]
+  },
+  "real:dyne:short": {
+   "n": 1,
+   "toks": [
+    "▁dyn"
+   ]
+  },
+  "real:dyne:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁dyn",
+    "es"
+   ]
+  },
+  "real:pound_force:short": {
+   "n": 2,
+   "toks": [
+    "▁l",
+    "bf"
+   ]
+  },
+  "real:pound_force:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁pounds",
+    "-",
+    "force"
+   ]
+  },
+  "real:kilogram_force:short": {
+   "n": 2,
+   "toks": [
+    "▁kg",
+    "f"
+   ]
+  },
+  "real:kilogram_force:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁kilograms",
+    "-",
+    "force"
+   ]
+  },
+  "real:joule:short": {
+   "n": 1,
+   "toks": [
+    "▁J"
+   ]
+  },
+  "real:joule:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁jou",
+    "les"
+   ]
+  },
+  "real:kilojoule:short": {
+   "n": 1,
+   "toks": [
+    "▁kJ"
+   ]
+  },
+  "real:kilojoule:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁kilo",
+    "jou",
+    "les"
+   ]
+  },
+  "real:erg:short": {
+   "n": 1,
+   "toks": [
+    "▁erg"
+   ]
+  },
+  "real:erg:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁er",
+    "gs"
+   ]
+  },
+  "real:calorie:short": {
+   "n": 1,
+   "toks": [
+    "▁cal"
+   ]
+  },
+  "real:calorie:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁calories"
+   ]
+  },
+  "real:kilowatt_hour:short": {
+   "n": 1,
+   "toks": [
+    "▁kWh"
+   ]
+  },
+  "real:kilowatt_hour:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁kilowatt",
+    "-",
+    "hours"
+   ]
+  },
+  "real:electronvolt:short": {
+   "n": 1,
+   "toks": [
+    "▁eV"
+   ]
+  },
+  "real:electronvolt:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁electron",
+    "volts"
+   ]
+  },
+  "real:watt:short": {
+   "n": 1,
+   "toks": [
+    "▁W"
+   ]
+  },
+  "real:watt:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁watts"
+   ]
+  },
+  "real:kilowatt:short": {
+   "n": 1,
+   "toks": [
+    "▁kW"
+   ]
+  },
+  "real:kilowatt:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁kil",
+    "ow",
+    "atts"
+   ]
+  },
+  "real:horsepower:short": {
+   "n": 1,
+   "toks": [
+    "▁hp"
+   ]
+  },
+  "real:horsepower:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁horsepower"
+   ]
+  },
+  "real:pascal:short": {
+   "n": 1,
+   "toks": [
+    "▁Pa"
+   ]
+  },
+  "real:pascal:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁pas",
+    "cals"
+   ]
+  },
+  "real:kilopascal:short": {
+   "n": 1,
+   "toks": [
+    "▁kPa"
+   ]
+  },
+  "real:kilopascal:long_pl": {
+   "n": 4,
+   "toks": [
+    "▁kil",
+    "op",
+    "asc",
+    "als"
+   ]
+  },
+  "real:psi:short": {
+   "n": 1,
+   "toks": [
+    "▁psi"
+   ]
+  },
+  "real:psi:long_pl": {
+   "n": 4,
+   "toks": [
+    "▁pounds",
+    "▁per",
+    "▁square",
+    "▁inch"
+   ]
+  },
+  "real:bar:short": {
+   "n": 1,
+   "toks": [
+    "▁bar"
+   ]
+  },
+  "real:bar:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁bars"
+   ]
+  },
+  "real:atmosphere:short": {
+   "n": 1,
+   "toks": [
+    "▁atm"
+   ]
+  },
+  "real:atmosphere:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁atmospheres"
+   ]
+  },
+  "real:hertz:short": {
+   "n": 1,
+   "toks": [
+    "▁Hz"
+   ]
+  },
+  "real:hertz:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁her",
+    "tz"
+   ]
+  },
+  "real:kilohertz:short": {
+   "n": 1,
+   "toks": [
+    "▁kHz"
+   ]
+  },
+  "real:kilohertz:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁kil",
+    "oh",
+    "ertz"
+   ]
+  },
+  "real:becquerel:short": {
+   "n": 2,
+   "toks": [
+    "▁B",
+    "q"
+   ]
+  },
+  "real:becquerel:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁bec",
+    "quer",
+    "els"
+   ]
+  },
+  "real:coulomb:short": {
+   "n": 1,
+   "toks": [
+    "▁C"
+   ]
+  },
+  "real:coulomb:long_pl": {
+   "n": 3,
+   "toks": [
+    "▁cou",
+    "lom",
+    "bs"
+   ]
+  },
+  "real:volt:short": {
+   "n": 1,
+   "toks": [
+    "▁V"
+   ]
+  },
+  "real:volt:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁volts"
+   ]
+  },
+  "real:ohm:short": {
+   "n": 1,
+   "toks": [
+    "▁Ω"
+   ]
+  },
+  "real:ohm:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁ohms"
+   ]
+  },
+  "real:farad:short": {
+   "n": 1,
+   "toks": [
+    "▁F"
+   ]
+  },
+  "real:farad:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁far",
+    "ads"
+   ]
+  },
+  "real:tesla:short": {
+   "n": 1,
+   "toks": [
+    "▁T"
+   ]
+  },
+  "real:tesla:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁tes",
+    "las"
+   ]
+  },
+  "real:weber:short": {
+   "n": 2,
+   "toks": [
+    "▁W",
+    "b"
+   ]
+  },
+  "real:weber:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁web",
+    "ers"
+   ]
+  },
+  "real:gray:short": {
+   "n": 1,
+   "toks": [
+    "▁Gy"
+   ]
+  },
+  "real:gray:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁gra",
+    "ys"
+   ]
+  },
+  "real:sievert:short": {
+   "n": 1,
+   "toks": [
+    "▁Sv"
+   ]
+  },
+  "real:sievert:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁sie",
+    "verts"
+   ]
+  },
+  "real:knot:short": {
+   "n": 1,
+   "toks": [
+    "▁kn"
+   ]
+  },
+  "real:knot:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁knots"
+   ]
+  },
+  "real:liter:short": {
+   "n": 1,
+   "toks": [
+    "▁L"
+   ]
+  },
+  "real:liter:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁liters"
+   ]
+  },
+  "real:milliliter:short": {
+   "n": 1,
+   "toks": [
+    "▁mL"
+   ]
+  },
+  "real:milliliter:long_pl": {
+   "n": 2,
+   "toks": [
+    "▁milli",
+    "liters"
+   ]
+  },
+  "real:gallon:short": {
+   "n": 1,
+   "toks": [
+    "▁gal"
+   ]
+  },
+  "real:gallon:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁gallons"
+   ]
+  },
+  "real:hectare:short": {
+   "n": 1,
+   "toks": [
+    "▁ha"
+   ]
+  },
+  "real:hectare:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁hectares"
+   ]
+  },
+  "real:acre:short": {
+   "n": 1,
+   "toks": [
+    "▁ac"
+   ]
+  },
+  "real:acre:long_pl": {
+   "n": 1,
+   "toks": [
+    "▁acres"
+   ]
+  },
+  "compound:symbol": {
+   "n": 6,
+   "toks": [
+    "▁kg",
+    "·",
+    "m",
+    "/",
+    "s",
+    "²"
+   ]
+  },
+  "compound:ascii": {
+   "n": 7,
+   "toks": [
+    "▁kg",
+    "*",
+    "m",
+    "/",
+    "s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:slash": {
+   "n": 6,
+   "toks": [
+    "▁kg",
+    "▁m",
+    "/",
+    "s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:per": {
+   "n": 6,
+   "toks": [
+    "▁kg",
+    "▁m",
+    "▁per",
+    "▁s",
+    "^",
+    "2"
+   ]
+  },
+  "compound:long": {
+   "n": 5,
+   "toks": [
+    "▁kilogram",
+    "▁meters",
+    "▁per",
+    "▁second",
+    "▁squared"
+   ]
+  },
+  "inv:tauf": {
+   "n": 2,
+   "toks": [
+    "▁t",
+    "auf"
+   ]
+  },
+  "inv:tauf:pl": {
+   "n": 2,
+   "toks": [
+    "▁tau",
+    "fs"
+   ]
+  },
+  "inv:pleert": {
+   "n": 2,
+   "toks": [
+    "▁ple",
+    "ert"
+   ]
+  },
+  "inv:pleert:pl": {
+   "n": 2,
+   "toks": [
+    "▁ple",
+    "erts"
+   ]
+  },
+  "inv:trurp": {
+   "n": 2,
+   "toks": [
+    "▁tr",
+    "urp"
+   ]
+  },
+  "inv:trurp:pl": {
+   "n": 3,
+   "toks": [
+    "▁tr",
+    "ur",
+    "ps"
+   ]
+  },
+  "inv:stooz": {
+   "n": 2,
+   "toks": [
+    "▁sto",
+    "oz"
+   ]
+  },
+  "inv:stooz:pl": {
+   "n": 3,
+   "toks": [
+    "▁sto",
+    "oz",
+    "s"
+   ]
+  },
+  "inv:wrilp": {
+   "n": 3,
+   "toks": [
+    "▁w",
+    "ril",
+    "p"
+   ]
+  },
+  "inv:wrilp:pl": {
+   "n": 3,
+   "toks": [
+    "▁w",
+    "ril",
+    "ps"
+   ]
+  },
+  "inv:gleng": {
+   "n": 2,
+   "toks": [
+    "▁gl",
+    "eng"
+   ]
+  },
+  "inv:gleng:pl": {
+   "n": 3,
+   "toks": [
+    "▁gl",
+    "eng",
+    "s"
+   ]
+  },
+  "inv:pleex": {
+   "n": 2,
+   "toks": [
+    "▁ple",
+    "ex"
+   ]
+  },
+  "inv:pleex:pl": {
+   "n": 3,
+   "toks": [
+    "▁ple",
+    "ex",
+    "s"
+   ]
+  },
+  "inv:grum": {
+   "n": 2,
+   "toks": [
+    "▁gr",
+    "um"
+   ]
+  },
+  "inv:grum:pl": {
+   "n": 2,
+   "toks": [
+    "▁gr",
+    "ums"
+   ]
+  },
+  "inv:dround": {
+   "n": 2,
+   "toks": [
+    "▁d",
+    "round"
+   ]
+  },
+  "inv:dround:pl": {
+   "n": 2,
+   "toks": [
+    "▁d",
+    "rounds"
+   ]
+  },
+  "inv:sheem": {
+   "n": 2,
+   "toks": [
+    "▁she",
+    "em"
+   ]
+  },
+  "inv:sheem:pl": {
+   "n": 2,
+   "toks": [
+    "▁she",
+    "ems"
+   ]
+  },
+  "inv:staump": {
+   "n": 2,
+   "toks": [
+    "▁sta",
+    "ump"
+   ]
+  },
+  "inv:staump:pl": {
+   "n": 2,
+   "toks": [
+    "▁sta",
+    "umps"
+   ]
+  },
+  "inv:rouz": {
+   "n": 2,
+   "toks": [
+    "▁rou",
+    "z"
+   ]
+  },
+  "inv:rouz:pl": {
+   "n": 2,
+   "toks": [
+    "▁rou",
+    "zs"
+   ]
+  },
+  "inv:yearm": {
+   "n": 2,
+   "toks": [
+    "▁year",
+    "m"
+   ]
+  },
+  "inv:yearm:pl": {
+   "n": 2,
+   "toks": [
+    "▁year",
+    "ms"
+   ]
+  },
+  "inv:troab": {
+   "n": 2,
+   "toks": [
+    "▁tro",
+    "ab"
+   ]
+  },
+  "inv:troab:pl": {
+   "n": 2,
+   "toks": [
+    "▁tro",
+    "abs"
+   ]
+  },
+  "inv:reand": {
+   "n": 2,
+   "toks": [
+    "▁re",
+    "and"
+   ]
+  },
+  "inv:reand:pl": {
+   "n": 2,
+   "toks": [
+    "▁re",
+    "ands"
+   ]
+  },
+  "inv:poamp": {
+   "n": 2,
+   "toks": [
+    "▁po",
+    "amp"
+   ]
+  },
+  "inv:poamp:pl": {
+   "n": 2,
+   "toks": [
+    "▁po",
+    "amps"
+   ]
+  },
+  "inv:drosh": {
+   "n": 2,
+   "toks": [
+    "▁d",
+    "rosh"
+   ]
+  },
+  "inv:drosh:pl": {
+   "n": 3,
+   "toks": [
+    "▁d",
+    "ros",
+    "hs"
+   ]
+  },
+  "inv:queal": {
+   "n": 2,
+   "toks": [
+    "▁que",
+    "al"
+   ]
+  },
+  "inv:queal:pl": {
+   "n": 2,
+   "toks": [
+    "▁que",
+    "als"
+   ]
+  },
+  "inv:flaisk": {
+   "n": 2,
+   "toks": [
+    "▁fla",
+    "isk"
+   ]
+  },
+  "inv:flaisk:pl": {
+   "n": 2,
+   "toks": [
+    "▁fla",
+    "isks"
+   ]
+  },
+  "inv:chelt": {
+   "n": 2,
+   "toks": [
+    "▁che",
+    "lt"
+   ]
+  },
+  "inv:chelt:pl": {
+   "n": 2,
+   "toks": [
+    "▁che",
+    "lts"
+   ]
+  },
+  "inv:yaist": {
+   "n": 2,
+   "toks": [
+    "▁ya",
+    "ist"
+   ]
+  },
+  "inv:yaist:pl": {
+   "n": 2,
+   "toks": [
+    "▁ya",
+    "ists"
+   ]
+  },
+  "inv:mooth": {
+   "n": 2,
+   "toks": [
+    "▁m",
+    "ooth"
+   ]
+  },
+  "inv:mooth:pl": {
+   "n": 3,
+   "toks": [
+    "▁m",
+    "ooth",
+    "s"
+   ]
+  },
+  "inv:hurm": {
+   "n": 2,
+   "toks": [
+    "▁hur",
+    "m"
+   ]
+  },
+  "inv:hurm:pl": {
+   "n": 2,
+   "toks": [
+    "▁hur",
+    "ms"
+   ]
+  },
+  "inv:floopt": {
+   "n": 2,
+   "toks": [
+    "▁flo",
+    "opt"
+   ]
+  },
+  "inv:floopt:pl": {
+   "n": 2,
+   "toks": [
+    "▁flo",
+    "opts"
+   ]
+  },
+  "inv:snooft": {
+   "n": 2,
+   "toks": [
+    "▁sno",
+    "oft"
+   ]
+  },
+  "inv:snooft:pl": {
+   "n": 3,
+   "toks": [
+    "▁sno",
+    "of",
+    "ts"
+   ]
+  },
+  "inv:skiv": {
+   "n": 2,
+   "toks": [
+    "▁sk",
+    "iv"
+   ]
+  },
+  "inv:skiv:pl": {
+   "n": 3,
+   "toks": [
+    "▁sk",
+    "iv",
+    "s"
+   ]
+  },
+  "inv:klang": {
+   "n": 2,
+   "toks": [
+    "▁k",
+    "lang"
+   ]
+  },
+  "inv:klang:pl": {
+   "n": 2,
+   "toks": [
+    "▁k",
+    "langs"
+   ]
+  },
+  "inv:pleak": {
+   "n": 2,
+   "toks": [
+    "▁ple",
+    "ak"
+   ]
+  },
+  "inv:pleak:pl": {
+   "n": 2,
+   "toks": [
+    "▁ple",
+    "aks"
+   ]
+  },
+  "inv:floup": {
+   "n": 2,
+   "toks": [
+    "▁fl",
+    "oup"
+   ]
+  },
+  "inv:floup:pl": {
+   "n": 3,
+   "toks": [
+    "▁fl",
+    "ou",
+    "ps"
+   ]
+  },
+  "inv:gral": {
+   "n": 2,
+   "toks": [
+    "▁gr",
+    "al"
+   ]
+  },
+  "inv:gral:pl": {
+   "n": 2,
+   "toks": [
+    "▁gr",
+    "als"
+   ]
+  },
+  "inv:quourb": {
+   "n": 3,
+   "toks": [
+    "▁qu",
+    "our",
+    "b"
+   ]
+  },
+  "inv:quourb:pl": {
+   "n": 3,
+   "toks": [
+    "▁qu",
+    "our",
+    "bs"
+   ]
+  },
+  "inv:jusp": {
+   "n": 2,
+   "toks": [
+    "▁jus",
+    "p"
+   ]
+  },
+  "inv:jusp:pl": {
+   "n": 2,
+   "toks": [
+    "▁jus",
+    "ps"
+   ]
+  },
+  "inv:poch": {
+   "n": 1,
+   "toks": [
+    "▁poch"
+   ]
+  },
+  "inv:poch:pl": {
+   "n": 2,
+   "toks": [
+    "▁po",
+    "chs"
+   ]
+  },
+  "inv:voolm": {
+   "n": 2,
+   "toks": [
+    "▁vo",
+    "olm"
+   ]
+  },
+  "inv:voolm:pl": {
+   "n": 3,
+   "toks": [
+    "▁vo",
+    "ol",
+    "ms"
+   ]
+  },
+  "inv:zeank": {
+   "n": 2,
+   "toks": [
+    "▁ze",
+    "ank"
+   ]
+  },
+  "inv:zeank:pl": {
+   "n": 2,
+   "toks": [
+    "▁ze",
+    "anks"
+   ]
+  },
+  "inv:flaing": {
+   "n": 2,
+   "toks": [
+    "▁fla",
+    "ing"
+   ]
+  },
+  "inv:flaing:pl": {
+   "n": 2,
+   "toks": [
+    "▁fla",
+    "ings"
+   ]
+  },
+  "inv:geach": {
+   "n": 2,
+   "toks": [
+    "▁g",
+    "each"
+   ]
+  },
+  "inv:geach:pl": {
+   "n": 3,
+   "toks": [
+    "▁g",
+    "each",
+    "s"
+   ]
+  },
+  "inv:spoft": {
+   "n": 2,
+   "toks": [
+    "▁sp",
+    "oft"
+   ]
+  },
+  "inv:spoft:pl": {
+   "n": 3,
+   "toks": [
+    "▁sp",
+    "of",
+    "ts"
+   ]
+  },
+  "inv:bloalm": {
+   "n": 2,
+   "toks": [
+    "▁blo",
+    "alm"
+   ]
+  },
+  "inv:bloalm:pl": {
+   "n": 3,
+   "toks": [
+    "▁blo",
+    "al",
+    "ms"
+   ]
+  },
+  "inv:goack": {
+   "n": 2,
+   "toks": [
+    "▁go",
+    "ack"
+   ]
+  },
+  "inv:goack:pl": {
+   "n": 2,
+   "toks": [
+    "▁go",
+    "acks"
+   ]
+  },
+  "inv:strind": {
+   "n": 2,
+   "toks": [
+    "▁str",
+    "ind"
+   ]
+  },
+  "inv:strind:pl": {
+   "n": 2,
+   "toks": [
+    "▁str",
+    "inds"
+   ]
+  },
+  "inv:vram": {
+   "n": 2,
+   "toks": [
+    "▁v",
+    "ram"
+   ]
+  },
+  "inv:vram:pl": {
+   "n": 2,
+   "toks": [
+    "▁vra",
+    "ms"
+   ]
+  },
+  "inv:groack": {
+   "n": 2,
+   "toks": [
+    "▁gro",
+    "ack"
+   ]
+  },
+  "inv:groack:pl": {
+   "n": 2,
+   "toks": [
+    "▁gro",
+    "acks"
+   ]
+  },
+  "inv:broost": {
+   "n": 2,
+   "toks": [
+    "▁bro",
+    "ost"
+   ]
+  },
+  "inv:broost:pl": {
+   "n": 3,
+   "toks": [
+    "▁bro",
+    "ost",
+    "s"
+   ]
+  },
+  "inv:louk": {
+   "n": 2,
+   "toks": [
+    "▁lou",
+    "k"
+   ]
+  },
+  "inv:louk:pl": {
+   "n": 2,
+   "toks": [
+    "▁lou",
+    "ks"
+   ]
+  },
+  "inv:blev": {
+   "n": 1,
+   "toks": [
+    "▁blev"
+   ]
+  },
+  "inv:blev:pl": {
+   "n": 2,
+   "toks": [
+    "▁blev",
+    "s"
+   ]
+  },
+  "inv:loon": {
+   "n": 1,
+   "toks": [
+    "▁loon"
+   ]
+  },
+  "inv:loon:pl": {
+   "n": 2,
+   "toks": [
+    "▁lo",
+    "ons"
+   ]
+  },
+  "inv:trent": {
+   "n": 1,
+   "toks": [
+    "▁trent"
+   ]
+  },
+  "inv:trent:pl": {
+   "n": 2,
+   "toks": [
+    "▁t",
+    "rents"
+   ]
+  },
+  "inv:blot": {
+   "n": 1,
+   "toks": [
+    "▁blot"
+   ]
+  },
+  "inv:blot:pl": {
+   "n": 2,
+   "toks": [
+    "▁blo",
+    "ts"
+   ]
+  },
+  "inv:geaz": {
+   "n": 2,
+   "toks": [
+    "▁gea",
+    "z"
+   ]
+  },
+  "inv:geaz:pl": {
+   "n": 2,
+   "toks": [
+    "▁gea",
+    "zs"
+   ]
+  },
+  "inv:doud": {
+   "n": 2,
+   "toks": [
+    "▁d",
+    "oud"
+   ]
+  },
+  "inv:doud:pl": {
+   "n": 2,
+   "toks": [
+    "▁dou",
+    "ds"
+   ]
+  },
+  "inv:quaung": {
+   "n": 2,
+   "toks": [
+    "▁qu",
+    "aung"
+   ]
+  },
+  "inv:quaung:pl": {
+   "n": 3,
+   "toks": [
+    "▁qu",
+    "au",
+    "ngs"
+   ]
+  },
+  "inv:fruk": {
+   "n": 2,
+   "toks": [
+    "▁fru",
+    "k"
+   ]
+  },
+  "inv:fruk:pl": {
+   "n": 2,
+   "toks": [
+    "▁fru",
+    "ks"
+   ]
+  },
+  "inv:nelt": {
+   "n": 2,
+   "toks": [
+    "▁ne",
+    "lt"
+   ]
+  },
+  "inv:nelt:pl": {
+   "n": 2,
+   "toks": [
+    "▁nel",
+    "ts"
+   ]
+  },
+  "inv:staut": {
+   "n": 2,
+   "toks": [
+    "▁sta",
+    "ut"
+   ]
+  },
+  "inv:staut:pl": {
+   "n": 2,
+   "toks": [
+    "▁sta",
+    "uts"
+   ]
+  },
+  "inv:deern": {
+   "n": 2,
+   "toks": [
+    "▁de",
+    "ern"
+   ]
+  },
+  "inv:deern:pl": {
+   "n": 2,
+   "toks": [
+    "▁deer",
+    "ns"
+   ]
+  },
+  "inv:broom": {
+   "n": 1,
+   "toks": [
+    "▁broom"
+   ]
+  },
+  "inv:broom:pl": {
+   "n": 1,
+   "toks": [
+    "▁brooms"
+   ]
+  },
+  "inv:trolk": {
+   "n": 2,
+   "toks": [
+    "▁trol",
+    "k"
+   ]
+  },
+  "inv:trolk:pl": {
+   "n": 2,
+   "toks": [
+    "▁trol",
+    "ks"
+   ]
+  },
+  "inv:stoarp": {
+   "n": 2,
+   "toks": [
+    "▁sto",
+    "arp"
+   ]
+  },
+  "inv:stoarp:pl": {
+   "n": 3,
+   "toks": [
+    "▁sto",
+    "ar",
+    "ps"
+   ]
+  },
+  "inv:dous": {
+   "n": 2,
+   "toks": [
+    "▁d",
+    "ous"
+   ]
+  },
+  "inv:dous:pl": {
+   "n": 2,
+   "toks": [
+    "▁dou",
+    "ss"
+   ]
+  },
+  "inv:kaisp": {
+   "n": 2,
+   "toks": [
+    "▁ka",
+    "isp"
+   ]
+  },
+  "inv:kaisp:pl": {
+   "n": 3,
+   "toks": [
+    "▁ka",
+    "is",
+    "ps"
+   ]
+  },
+  "inv:plex": {
+   "n": 1,
+   "toks": [
+    "▁plex"
+   ]
+  },
+  "inv:plex:pl": {
+   "n": 2,
+   "toks": [
+    "▁plex",
+    "s"
+   ]
+  },
+  "inv:zout": {
+   "n": 1,
+   "toks": [
+    "▁zout"
+   ]
+  },
+  "inv:zout:pl": {
+   "n": 2,
+   "toks": [
+    "▁z",
+    "outs"
+   ]
+  },
+  "inv:beard": {
+   "n": 1,
+   "toks": [
+    "▁beard"
+   ]
+  },
+  "inv:beard:pl": {
+   "n": 1,
+   "toks": [
+    "▁beards"
+   ]
+  },
+  "inv:weelt": {
+   "n": 2,
+   "toks": [
+    "▁we",
+    "elt"
+   ]
+  },
+  "inv:weelt:pl": {
+   "n": 2,
+   "toks": [
+    "▁we",
+    "elts"
+   ]
+  },
+  "inv:staulk": {
+   "n": 2,
+   "toks": [
+    "▁sta",
+    "ulk"
+   ]
+  },
+  "inv:staulk:pl": {
+   "n": 3,
+   "toks": [
+    "▁sta",
+    "ul",
+    "ks"
+   ]
+  },
+  "inv:greeb": {
+   "n": 2,
+   "toks": [
+    "▁gree",
+    "b"
+   ]
+  },
+  "inv:greeb:pl": {
+   "n": 2,
+   "toks": [
+    "▁gree",
+    "bs"
+   ]
+  },
+  "inv:thoal": {
+   "n": 2,
+   "toks": [
+    "▁tho",
+    "al"
+   ]
+  },
+  "inv:thoal:pl": {
+   "n": 2,
+   "toks": [
+    "▁tho",
+    "als"
+   ]
+  },
+  "inv:spoaf": {
+   "n": 2,
+   "toks": [
+    "▁spo",
+    "af"
+   ]
+  },
+  "inv:spoaf:pl": {
+   "n": 2,
+   "toks": [
+    "▁spo",
+    "afs"
+   ]
+  },
+  "inv:quup": {
+   "n": 2,
+   "toks": [
+    "▁qu",
+    "up"
+   ]
+  },
+  "inv:quup:pl": {
+   "n": 2,
+   "toks": [
+    "▁qu",
+    "ups"
+   ]
+  },
+  "inv:peank": {
+   "n": 2,
+   "toks": [
+    "▁pe",
+    "ank"
+   ]
+  },
+  "inv:peank:pl": {
+   "n": 2,
+   "toks": [
+    "▁pe",
+    "anks"
+   ]
+  },
+  "inv:runk": {
+   "n": 2,
+   "toks": [
+    "▁run",
+    "k"
+   ]
+  },
+  "inv:runk:pl": {
+   "n": 2,
+   "toks": [
+    "▁run",
+    "ks"
+   ]
+  },
+  "inv:houng": {
+   "n": 2,
+   "toks": [
+    "▁hou",
+    "ng"
+   ]
+  },
+  "inv:houng:pl": {
+   "n": 2,
+   "toks": [
+    "▁hou",
+    "ngs"
+   ]
+  },
+  "inv:gloalt": {
+   "n": 2,
+   "toks": [
+    "▁glo",
+    "alt"
+   ]
+  },
+  "inv:gloalt:pl": {
+   "n": 2,
+   "toks": [
+    "▁glo",
+    "alts"
+   ]
+  },
+  "inv:toard": {
+   "n": 2,
+   "toks": [
+    "▁to",
+    "ard"
+   ]
+  },
+  "inv:toard:pl": {
+   "n": 2,
+   "toks": [
+    "▁to",
+    "ards"
+   ]
+  },
+  "inv:flax": {
+   "n": 1,
+   "toks": [
+    "▁flax"
+   ]
+  },
+  "inv:flax:pl": {
+   "n": 2,
+   "toks": [
+    "▁fla",
+    "xs"
+   ]
+  },
+  "inv:kroand": {
+   "n": 2,
+   "toks": [
+    "▁kro",
+    "and"
+   ]
+  },
+  "inv:kroand:pl": {
+   "n": 2,
+   "toks": [
+    "▁kro",
+    "ands"
+   ]
+  },
+  "inv:kock": {
+   "n": 1,
+   "toks": [
+    "▁kock"
+   ]
+  },
+  "inv:kock:pl": {
+   "n": 2,
+   "toks": [
+    "▁ko",
+    "cks"
+   ]
+  },
+  "inv:zaush": {
+   "n": 2,
+   "toks": [
+    "▁za",
+    "ush"
+   ]
+  },
+  "inv:zaush:pl": {
+   "n": 3,
+   "toks": [
+    "▁za",
+    "ush",
+    "s"
+   ]
+  },
+  "inv:varb": {
+   "n": 2,
+   "toks": [
+    "▁var",
+    "b"
+   ]
+  },
+  "inv:varb:pl": {
+   "n": 2,
+   "toks": [
+    "▁var",
+    "bs"
+   ]
+  },
+  "inv:wauf": {
+   "n": 2,
+   "toks": [
+    "▁w",
+    "auf"
+   ]
+  },
+  "inv:wauf:pl": {
+   "n": 2,
+   "toks": [
+    "▁w",
+    "aufs"
+   ]
+  },
+  "inv:keak": {
+   "n": 2,
+   "toks": [
+    "▁k",
+    "eak"
+   ]
+  },
+  "inv:keak:pl": {
+   "n": 2,
+   "toks": [
+    "▁kea",
+    "ks"
+   ]
+  },
+  "inv:ploas": {
+   "n": 2,
+   "toks": [
+    "▁plo",
+    "as"
+   ]
+  },
+  "inv:ploas:pl": {
+   "n": 2,
+   "toks": [
+    "▁plo",
+    "ass"
+   ]
+  },
+  "inv:zeert": {
+   "n": 2,
+   "toks": [
+    "▁ze",
+    "ert"
+   ]
+  },
+  "inv:zeert:pl": {
+   "n": 2,
+   "toks": [
+    "▁ze",
+    "erts"
+   ]
+  },
+  "inv:yoob": {
+   "n": 2,
+   "toks": [
+    "▁y",
+    "oob"
+   ]
+  },
+  "inv:yoob:pl": {
+   "n": 2,
+   "toks": [
+    "▁yoo",
+    "bs"
+   ]
+  },
+  "inv:breamp": {
+   "n": 2,
+   "toks": [
+    "▁bre",
+    "amp"
+   ]
+  },
+  "inv:breamp:pl": {
+   "n": 3,
+   "toks": [
+    "▁b",
+    "ream",
+    "ps"
+   ]
+  },
+  "inv:sleag": {
+   "n": 2,
+   "toks": [
+    "▁sle",
+    "ag"
+   ]
+  },
+  "inv:sleag:pl": {
+   "n": 2,
+   "toks": [
+    "▁sle",
+    "ags"
+   ]
+  },
+  "inv:voth": {
+   "n": 2,
+   "toks": [
+    "▁vo",
+    "th"
+   ]
+  },
+  "inv:voth:pl": {
+   "n": 2,
+   "toks": [
+    "▁vo",
+    "ths"
+   ]
+  },
+  "inv:floap": {
+   "n": 2,
+   "toks": [
+    "▁flo",
+    "ap"
+   ]
+  },
+  "inv:floap:pl": {
+   "n": 2,
+   "toks": [
+    "▁flo",
+    "aps"
+   ]
+  },
+  "inv:baurd": {
+   "n": 2,
+   "toks": [
+    "▁ba",
+    "urd"
+   ]
+  },
+  "inv:baurd:pl": {
+   "n": 3,
+   "toks": [
+    "▁ba",
+    "ur",
+    "ds"
+   ]
+  },
+  "inv:snaz": {
+   "n": 2,
+   "toks": [
+    "▁sna",
+    "z"
+   ]
+  },
+  "inv:snaz:pl": {
+   "n": 2,
+   "toks": [
+    "▁sna",
+    "zs"
+   ]
+  },
+  "inv:boab": {
+   "n": 2,
+   "toks": [
+    "▁bo",
+    "ab"
+   ]
+  },
+  "inv:boab:pl": {
+   "n": 2,
+   "toks": [
+    "▁bo",
+    "abs"
+   ]
+  },
+  "inv:joom": {
+   "n": 2,
+   "toks": [
+    "▁jo",
+    "om"
+   ]
+  },
+  "inv:joom:pl": {
+   "n": 2,
+   "toks": [
+    "▁jo",
+    "oms"
+   ]
+  },
+  "inv:krex": {
+   "n": 2,
+   "toks": [
+    "▁kre",
+    "x"
+   ]
+  },
+  "inv:krex:pl": {
+   "n": 2,
+   "toks": [
+    "▁kre",
+    "xs"
+   ]
+  },
+  "inv:krulm": {
+   "n": 3,
+   "toks": [
+    "▁kr",
+    "ul",
+    "m"
+   ]
+  },
+  "inv:krulm:pl": {
+   "n": 3,
+   "toks": [
+    "▁kr",
+    "ul",
+    "ms"
+   ]
+  },
+  "inv:klerp": {
+   "n": 2,
+   "toks": [
+    "▁k",
+    "lerp"
+   ]
+  },
+  "inv:klerp:pl": {
+   "n": 3,
+   "toks": [
+    "▁k",
+    "ler",
+    "ps"
+   ]
+  },
+  "inv:troul": {
+   "n": 2,
+   "toks": [
+    "▁trou",
+    "l"
+   ]
+  },
+  "inv:troul:pl": {
+   "n": 2,
+   "toks": [
+    "▁trou",
+    "ls"
+   ]
+  },
+  "inv:blurm": {
+   "n": 2,
+   "toks": [
+    "▁blur",
+    "m"
+   ]
+  },
+  "inv:blurm:pl": {
+   "n": 2,
+   "toks": [
+    "▁blur",
+    "ms"
+   ]
+  },
+  "inv:jounk": {
+   "n": 3,
+   "toks": [
+    "▁j",
+    "oun",
+    "k"
+   ]
+  },
+  "inv:jounk:pl": {
+   "n": 3,
+   "toks": [
+    "▁j",
+    "oun",
+    "ks"
+   ]
+  },
+  "inv:gilm": {
+   "n": 2,
+   "toks": [
+    "▁gil",
+    "m"
+   ]
+  },
+  "inv:gilm:pl": {
+   "n": 2,
+   "toks": [
+    "▁gil",
+    "ms"
+   ]
+  }
+ }
+}

@@ -67,3 +67,25 @@ See `DESIGN_phase0.md`, `decisions/DR-001-*.md` (adversarial pass on the design)
 | Phase | GPU-hours (approx) | Notes |
 |---|---|---|
 | 0 | 0 | env build only so far |
+
+## 2026-09-13 — Day 1 (early): library built, E0.0 audits, infrastructure friction
+
+### E0.0 — tokenisation audit (`runs/E0.0/tokenization_audit.json`)
+- Invented lexemes (CVC/CVCC, 4–6 chars) tokenise to 2 tokens for ~80%, 3 for ~17%, 1 for ~3% (Qwen3 and OLMo-3 tokenisers behave identically on all audited strings; Gemma-2: 85/11/4%). No lexeme exceeds 3 tokens → no tokenisation pathology (PREDICTIONS_phase0 "distrust a FAIL" clause 1 is satisfied).
+- Real units: short symbols are 1 token for 65/79 (Qwen3/OLMo-3) and 72/79 (Gemma-2); long plurals 1–4 tokens.
+- Compound renderings split sensibly, e.g. `kg·m/s²` → [kg][·][m][/s][²]; `kilogram meters per second squared` → 6 tokens. The mean-per-token log-prob readout is therefore comparing candidates of 3–8 tokens; length-matched distractors (see below) keep this fair.
+
+### Library ↔ model support (E0.0)
+- transformers 4.57.6 has `Qwen3ForCausalLM`, `Olmo3ForCausalLM`, `Gemma2ForCausalLM`.
+- pyvene 0.1.8 ships module maps for Qwen2/Olmo(v1)/Gemma2/Llama/Mistral but **not Qwen3 or Olmo3**. nnsight 0.7 wraps any HF model.
+- **Decision (engineering default changed):** implement DAS ourselves in plain PyTorch (forward hooks on the residual stream at chosen layer/positions; orthogonal rotation via `torch.nn.utils.parametrizations.orthogonal`; interchange = swap the first k rotated coordinates). Reasons: (i) uniform treatment of the control regime (matched-rank random subspaces, rank sweeps, probe-derived subspaces, noising/denoising) without fighting a library's abstractions; (ii) no dependence on pyvene's per-architecture maps; (iii) ~200 lines, fully auditable. pyvene remains available for a cross-check on Gemma-2 (supported) in Phase 2.
+
+### Stimulus library status (E0.1)
+- 17 unit tests green (dimension group laws; every registry unit's dimension and SI scale checked against Pint; near-miss pairs; rendering; lexeme generator; task generators incl. yes/no balance and both surface orders per relation; Phase-1 mention spans).
+- Two design fixes after inspecting generated items (logged in DR-001 addendum below): (1) distractors are now **length-matched** — every distractor uses all the lexemes of the correct answer (inverted / exponent-permuted / random lattice point over the same lexemes), replacing the earlier "single unit" distractor that made the correct answer the longest candidate in 62% of items; (2) compound units are composed **system-consistently** (metric or imperial, never "foot kilograms") and T1 inputs use natural everyday units (no "126 yd in 9 ms").
+- Built: `data/phase0/{T1..T5}_s0.jsonl` (240 items per condition; T1 has 4 conditions + 2 twin sets = 1440 items) and `T1_s1.jsonl` (second stimulus seed for the headline cell).
+
+### Infrastructure friction (all logged as flags F4/F5)
+- All 8 A100s on rosetta4 became occupied by other users' jobs at ~23:50; no GPU work launched since.
+- The NFS home is the bottleneck for everything: `conda activate` ≈ 50 s, `import torch` 20–100 s, and python processes sit in `rpc_wait_bit_killable`. My own 64 GB OLMo-3-32B download was a contributor; it is paused (SIGSTOP) until GPU work is possible anyway.
+- infini-gram API occasionally times out; the frequency cache now records misses and re-queries on the next run.

@@ -28,5 +28,5 @@ def test_names():
 
 
 def test_invented_basis():
-    x = Dimension(X1=1)
+    x = Dimension(X=1)
     assert (x / Dimension(T=1)).vector(basis=BASE_SYMBOLS + ("X",)) == (0, 0, -1, 0, 0, 0, 0, 1)

@@ -29,5 +29,4 @@ for i, s in enumerate(strings):
     if i % 50 == 0:
         fc.save(); print(i, s, fc.counts[s], flush=True)
 fc.save()
-inv = [s for s in strings if s.startswith("inv:")]
-print("done; cached", len(fc.counts))
+print("done; cached", len(fc.counts), "missing", len(fc.missing()))

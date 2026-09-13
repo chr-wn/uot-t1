@@ -70,6 +70,11 @@ NATURAL_UNITS = {
     "M": ["kilogram", "gram", "pound", "tonne"],
     "T": ["second", "minute", "hour"],
 }
+# System-consistent sets for composing compound expressions (no "foot kilograms").
+NATURAL_SYSTEMS = {
+    "metric": {"L": ["meter", "kilometer", "centimeter"], "M": ["kilogram", "gram"], "T": ["second", "minute", "hour"]},
+    "imperial": {"L": ["foot", "mile", "inch"], "M": ["pound"], "T": ["second", "minute", "hour"]},
+}
 # Named-derived units used as inputs for composite slots (FAM conditions).
 NAMED_FOR_DIM = {
     "M L/T2": ["newton", "kilonewton", "pound_force"],
@@ -104,8 +109,14 @@ def pick_unit(rng: random.Random, dim: Dimension, *, pool: str = "core") -> Unit
     named = NAMED_FOR_DIM.get(str(dim))
     if named and (rng.random() < 0.5 or dim.distance() > 4):
         return UnitExpr.of(reg[rng.choice(named)])
-    # compound expressions are always composed from natural units
-    return compose_from_base(rng, dim, lambda s: pick_unit(rng, Dimension({s: 1}), pool="natural").factors[0][0])
+    # compound expressions are composed from natural, system-consistent units
+    sysname = rng.choice(list(NATURAL_SYSTEMS))
+    table = NATURAL_SYSTEMS[sysname]
+
+    def base_unit_for(s: str) -> Unit:
+        ids = table.get(s) or [u.id for u in reg.base_units(s, invented=False)]
+        return reg[rng.choice(ids)]
+    return compose_from_base(rng, dim, base_unit_for)
 
 
 def compose_from_base(rng: random.Random, dim: Dimension, base_unit_for) -> UnitExpr:
@@ -119,15 +130,16 @@ def compose_from_base(rng: random.Random, dim: Dimension, base_unit_for) -> Unit
 # ---- candidate construction --------------------------------------------------
 
 def lattice_neighbours(units: Sequence[Unit], correct: UnitExpr, rng: random.Random, k: int = 3,
-                       exps: Sequence[int] = (-2, -1, 1, 2)) -> list[tuple[UnitExpr, str]]:
+                       exps: Sequence[int] = (-3, -2, -1, 1, 2, 3)) -> list[tuple[UnitExpr, str]]:
     """Distractor unit expressions built from the same lexemes at other lattice points.
 
-    Priority: inverted (all exponents negated), 'copy' (all exponents ±1 in the correct sign
-    pattern — equals correct for simple quotients, then skipped), product (all +1), single first
-    unit, then random other points.  Returns (expr, role) pairs, distinct and != correct.
+    Length-matched by construction: every distractor uses *all* the lexemes of the correct
+    expression with nonzero exponents, so candidates differ only in exponents/arrangement.
+    Priority: inverted (all exponents negated), exp_swapped (exponents permuted across units, or
+    ±1 for a single unit), then random points over the same lexemes.  Returns (expr, role) pairs,
+    distinct and != correct.
     """
     corr = correct.canonical()
-    cu = {u.id: e for u, e in corr.factors}
     out: list[tuple[UnitExpr, str]] = []
     seen = {corr}
 
@@ -140,17 +152,23 @@ def lattice_neighbours(units: Sequence[Unit], correct: UnitExpr, rng: random.Ran
         seen.add(ex)
         out.append((ex, role))
 
-    push(UnitExpr.of(*[(u, -e) for u, e in corr.factors]), "inverted")
-    push(UnitExpr.of(*[(u, 1 if e > 0 else -1) for u, e in corr.factors]), "exp_dropped")
-    push(UnitExpr.of(*[(u, 1) for u in units]), "product")
-    push(UnitExpr.of((units[0], 1)), "single")
-    if len(units) > 1:
-        push(UnitExpr.of((units[1], 1)), "single")
+    fs = list(corr.factors)
+    push(UnitExpr.of(*[(u, -e) for u, e in fs]), "inverted")
+    if len(fs) >= 2:
+        es = [e for _, e in fs]
+        perm = es[1:] + es[:1]
+        push(UnitExpr.of(*[(u, e) for (u, _), e in zip(fs, perm)]), "exp_swapped")
+    else:
+        u, e = fs[0]
+        push(UnitExpr.of((u, e + 1 if e > 0 else e - 1)), "exp_swapped")
+        push(UnitExpr.of((u, 1 if abs(e) != 1 else 2)), "exp_dropped")
     tries = 0
-    while len(out) < k and tries < 200:
+    while len(out) < k and tries < 500:
         tries += 1
-        fs = [(u, rng.choice(exps)) for u in units]
-        push(UnitExpr.of(*fs), "random_point")
+        push(UnitExpr.of(*[(u, rng.choice(exps)) for u, _ in fs]), "random_point")
+    if len(out) < k:
+        push(UnitExpr.of(*[(u, 1) for u, _ in fs]), "product")
+        push(UnitExpr.of((fs[0][0], 1)), "single")
     if len(out) < k:
         raise RuntimeError("could not build enough distractors")
     return out
