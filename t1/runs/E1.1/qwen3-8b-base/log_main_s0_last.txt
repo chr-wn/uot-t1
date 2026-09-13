@@ -1,0 +1,13 @@
+/data/rbg/users/charlie/interp/uot/t1/env/lib/python3.11/site-packages/sklearn/decomposition/_pca.py:779: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+last         L  0 lex: nearest=0.017 axis=0.233 r2=-0.006 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.018
+last         L  4 lex: nearest=0.112 axis=0.436 r2=0.589 ctrl_axis=0.205 | lattice-holdout: nearest=0.088 axis=0.402 r2=0.540
+last         L  8 lex: nearest=0.070 axis=0.374 r2=0.460 ctrl_axis=0.207 | lattice-holdout: nearest=0.048 axis=0.338 r2=0.422
+last         L 12 lex: nearest=0.075 axis=0.380 r2=0.474 ctrl_axis=0.206 | lattice-holdout: nearest=0.056 axis=0.343 r2=0.448
+last         L 16 lex: nearest=0.059 axis=0.350 r2=0.416 ctrl_axis=0.205 | lattice-holdout: nearest=0.038 axis=0.300 r2=0.386
+last         L 20 lex: nearest=0.064 axis=0.372 r2=0.440 ctrl_axis=0.206 | lattice-holdout: nearest=0.049 axis=0.336 r2=0.437
+last         L 24 lex: nearest=0.057 axis=0.344 r2=0.430 ctrl_axis=0.206 | lattice-holdout: nearest=0.030 axis=0.300 r2=0.396
+last         L 28 lex: nearest=0.082 axis=0.388 r2=0.512 ctrl_axis=0.206 | lattice-holdout: nearest=0.060 axis=0.348 r2=0.475
+last         L 32 lex: nearest=0.077 axis=0.379 r2=0.486 ctrl_axis=0.206 | lattice-holdout: nearest=0.051 axis=0.343 r2=0.458
+last         L 36 lex: nearest=0.082 axis=0.394 r2=0.486 ctrl_axis=0.195 | lattice-holdout: nearest=0.059 axis=0.343 r2=0.453
+wrote runs/E1.1/qwen3-8b-base

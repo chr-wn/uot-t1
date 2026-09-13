@@ -8,6 +8,6 @@ export CUDA_VISIBLE_DEVICES=$GPU
 for m in "$@"; do
   echo "=== cache $m $(date)"
   DM=""; [ "$m" = "olmo3-32b" ] && DM="--device-map auto"
-  $PY scripts/phase1/02_cache_residuals.py --model $m --stimuli data/phase1/P1_s0.jsonl data/phase1/P1_s1.jsonl --batch 16 $DM
+  $PY scripts/phase1/02_cache_residuals.py --model $m --stimuli data/phase1/${STIM:-P1}_s0.jsonl data/phase1/${STIM:-P1}_s1.jsonl --batch 16 $DM
 done
 echo "=== done cache $(date)"

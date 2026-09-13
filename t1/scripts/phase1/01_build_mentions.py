@@ -15,11 +15,12 @@ ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--out", default=None)
 ap.add_argument("--n-lattice", type=int, default=3000)
 ap.add_argument("--n-base", type=int, default=900)
+ap.add_argument("--name", default="P1")
 args = ap.parse_args()
 out = Path(args.out or (Path(__file__).resolve().parents[2] / "data" / "phase1"))
 out.mkdir(parents=True, exist_ok=True)
 items = generate(args.n, seed=args.seed, n_override={"REAL-LATTICE": args.n_lattice, "REAL-BASE": args.n_base, "REAL-NAMED": args.n_base})
-p = out / f"P1_s{args.seed}.jsonl"
+p = out / f"{args.name}_s{args.seed}.jsonl"
 to_jsonl(items, str(p))
 print(len(items), dict(Counter((it.condition, it.family) for it in items)), "->", p)
 print("distinct lattice points:", len({it.dimension for it in items}))
