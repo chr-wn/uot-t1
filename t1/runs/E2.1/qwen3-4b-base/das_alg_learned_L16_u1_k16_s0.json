@@ -1,113 +1,113 @@
 {
  "model": "qwen3-4b-base",
- "layer": 24,
+ "layer": 16,
  "position": "u1",
- "variable": "heur",
+ "variable": "alg",
  "mode": "learned",
- "rank": 64,
+ "rank": 16,
  "steps": 1000,
- "train_time": 343.12238216400146,
- "final_train_acc": 0.709375,
+ "train_time": 641.542715549469,
+ "final_train_acc": 0.525,
  "base_acc_real": 0.6883333333333334,
  "base_yes_rate_real": 0.23166666666666666,
  "iia_all": {
   "changing": {
-   "iia": 0.02127659574468085,
-   "n": 282
+   "iia": 0.0375,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9882005899705014,
-   "n": 678
+   "iia": 0.95625,
+   "n": 480
   },
-  "balanced_iia": 0.5047385928575912
+  "balanced_iia": 0.496875
  },
  "iia_disagree": {
   "changing": {
-   "iia": 0.0,
-   "n": 38
-  },
-  "preserving": {
-   "iia": 0.9957627118644068,
+   "iia": 0.01694915254237288,
    "n": 236
   },
-  "balanced_iia": 0.4978813559322034
+  "preserving": {
+   "iia": 0.8947368421052632,
+   "n": 38
+  },
+  "balanced_iia": 0.455842997323818
  },
  "iia_same_dim_swap": {
   "changing": {
-   "iia": 0.01639344262295082,
-   "n": 61
+   "iia": 0.0625,
+   "n": 112
   },
   "preserving": {
-   "iia": 0.9851851851851852,
-   "n": 135
+   "iia": 0.9404761904761905,
+   "n": 84
   },
-  "balanced_iia": 0.500789313904068
+  "balanced_iia": 0.5014880952380952
  },
  "iia_heldout_lex": {
   "changing": {
-   "iia": 0.03418803418803419,
-   "n": 117
+   "iia": 0.07526881720430108,
+   "n": 186
   },
   "preserving": {
-   "iia": 0.9793388429752066,
-   "n": 242
+   "iia": 0.953757225433526,
+   "n": 173
   },
-  "balanced_iia": 0.5067634385816204
+  "balanced_iia": 0.5145130213189135
  },
  "iia_invented_alg": {
   "changing": {
-   "iia": 0.0275,
+   "iia": 0.0325,
    "n": 800
   },
   "preserving": {
-   "iia": 0.97875,
+   "iia": 0.97375,
    "n": 800
   },
   "balanced_iia": 0.503125
  },
- "iia_other_labels(y_alg)": {
+ "iia_other_labels(y_heur)": {
   "changing": {
-   "iia": 0.014583333333333334,
+   "iia": 0.06382978723404255,
+   "n": 282
+  },
+  "preserving": {
+   "iia": 0.9690265486725663,
+   "n": 678
+  },
+  "balanced_iia": 0.5164281679533045
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.016666666666666666,
    "n": 480
   },
   "preserving": {
-   "iia": 0.9854166666666667,
+   "iia": 0.9833333333333333,
    "n": 480
   },
   "balanced_iia": 0.5
  },
- "iia_all_alpha0.25": {
-  "changing": {
-   "iia": 0.031914893617021274,
-   "n": 282
-  },
-  "preserving": {
-   "iia": 0.9852507374631269,
-   "n": 678
-  },
-  "balanced_iia": 0.5085828155400741
- },
  "iia_all_alpha0.5": {
   "changing": {
-   "iia": 0.028368794326241134,
-   "n": 282
+   "iia": 0.027083333333333334,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9867256637168141,
-   "n": 678
+   "iia": 0.9708333333333333,
+   "n": 480
   },
-  "balanced_iia": 0.5075472290215276
+  "balanced_iia": 0.49895833333333334
  },
  "iia_all_alpha0.75": {
   "changing": {
-   "iia": 0.02127659574468085,
-   "n": 282
+   "iia": 0.03125,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9867256637168141,
-   "n": 678
+   "iia": 0.9625,
+   "n": 480
   },
-  "balanced_iia": 0.5040011297307475
+  "balanced_iia": 0.496875
  },
  "per_example": [
   {
@@ -864,7 +864,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00112",
@@ -1242,7 +1242,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00136",
@@ -1256,7 +1256,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00136",
@@ -1270,7 +1270,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00136",
@@ -1326,7 +1326,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00137",
@@ -1340,7 +1340,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00141",
@@ -1424,7 +1424,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00144",
@@ -2544,7 +2544,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00241",
@@ -2810,7 +2810,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00266",
@@ -3174,7 +3174,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00298",
@@ -3188,7 +3188,7 @@
    "y_alg": 0,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00306",
@@ -3762,7 +3762,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00361",
@@ -5666,7 +5666,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00511",
@@ -5694,7 +5694,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00511",
@@ -5750,7 +5750,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00515",
@@ -6254,7 +6254,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00577",
@@ -6450,7 +6450,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00583",
@@ -6464,7 +6464,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00583",
@@ -6478,7 +6478,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00583",
@@ -6492,7 +6492,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00584",
@@ -7122,7 +7122,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00635",
@@ -7136,7 +7136,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00635",
@@ -7514,7 +7514,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00689",
@@ -8578,7 +8578,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00807",
@@ -8592,7 +8592,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00807",
@@ -8606,7 +8606,7 @@
    "y_alg": 0,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00807",
@@ -9236,7 +9236,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00855",
@@ -10090,7 +10090,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00904",
@@ -10118,7 +10118,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00904",
@@ -10734,7 +10734,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00968",
@@ -11350,7 +11350,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-01009",
@@ -12526,7 +12526,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01097",
@@ -12834,7 +12834,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01130",
@@ -12862,7 +12862,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01130",
@@ -12876,7 +12876,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01133",

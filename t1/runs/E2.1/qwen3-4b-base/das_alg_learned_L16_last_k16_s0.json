@@ -1,113 +1,113 @@
 {
  "model": "qwen3-4b-base",
- "layer": 24,
- "position": "u1",
- "variable": "heur",
+ "layer": 16,
+ "position": "last",
+ "variable": "alg",
  "mode": "learned",
- "rank": 64,
+ "rank": 16,
  "steps": 1000,
- "train_time": 343.12238216400146,
- "final_train_acc": 0.709375,
+ "train_time": 640.4744987487793,
+ "final_train_acc": 0.496875,
  "base_acc_real": 0.6883333333333334,
  "base_yes_rate_real": 0.23166666666666666,
  "iia_all": {
   "changing": {
-   "iia": 0.02127659574468085,
-   "n": 282
+   "iia": 0.1125,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9882005899705014,
-   "n": 678
+   "iia": 0.8791666666666667,
+   "n": 480
   },
-  "balanced_iia": 0.5047385928575912
+  "balanced_iia": 0.49583333333333335
  },
  "iia_disagree": {
   "changing": {
-   "iia": 0.0,
-   "n": 38
-  },
-  "preserving": {
-   "iia": 0.9957627118644068,
+   "iia": 0.0635593220338983,
    "n": 236
   },
-  "balanced_iia": 0.4978813559322034
+  "preserving": {
+   "iia": 0.7105263157894737,
+   "n": 38
+  },
+  "balanced_iia": 0.387042818911686
  },
  "iia_same_dim_swap": {
   "changing": {
-   "iia": 0.01639344262295082,
-   "n": 61
+   "iia": 0.11607142857142858,
+   "n": 112
   },
   "preserving": {
-   "iia": 0.9851851851851852,
-   "n": 135
+   "iia": 0.8095238095238095,
+   "n": 84
   },
-  "balanced_iia": 0.500789313904068
+  "balanced_iia": 0.46279761904761907
  },
  "iia_heldout_lex": {
   "changing": {
-   "iia": 0.03418803418803419,
-   "n": 117
+   "iia": 0.12903225806451613,
+   "n": 186
   },
   "preserving": {
-   "iia": 0.9793388429752066,
-   "n": 242
+   "iia": 0.8786127167630058,
+   "n": 173
   },
-  "balanced_iia": 0.5067634385816204
+  "balanced_iia": 0.5038224874137609
  },
  "iia_invented_alg": {
   "changing": {
-   "iia": 0.0275,
+   "iia": 0.09625,
    "n": 800
   },
   "preserving": {
-   "iia": 0.97875,
+   "iia": 0.90875,
    "n": 800
   },
-  "balanced_iia": 0.503125
+  "balanced_iia": 0.5025
  },
- "iia_other_labels(y_alg)": {
+ "iia_other_labels(y_heur)": {
   "changing": {
-   "iia": 0.014583333333333334,
-   "n": 480
+   "iia": 0.18439716312056736,
+   "n": 282
   },
   "preserving": {
-   "iia": 0.9854166666666667,
-   "n": 480
+   "iia": 0.911504424778761,
+   "n": 678
   },
-  "balanced_iia": 0.5
+  "balanced_iia": 0.5479507939496642
  },
  "iia_all_alpha0.25": {
   "changing": {
-   "iia": 0.031914893617021274,
-   "n": 282
+   "iia": 0.01875,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9852507374631269,
-   "n": 678
+   "iia": 0.9604166666666667,
+   "n": 480
   },
-  "balanced_iia": 0.5085828155400741
+  "balanced_iia": 0.48958333333333337
  },
  "iia_all_alpha0.5": {
   "changing": {
-   "iia": 0.028368794326241134,
-   "n": 282
+   "iia": 0.035416666666666666,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9867256637168141,
-   "n": 678
+   "iia": 0.9375,
+   "n": 480
   },
-  "balanced_iia": 0.5075472290215276
+  "balanced_iia": 0.4864583333333333
  },
  "iia_all_alpha0.75": {
   "changing": {
-   "iia": 0.02127659574468085,
-   "n": 282
+   "iia": 0.06458333333333334,
+   "n": 480
   },
   "preserving": {
-   "iia": 0.9867256637168141,
-   "n": 678
+   "iia": 0.8979166666666667,
+   "n": 480
   },
-  "balanced_iia": 0.5040011297307475
+  "balanced_iia": 0.48125
  },
  "per_example": [
   {
@@ -178,7 +178,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00015",
@@ -458,7 +458,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00080",
@@ -472,7 +472,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00080",
@@ -486,7 +486,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00080",
@@ -500,7 +500,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00083",
@@ -584,7 +584,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00087",
@@ -710,7 +710,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00102",
@@ -850,7 +850,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00112",
@@ -864,7 +864,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00112",
@@ -962,7 +962,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00117",
@@ -1004,7 +1004,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00118",
@@ -1074,7 +1074,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00122",
@@ -1102,7 +1102,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00122",
@@ -1270,7 +1270,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00136",
@@ -1410,7 +1410,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00144",
@@ -1424,7 +1424,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00144",
@@ -1438,7 +1438,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00144",
@@ -1452,7 +1452,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00151",
@@ -1592,7 +1592,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00157",
@@ -2040,7 +2040,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00205",
@@ -2082,7 +2082,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00211",
@@ -2096,7 +2096,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00211",
@@ -2110,7 +2110,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00211",
@@ -2124,7 +2124,7 @@
    "y_alg": 0,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00212",
@@ -2194,7 +2194,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00216",
@@ -2306,7 +2306,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00221",
@@ -2334,7 +2334,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00221",
@@ -2376,7 +2376,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00222",
@@ -2544,7 +2544,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00241",
@@ -2838,7 +2838,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00266",
@@ -3062,7 +3062,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00290",
@@ -3188,7 +3188,7 @@
    "y_alg": 0,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00306",
@@ -3230,7 +3230,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00306",
@@ -3244,7 +3244,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00307",
@@ -3426,7 +3426,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00335",
@@ -3440,7 +3440,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00335",
@@ -3776,7 +3776,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00361",
@@ -4672,7 +4672,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00417",
@@ -4686,7 +4686,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00417",
@@ -4798,7 +4798,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00432",
@@ -5050,7 +5050,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00471",
@@ -5092,7 +5092,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00484",
@@ -5666,7 +5666,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00511",
@@ -5680,7 +5680,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00511",
@@ -5694,7 +5694,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00511",
@@ -6226,7 +6226,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00577",
@@ -6240,7 +6240,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00577",
@@ -6254,7 +6254,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00577",
@@ -6268,7 +6268,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00578",
@@ -6324,7 +6324,7 @@
    "y_alg": 0,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00579",
@@ -6450,7 +6450,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00583",
@@ -6660,7 +6660,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00598",
@@ -6968,7 +6968,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00621",
@@ -6982,7 +6982,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00621",
@@ -7108,7 +7108,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00635",
@@ -7472,7 +7472,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00673",
@@ -7486,7 +7486,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00673",
@@ -7514,7 +7514,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00689",
@@ -7542,7 +7542,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00689",
@@ -7752,7 +7752,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00710",
@@ -7766,7 +7766,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00710",
@@ -7962,7 +7962,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00744",
@@ -8200,7 +8200,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00767",
@@ -8228,7 +8228,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00777",
@@ -8396,7 +8396,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00790",
@@ -8620,7 +8620,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00809",
@@ -8634,7 +8634,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00809",
@@ -8648,7 +8648,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00809",
@@ -8662,7 +8662,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00809",
@@ -8746,7 +8746,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00817",
@@ -8774,7 +8774,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00817",
@@ -8788,7 +8788,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00818",
@@ -9222,7 +9222,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00843",
@@ -9558,7 +9558,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00865",
@@ -9768,7 +9768,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00882",
@@ -9796,7 +9796,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00883",
@@ -9838,7 +9838,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00883",
@@ -10104,7 +10104,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00904",
@@ -10132,7 +10132,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00906",
@@ -10258,7 +10258,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00921",
@@ -10272,7 +10272,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00921",
@@ -10482,7 +10482,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00945",
@@ -10496,7 +10496,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00945",
@@ -10510,7 +10510,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00945",
@@ -10608,7 +10608,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00951",
@@ -10678,7 +10678,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-00959",
@@ -10888,7 +10888,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00978",
@@ -10902,7 +10902,7 @@
    "y_alg": 0,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00978",
@@ -10916,7 +10916,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00979",
@@ -10986,7 +10986,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00994",
@@ -11000,7 +11000,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00994",
@@ -11014,7 +11014,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00994",
@@ -11028,7 +11028,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00998",
@@ -11042,7 +11042,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00998",
@@ -11056,7 +11056,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-00998",
@@ -11812,7 +11812,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-01055",
@@ -11840,7 +11840,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01055",
@@ -12274,7 +12274,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01080",
@@ -12302,7 +12302,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01080",
@@ -12316,7 +12316,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01082",
@@ -12330,7 +12330,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-01082",
@@ -12344,7 +12344,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-01082",
@@ -12498,7 +12498,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01097",
@@ -12512,7 +12512,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01097",
@@ -12680,7 +12680,7 @@
    "y_alg": 1,
    "y_heur": 0,
    "base_pred": 0,
-   "pred": 0
+   "pred": 1
   },
   {
    "base": "P2-REAL-01122",
@@ -12834,7 +12834,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01130",
@@ -12876,7 +12876,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01133",
@@ -13002,7 +13002,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01141",
@@ -13016,7 +13016,7 @@
    "y_alg": 1,
    "y_heur": 1,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01141",
@@ -13478,7 +13478,7 @@
    "y_alg": 0,
    "y_heur": 0,
    "base_pred": 1,
-   "pred": 1
+   "pred": 0
   },
   {
    "base": "P2-REAL-01167",
