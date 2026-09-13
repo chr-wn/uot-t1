@@ -3,3 +3,9 @@ value        L  4 lex: nearest=0.039 axis=0.233 r2=-0.012 ctrl_axis=0.206 | latt
 value        L  8 lex: nearest=0.043 axis=0.234 r2=-0.015 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.169 r2=-0.028
 value        L 12 lex: nearest=0.038 axis=0.234 r2=-0.013 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.026
 value        L 16 lex: nearest=0.043 axis=0.233 r2=-0.014 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.166 r2=-0.028
+value        L 20 lex: nearest=0.041 axis=0.233 r2=-0.013 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.027
+value        L 24 lex: nearest=0.038 axis=0.233 r2=-0.011 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.024
+value        L 28 lex: nearest=0.041 axis=0.233 r2=-0.011 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.025
+value        L 32 lex: nearest=0.042 axis=0.234 r2=-0.008 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.023
+value        L 36 lex: nearest=0.044 axis=0.233 r2=-0.008 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.022
+wrote runs/E1.1/gemma2-9b

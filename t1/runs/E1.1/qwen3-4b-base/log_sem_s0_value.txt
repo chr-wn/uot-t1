@@ -3,3 +3,9 @@ value        L  4 lex: nearest=0.031 axis=0.243 r2=-0.064 ctrl_axis=0.275 | latt
 value        L  8 lex: nearest=0.031 axis=0.254 r2=-0.051 ctrl_axis=0.273 | lattice-holdout: nearest=0.043 axis=0.238 r2=-0.674
 value        L 12 lex: nearest=0.035 axis=0.271 r2=-0.050 ctrl_axis=0.272 | lattice-holdout: nearest=0.041 axis=0.223 r2=-0.677
 value        L 16 lex: nearest=0.026 axis=0.241 r2=-0.063 ctrl_axis=0.270 | lattice-holdout: nearest=0.036 axis=0.231 r2=-0.686
+value        L 20 lex: nearest=0.026 axis=0.243 r2=-0.063 ctrl_axis=0.274 | lattice-holdout: nearest=0.055 axis=0.219 r2=-0.736
+value        L 24 lex: nearest=0.029 axis=0.237 r2=-0.062 ctrl_axis=0.276 | lattice-holdout: nearest=0.050 axis=0.211 r2=-0.724
+value        L 28 lex: nearest=0.029 axis=0.245 r2=-0.062 ctrl_axis=0.271 | lattice-holdout: nearest=0.064 axis=0.239 r2=-0.685
+value        L 32 lex: nearest=0.028 axis=0.242 r2=-0.068 ctrl_axis=0.267 | lattice-holdout: nearest=0.055 axis=0.241 r2=-0.671
+value        L 36 lex: nearest=0.034 axis=0.255 r2=-0.056 ctrl_axis=0.269 | lattice-holdout: nearest=0.055 axis=0.236 r2=-0.650
+wrote runs/E1.1/qwen3-4b-base

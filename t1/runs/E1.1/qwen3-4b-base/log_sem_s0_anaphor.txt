@@ -3,3 +3,9 @@ anaphor      L  4 lex: nearest=0.070 axis=0.333 r2=-0.065 ctrl_axis=0.325 | latt
 anaphor      L  8 lex: nearest=0.109 axis=0.376 r2=0.006 ctrl_axis=0.276 | lattice-holdout: nearest=0.023 axis=0.261 r2=-0.768
 anaphor      L 12 lex: nearest=0.104 axis=0.397 r2=0.095 ctrl_axis=0.319 | lattice-holdout: nearest=0.036 axis=0.260 r2=-0.755
 anaphor      L 16 lex: nearest=0.150 axis=0.410 r2=0.087 ctrl_axis=0.282 | lattice-holdout: nearest=0.066 axis=0.268 r2=-0.741
+anaphor      L 20 lex: nearest=0.122 axis=0.414 r2=0.113 ctrl_axis=0.288 | lattice-holdout: nearest=0.059 axis=0.268 r2=-0.662
+anaphor      L 24 lex: nearest=0.142 axis=0.419 r2=0.097 ctrl_axis=0.286 | lattice-holdout: nearest=0.062 axis=0.279 r2=-0.728
+anaphor      L 28 lex: nearest=0.142 axis=0.413 r2=0.118 ctrl_axis=0.278 | lattice-holdout: nearest=0.048 axis=0.266 r2=-0.698
+anaphor      L 32 lex: nearest=0.138 axis=0.425 r2=0.141 ctrl_axis=0.277 | lattice-holdout: nearest=0.052 axis=0.276 r2=-0.639
+anaphor      L 36 lex: nearest=0.134 axis=0.416 r2=0.107 ctrl_axis=0.317 | lattice-holdout: nearest=0.041 axis=0.276 r2=-0.695
+wrote runs/E1.1/qwen3-4b-base

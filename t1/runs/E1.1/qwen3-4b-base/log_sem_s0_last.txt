@@ -5,3 +5,9 @@ last         L  4 lex: nearest=0.098 axis=0.361 r2=-0.144 ctrl_axis=0.298 | latt
 last         L  8 lex: nearest=0.112 axis=0.381 r2=0.049 ctrl_axis=0.342 | lattice-holdout: nearest=0.027 axis=0.257 r2=-0.691
 last         L 12 lex: nearest=0.130 axis=0.408 r2=0.126 ctrl_axis=0.282 | lattice-holdout: nearest=0.082 axis=0.286 r2=-0.678
 last         L 16 lex: nearest=0.131 axis=0.412 r2=0.057 ctrl_axis=0.287 | lattice-holdout: nearest=0.080 axis=0.323 r2=-0.627
+last         L 20 lex: nearest=0.171 axis=0.420 r2=0.045 ctrl_axis=0.302 | lattice-holdout: nearest=0.082 axis=0.294 r2=-0.776
+last         L 24 lex: nearest=0.148 axis=0.428 r2=0.109 ctrl_axis=0.289 | lattice-holdout: nearest=0.089 axis=0.298 r2=-0.640
+last         L 28 lex: nearest=0.160 axis=0.441 r2=0.173 ctrl_axis=0.282 | lattice-holdout: nearest=0.066 axis=0.280 r2=-0.593
+last         L 32 lex: nearest=0.131 axis=0.411 r2=0.132 ctrl_axis=0.290 | lattice-holdout: nearest=0.043 axis=0.254 r2=-0.684
+last         L 36 lex: nearest=0.063 axis=0.350 r2=0.060 ctrl_axis=0.323 | lattice-holdout: nearest=0.027 axis=0.230 r2=-0.700
+wrote runs/E1.1/qwen3-4b-base

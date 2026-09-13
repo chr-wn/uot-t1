@@ -6,3 +6,8 @@ last         L  8 lex: nearest=0.058 axis=0.359 r2=0.420 ctrl_axis=0.206 | latti
 last         L 12 lex: nearest=0.059 axis=0.354 r2=0.415 ctrl_axis=0.206 | lattice-holdout: nearest=0.042 axis=0.321 r2=0.392
 last         L 16 lex: nearest=0.057 axis=0.329 r2=0.374 ctrl_axis=0.206 | lattice-holdout: nearest=0.026 axis=0.277 r2=0.323
 last         L 20 lex: nearest=0.052 axis=0.328 r2=0.404 ctrl_axis=0.206 | lattice-holdout: nearest=0.029 axis=0.282 r2=0.356
+last         L 24 lex: nearest=0.055 axis=0.332 r2=0.406 ctrl_axis=0.206 | lattice-holdout: nearest=0.045 axis=0.301 r2=0.367
+last         L 28 lex: nearest=0.066 axis=0.348 r2=0.424 ctrl_axis=0.206 | lattice-holdout: nearest=0.036 axis=0.294 r2=0.369
+last         L 32 lex: nearest=0.062 axis=0.352 r2=0.436 ctrl_axis=0.206 | lattice-holdout: nearest=0.039 axis=0.298 r2=0.373
+last         L 36 lex: nearest=0.077 axis=0.364 r2=0.447 ctrl_axis=0.201 | lattice-holdout: nearest=0.041 axis=0.307 r2=0.394
+wrote runs/E1.1/gemma2-9b

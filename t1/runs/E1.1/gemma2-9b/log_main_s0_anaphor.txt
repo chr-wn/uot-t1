@@ -3,3 +3,9 @@ anaphor      L  4 lex: nearest=0.046 axis=0.322 r2=0.314 ctrl_axis=0.206 | latti
 anaphor      L  8 lex: nearest=0.053 axis=0.348 r2=0.417 ctrl_axis=0.196 | lattice-holdout: nearest=0.032 axis=0.302 r2=0.367
 anaphor      L 12 lex: nearest=0.054 axis=0.347 r2=0.447 ctrl_axis=0.204 | lattice-holdout: nearest=0.039 axis=0.309 r2=0.399
 anaphor      L 16 lex: nearest=0.073 axis=0.367 r2=0.455 ctrl_axis=0.206 | lattice-holdout: nearest=0.044 axis=0.317 r2=0.412
+anaphor      L 20 lex: nearest=0.082 axis=0.388 r2=0.473 ctrl_axis=0.206 | lattice-holdout: nearest=0.066 axis=0.348 r2=0.438
+anaphor      L 24 lex: nearest=0.073 axis=0.378 r2=0.461 ctrl_axis=0.206 | lattice-holdout: nearest=0.054 axis=0.334 r2=0.425
+anaphor      L 28 lex: nearest=0.068 axis=0.371 r2=0.450 ctrl_axis=0.205 | lattice-holdout: nearest=0.042 axis=0.318 r2=0.394
+anaphor      L 32 lex: nearest=0.065 axis=0.350 r2=0.427 ctrl_axis=0.206 | lattice-holdout: nearest=0.032 axis=0.291 r2=0.364
+anaphor      L 36 lex: nearest=0.049 axis=0.337 r2=0.405 ctrl_axis=0.206 | lattice-holdout: nearest=0.026 axis=0.284 r2=0.344
+wrote runs/E1.1/gemma2-9b

@@ -169,3 +169,14 @@ Observation-level takeaway: on this set the representation is categorical-by-poi
 
 ### E1.4 — pre-answer position (T1v2 prompts, Qwen3-4B, seed 0; first pass)
 Probes trained on mentions (compound-heavy set) do not transfer to the pre-answer token (nearest 0.00–0.06; R² < 0) — expected after E1.2b. A probe trained *directly* on T1 pre-answer tokens with **cross-relation folds** (each relation is one lattice point, so this is lattice holdout by construction) gives per-axis 0.33–0.41, nearest 0.04–0.14, R² ≈ −0.1 to 0.02 at every layer: the *composed* answer dimension is not linearly decodable across relations before the answer is produced, in this model. Follow-ups queued: within-relation random split (is it decodable at all?) and a 3-way base-dimension transfer from mention unit tokens to the T1 input-unit tokens (does the base-dimension code carry across contexts?).
+
+### E1.3 (semantic set: REAL-BASE + REAL-NAMED, ≈30 lattice points, Qwen3-4B, seed 0; 2026-09-13 13:40)
+| site | random split: linear exact / nearest / R² | categorical exact | held-out named points: linear nearest / sign acc | additivity ratio (random baseline) |
+|---|---|---|---|---|
+| unit L16 | 0.75 / 0.86 / 0.90 | 0.89 | 0.15 / 0.61 | 1.27 (1.38) |
+| unit L28 | 0.82 / 0.90 / 0.93 | 0.84 | 0.19 / 0.58 | 1.32 (1.30) |
+| mention_end L12 | 0.24 / 0.40 / 0.63 | 0.75 | 0.10 / 0.56 | 1.10 (1.13) |
+| anaphor L12 | 0.18 / 0.37 / 0.53 | 0.76 | 0.09 / 0.56 | 1.24 (1.22) |
+| last L36 | 0.26 / 0.41 / 0.61 | 0.74 | 0.07 / 0.55 | 1.42 (1.35) |
+Observation: the dimension of named/base units is decodable in-distribution — linearly at the unit token (exact 0.75–0.82) and categorically at the referent positions (0.74–0.76, with the linear-in-exponent form recovering only 0.18–0.26 exact there). **Held-out named lattice points do not extrapolate** (nearest ≤ 0.19, per-axis sign accuracy ≈ chance), centroid additivity is at the random-triple baseline, and dimensionless mentions do not sit at the origin. Sign+magnitude parameterisation helps in-distribution (0.86–0.87 exact at unit) but not extrapolation. MLP numbers are unusable here (n ≈ 760; overfits).
+Interpretation (tentative until replicated on 4 more models and seed 1): H1 (decodability, incl. at the referent, across lexemes — pending the `sem` cross-lexeme sweep) looks supported; H2 (representation ≈ linear in the exponent vector, extrapolating across lattice points) does not, for this model: named units are represented as *categories* (one direction per named dimension), not as points of a linear lattice code. Under the pre-registered G1 rule this is PARTIAL territory.
