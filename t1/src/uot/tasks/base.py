@@ -133,13 +133,15 @@ def lattice_neighbours(units: Sequence[Unit], correct: UnitExpr, rng: random.Ran
                        exps: Sequence[int] = (-3, -2, -1, 1, 2, 3)) -> list[tuple[UnitExpr, str]]:
     """Distractor unit expressions built from the same lexemes at other lattice points.
 
-    Length-matched by construction: every distractor uses *all* the lexemes of the correct
-    expression with nonzero exponents, so candidates differ only in exponents/arrangement.
-    Priority: inverted (all exponents negated), exp_swapped (exponents permuted across units, or
-    ±1 for a single unit), then random points over the same lexemes.  Returns (expr, role) pairs,
-    distinct and != correct.
+    Length-matched by construction: distractors reuse *all* the lexemes of the correct expression
+    and the same multiset of exponent magnitudes (permuted across lexemes, with free signs), so
+    candidates differ only in which lexeme carries which exponent and in signs.  Priority:
+    inverted (all signs flipped), then the other same-magnitude assignments in random order, then
+    (only if still short) ±1 exponent perturbations.  Returns (expr, role) pairs != correct.
     """
+    import itertools
     corr = correct.canonical()
+    fs = list(corr.factors)
     out: list[tuple[UnitExpr, str]] = []
     seen = {corr}
 
@@ -152,23 +154,27 @@ def lattice_neighbours(units: Sequence[Unit], correct: UnitExpr, rng: random.Ran
         seen.add(ex)
         out.append((ex, role))
 
-    fs = list(corr.factors)
     push(UnitExpr.of(*[(u, -e) for u, e in fs]), "inverted")
-    if len(fs) >= 2:
-        es = [e for _, e in fs]
-        perm = es[1:] + es[:1]
-        push(UnitExpr.of(*[(u, e) for (u, _), e in zip(fs, perm)]), "exp_swapped")
-    else:
-        u, e = fs[0]
-        push(UnitExpr.of((u, e + 1 if e > 0 else e - 1)), "exp_swapped")
-        push(UnitExpr.of((u, 1 if abs(e) != 1 else 2)), "exp_dropped")
-    tries = 0
-    while len(out) < k and tries < 500:
-        tries += 1
-        push(UnitExpr.of(*[(u, rng.choice(exps)) for u, _ in fs]), "random_point")
+    mags = [abs(e) for _, e in fs]
+    same_len: list[tuple[UnitExpr, str]] = []
+    for perm in set(itertools.permutations(mags)):
+        for signs in itertools.product((1, -1), repeat=len(fs)):
+            cand = UnitExpr.of(*[(u, sg * m) for (u, _), sg, m in zip(fs, signs, perm)])
+            role = "exp_swapped" if list(perm) != mags else "sign_flip"
+            same_len.append((cand, role))
+    rng.shuffle(same_len)
+    for cand, role in same_len:
+        push(cand, role)
     if len(out) < k:
-        push(UnitExpr.of(*[(u, 1) for u, _ in fs]), "product")
-        push(UnitExpr.of((fs[0][0], 1)), "single")
+        tries = 0
+        while len(out) < k and tries < 200:
+            tries += 1
+            i = rng.randrange(len(fs))
+            u, e = fs[i]
+            d = rng.choice((-1, 1))
+            ne = e + d if e + d != 0 else e + 2 * d
+            new = [(uu, ne if j == i else ee) for j, (uu, ee) in enumerate(fs)]
+            push(UnitExpr.of(*new), "exp_perturbed")
     if len(out) < k:
         raise RuntimeError("could not build enough distractors")
     return out
