@@ -256,3 +256,7 @@ Implanting the second slot's dimension into slot 1 (full residual of the unit to
 | text-rewrite reference (edit the unit string): lawful changes | 0.42 | — | — |
 | subspace lawful changes (same examples) | 0.25 | 0.17 | 0.02 |
 Interpretation: the effective subspace is real (not dormant; necessity via noising; monotone dose; no contamination of quantity 2) but it is **not value-free**: swapping 64 dimensions of the unit-1 token disturbs the downstream readout of quantity 1's *numeral* (R² 0.96 → 0.55). The pre-registered double-dissociation (P2.11: within 0.05) fails — the "unit" representation at u1 carries information the model also uses for the value, i.e. the swap moves a bound number–unit representation, not a pure dimension coordinate.
+
+
+## 2026-09-13 — G2 gate closed: no pre-registered branch met in full; heuristics-extension is the supported direction
+Deliverables: `reports/G2_gate_report.md`, `reports/G2_red_team.md`, `decisions/DR-005-G2-decision.md`, CLAIMS C11–C16. Calibration: 9 hits, 1 miss (value preservation), 1 unscored (selectivity matrix not run as a matrix — per-dimension IIA reported instead; declared), 1 conditional. Compute ledger Phase 2: ≈ 10 GPU-h (A6000). Gemma bias-corrected re-run pending and appended when done. Phase 3 (generality / naturalistic transfer / utility demo / writing) starts with DESIGN_phase3.
