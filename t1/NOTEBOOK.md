@@ -221,3 +221,14 @@ Full-residual patching of quantity 1's *last* unit token (v0 set, long-form unit
 | u2 L4–16 | 0.52–0.55 (0.21–0.27) | 0.63–0.66 (0.38–0.45) | 0.50 |
 | last L24–28 | 0.50 (0.28–0.29 / 0.71) | 0.64 (0.48 / 0.79–0.81) | 0.51 (0.26–0.29) |
 Observations: (i) quantity 1's unit representation is read out of the u1 position by layer ≈ 12 — later patches there do nothing; (ii) even replacing the *entire* residual at u1 L4 makes the judgment follow dimension equality in only 40% of changing cases, but follow the model's own pair table in 73% — the model's judgments are not equality-based, so the attainable IIA for M_alg is bounded (~0.65) at any site by the model's behaviour, and M_heur's ceiling is 0.85; (iii) for invented units, patching the lexeme token has no effect (0.05): their dimension is carried by the definition sentence; (iv) a late decision variable at the answer token (L24–28) is patchable (28–48% flips) but that is the answer, not D1. Consequence for the sweep: the only sites where a D1 subspace can matter are u1 at layers 4–8 (and u2 similarly); Phase-2 headline comparisons are made there, with the ceiling as the denominator.
+
+### E2.1 — DAS sweep, Qwen3-4B, single-token set (v1), balanced IIA (chance 0.50); 2026-09-13 16:30
+| site | rank | M_alg learned | M_heur learned | random | alg on disagree / heur on disagree | alg on held-out lexemes / heur | invented (alg) | alg-subspace scored with heur labels |
+|---|---|---|---|---|---|---|---|---|
+| u1 L4 | 16 | 0.53 | 0.58 | 0.50 | 0.45 / 0.54 | 0.53 / 0.58 | 0.49 | 0.57 |
+| u1 L4 | 64 | 0.58 | 0.61 | 0.50 | 0.44 / 0.58 | 0.56 / 0.61 | 0.50 | 0.64 |
+| u1 L8 | 16 | 0.57 | 0.60 | 0.50 | 0.51 / 0.56 | 0.57 / 0.59 | 0.51 | 0.61 |
+| **u1 L8** | **64** | **0.60** | **0.64** | 0.50 | 0.48 / 0.54 | 0.59 / 0.66 | 0.50 | **0.66** |
+| last L4–8 | 16–64 | 0.50 | 0.51–0.52 | 0.50 | — | — | 0.50 | — |
+Full-residual ceilings at u1 L8: 0.65 (alg labels), 0.78 (heur labels). Train accuracy of the alg subspace 0.55–0.58; heur 0.74–0.78.
+Observations: a low-rank subspace at the first unit token (layers 4–8) carries a causally effective unit representation: rank-64 interchange reaches 92% of the full-patch ceiling under equality labels and 82% under pair-table labels; it generalises to lexemes never used in DAS training (0.59/0.66) — so it is not a memorised lexeme list. Where the two rival models disagree, the effects follow the model's pair table, not equality (alg 0.44–0.51 ≤ chance; heur 0.54–0.58), and the equality-trained subspace itself is better described by pair-table labels (0.66 vs 0.60). Invented units: no effect at the lexeme token (0.50), consistent with the ceiling. The answer-token site carries no D1 subspace. Pending: rank sweep {1,4,128}, probe-derived bases, 3 seeds with per-example records (base vs derived dimensions), controls, OLMo/Gemma replication.

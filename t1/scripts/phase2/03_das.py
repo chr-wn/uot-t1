@@ -86,11 +86,31 @@ res["base_acc_real"] = float(np.mean([bp_real[i] == (0 if real[i].same_dim else 
 res["base_yes_rate_real"] = float(np.mean([bp_real[i] == 0 for i in bp_real]))
 
 
+per_example = []
+
+
+@torch.no_grad()
+def predictions(examples, items_map, label_key, alpha=1.0):
+    """Per-example intervened prediction (0=yes,1=no) for the record."""
+    site.alpha = alpha; ivx = Intervener(model, args.layer, site); preds = []
+    for b in make_batches(examples, items_map, label_key, args.batch, False):
+        src = ivx.capture(b["src_ids"].to(device), b["src_mask"].to(device), b["src_pos"].to(device))
+        out = ivx.intervene(b["base_ids"].to(device), b["base_mask"].to(device), b["base_pos"].to(device), src)
+        preds += answer_logits(out.logits.float(), b["base_last"].to(device), b["answer_token_ids"].to(device)).argmax(1).tolist()
+    ivx.remove(); site.alpha = 1.0
+    return preds
+
+
 def ev(examples, items_map, label_key, name, alpha=1.0):
     """Balanced IIA: mean of IIA on output-changing (cf label != model's base prediction) and
     output-preserving examples; also the raw IIA and the flip rate on changing examples."""
     if not examples: return
     bp = bp_real if items_map is real else bp_inv
+    if name == "iia_all" and alpha == 1.0:
+        for e, p in zip(examples, predictions(examples, items_map, label_key)):
+            b, s_ = items_map[e["base"]], items_map[e["src"]]
+            per_example.append(dict(base=e["base"], src=e["src"], d1_base=b.d1, d1_src=s_.d1, d2=b.d2, u1_base=b.u1, u1_src=s_.u1, op=b.op,
+                                    y_alg=e["y_alg"], y_heur=e.get("y_heur"), base_pred=int(bp[e["base"]]), pred=int(p)))
     chg = [e for e in examples if (0 if e[label_key] == 1 else 1) != bp[e["base"]]]
     prs = [e for e in examples if (0 if e[label_key] == 1 else 1) == bp[e["base"]]]
     out = {}
@@ -114,6 +134,7 @@ for a in (0.25, 0.5, 0.75):
     ev(eval_ex, real, lab, f"iia_all_alpha{a}", alpha=a)
 out = root / "runs/E2.1" / args.model; out.mkdir(parents=True, exist_ok=True)
 tag = args.tag or f"{args.variable}_{args.mode}_L{args.layer}_{args.position}_k{args.rank}_s{args.seed}"
+res["per_example"] = per_example
 json.dump(res, open(out / f"das_{tag}.json", "w"), indent=1)
 if args.mode != "full":
     np.save(out / f"basis_{tag}.npy", site.basis().detach().cpu().numpy().astype(np.float32))
