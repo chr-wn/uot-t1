@@ -207,3 +207,6 @@ At the unit token, every lattice point has a handful of latents that fire on 30�
 
 ## 2026-09-13 — G1 gate closed: PARTIAL (H1 supported; H2 refuted in linear form)
 Deliverables: `reports/G1_gate_report.md`, `reports/G1_red_team.md`, `decisions/DR-004-G1-decision.md`, CLAIMS C7–C10, `PREDICTIONS_phase2.md` (committed before the corrected DAS sweep is read). Calibration: 3 hits, 1 partial, 10 misses — every miss in the direction "I assumed exponent coordinates; the model uses categories". Compute ledger Phase 1: ≈ 6 GPU-h (caching) + ≈ 20 CPU-h (probes).
+
+### E2.1 pipeline test and the multi-token lesson (2026-09-13 15:30; v0 set, before PREDICTIONS_phase2 headline runs)
+Full-residual patching of quantity 1's *last* unit token (v0 set, long-form units) changes the judgment lawfully under M_alg in only 22–37% of output-changing cases at layer 4 — because many long-form units span several tokens ("pounds per square inch") and patching the last token leaves the others readable. All Phase-2 lexemes were therefore restricted to single-token surface forms (audited on the Qwen3 tokeniser: 43 lexemes over 10 lattice points), the pair table and interchange set were rebuilt, and the sweep/ceiling relaunched (v1). v0 results are kept under `runs/E2.1/v0/` as a record only.
