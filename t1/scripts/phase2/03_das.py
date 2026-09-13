@@ -55,6 +55,21 @@ def make_batches(examples, items_map, label_key, batch, shuffle, seed=0):
                         answer_token_ids=ans_ids))
     return out
 lab = "y_alg" if args.variable == "alg" else "y_heur"
+
+
+@torch.no_grad()
+def base_predictions(items_map, ids_list):
+    """Model's own yes/no prediction (0=yes, 1=no) per base item, no intervention."""
+    preds = {}
+    for b in range(0, len(ids_list), args.batch):
+        chunk = ids_list[b:b + args.batch]; encs = [enc(items_map[i]) for i in chunk]
+        L = max(len(x[0]) for x in encs)
+        ids = torch.full((len(encs), L), tok.pad_token_id, dtype=torch.long); m = torch.zeros((len(encs), L), dtype=torch.long)
+        for r, (sq, _) in enumerate(encs): ids[r, :len(sq)] = torch.tensor(sq); m[r, :len(sq)] = 1
+        lg = model(input_ids=ids.to(device), attention_mask=m.to(device)).logits.float()
+        a = answer_logits(lg, torch.tensor([x[1]["last"] for x in encs]).to(device), ans_ids.to(device))
+        for i, p in zip(chunk, a.argmax(1).tolist()): preds[i] = p
+    return preds
 train_ex = [e for e in EX["real"] if e["split"] == "train" and e[lab] is not None]
 eval_ex = [e for e in EX["real"] if e["split"] == "eval" and e[lab] is not None]
 train_b = make_batches(train_ex, real, lab, args.batch, True, args.seed)
@@ -64,15 +79,30 @@ site, log = train_das(model, tok, args.layer, args.rank, train_b, steps=args.ste
                       mode=("fixed" if args.mode == "probe" else args.mode), basis=basis, device=device)
 res = dict(model=args.model, layer=args.layer, position=args.position, variable=args.variable, mode=args.mode, rank=args.rank, steps=args.steps,
            train_time=time.time() - t0, final_train_acc=float(np.mean([l["acc"] for l in log[-20:]])) if log else None)
+bp_real = base_predictions(real, sorted({e["base"] for e in EX["real"]})); bp_inv = base_predictions(inv, sorted({e["base"] for e in EX["inv"]}))
+res["base_acc_real"] = float(np.mean([bp_real[i] == (0 if real[i].same_dim else 1) for i in bp_real]))
+res["base_yes_rate_real"] = float(np.mean([bp_real[i] == 0 for i in bp_real]))
+
+
 def ev(examples, items_map, label_key, name, alpha=1.0):
+    """Balanced IIA: mean of IIA on output-changing (cf label != model's base prediction) and
+    output-preserving examples; also the raw IIA and the flip rate on changing examples."""
     if not examples: return
-    r = eval_iia(model, args.layer, site, make_batches(examples, items_map, label_key, args.batch, False), device=device, alpha=alpha)
-    res[name] = r; print(f"  {name:28s} IIA={r['iia']:.3f} n={r['n']}", flush=True)
+    bp = bp_real if items_map is real else bp_inv
+    chg = [e for e in examples if (0 if e[label_key] == 1 else 1) != bp[e["base"]]]
+    prs = [e for e in examples if (0 if e[label_key] == 1 else 1) == bp[e["base"]]]
+    out = {}
+    for sub, nm in ((chg, "changing"), (prs, "preserving")):
+        if sub:
+            r = eval_iia(model, args.layer, site, make_batches(sub, items_map, label_key, args.batch, False), device=device, alpha=alpha)
+            out[nm] = dict(iia=r["iia"], n=r["n"])
+    out["balanced_iia"] = float(np.mean([out[k]["iia"] for k in ("changing", "preserving") if k in out]))
+    res[name] = out
+    print(f"  {name:28s} balanced IIA={out['balanced_iia']:.3f}  changing={out.get('changing', {}).get('iia', float('nan')):.3f} (n={out.get('changing', {}).get('n', 0)})  preserving={out.get('preserving', {}).get('iia', float('nan')):.3f} (n={out.get('preserving', {}).get('n', 0)})", flush=True)
 ev(eval_ex, real, lab, "iia_all")
 ev([e for e in eval_ex if e.get("agree") == 0], real, lab, "iia_disagree")
 ev([e for e in eval_ex if e["same_dim_swap"] == 1], real, lab, "iia_same_dim_swap")
 ev([e for e in eval_ex if e["heldout_lex"] == 1], real, lab, "iia_heldout_lex")
-ev([e for e in eval_ex if e["y_alg"] != e["y_base"]], real, lab, "iia_output_changing")
 # invented units: alg labels only
 ev([e for e in EX["inv"]], inv, "y_alg", "iia_invented_alg")
 # the *other* model's labels on the same subspace (does the subspace better fit alg or heur?)

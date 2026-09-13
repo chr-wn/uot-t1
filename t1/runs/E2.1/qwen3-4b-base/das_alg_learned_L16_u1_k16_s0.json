@@ -1,0 +1,61 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 16,
+ "position": "u1",
+ "variable": "alg",
+ "mode": "learned",
+ "rank": 16,
+ "steps": 300,
+ "train_time": 93.33568334579468,
+ "final_train_acc": 0.478125,
+ "iia_all": {
+  "iia": 0.5104166666666666,
+  "n": 960,
+  "mean_cf_logprob": -1.0941906571252427
+ },
+ "iia_disagree": {
+  "iia": 0.09779179810725552,
+  "n": 317,
+  "mean_cf_logprob": -1.9404932952218628
+ },
+ "iia_same_dim_swap": {
+  "iia": 0.4199134199134199,
+  "n": 231,
+  "mean_cf_logprob": -1.06597558663779
+ },
+ "iia_heldout_lex": {
+  "iia": 0.5,
+  "n": 366,
+  "mean_cf_logprob": -1.1349790333897445
+ },
+ "iia_output_changing": {
+  "iia": 0.3541666666666667,
+  "n": 480,
+  "mean_cf_logprob": -1.5188495955779218
+ },
+ "iia_invented_alg": {
+  "iia": 0.496875,
+  "n": 1600,
+  "mean_cf_logprob": -0.9118924364121631
+ },
+ "iia_other_labels(y_heur)": {
+  "iia": 0.7739583333333333,
+  "n": 960,
+  "mean_cf_logprob": -0.5529146135454842
+ },
+ "iia_all_alpha0.25": {
+  "iia": 0.5010416666666667,
+  "n": 960,
+  "mean_cf_logprob": -1.1891901058183671
+ },
+ "iia_all_alpha0.5": {
+  "iia": 0.5,
+  "n": 960,
+  "mean_cf_logprob": -1.1632547375455033
+ },
+ "iia_all_alpha0.75": {
+  "iia": 0.5083333333333333,
+  "n": 960,
+  "mean_cf_logprob": -1.1253852822468615
+ }
+}
