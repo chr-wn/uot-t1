@@ -21,7 +21,7 @@ def test_spans_align():
 
 
 def test_conditions_present():
-    items = generate(30, seed=1)
+    items = generate(30, seed=1, n_override={"REAL-LATTICE": 300})
     conds = {it.condition for it in items}
     assert {"REAL-BASE", "REAL-NAMED", "REAL-LATTICE", "DIMLESS", "INV-LEX", "XLING"} <= conds
     lat = [it for it in items if it.condition == "REAL-LATTICE"]
