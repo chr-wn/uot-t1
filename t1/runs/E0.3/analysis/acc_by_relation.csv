@@ -1,0 +1,63 @@
+model,condition,relation,mean,count
+qwen3-4b-base,FAM-NAMED,acceleration,0.9772727272727273,44
+qwen3-4b-base,FAM-NAMED,area,0.38636363636363635,44
+qwen3-4b-base,FAM-NAMED,density,1.0,44
+qwen3-4b-base,FAM-NAMED,energy,1.0,44
+qwen3-4b-base,FAM-NAMED,flow rate,0.9761904761904762,42
+qwen3-4b-base,FAM-NAMED,force,1.0,44
+qwen3-4b-base,FAM-NAMED,momentum,0.7857142857142857,42
+qwen3-4b-base,FAM-NAMED,power,1.0,44
+qwen3-4b-base,FAM-NAMED,pressure,0.9772727272727273,44
+qwen3-4b-base,FAM-NAMED,speed,1.0,44
+qwen3-4b-base,FAM-NAMED,volume,1.0,44
+qwen3-4b-base,FAM-UNNAMED,Q(L3/T5),0.9857142857142858,70
+qwen3-4b-base,FAM-UNNAMED,Q(LT),0.8676470588235294,68
+qwen3-4b-base,FAM-UNNAMED,Q(M/T2),0.9705882352941176,68
+qwen3-4b-base,FAM-UNNAMED,Q(M2/T),0.9117647058823529,68
+qwen3-4b-base,FAM-UNNAMED,Q(M2L),0.6,70
+qwen3-4b-base,FAM-UNNAMED,Q(ML3),0.8382352941176471,68
+qwen3-4b-base,FAM-UNNAMED,Q(T2/L),0.8529411764705882,68
+qwen3-4b-base,INV-BASE,X1 per length,1.0,120
+qwen3-4b-base,INV-BASE,X1 rate,1.0,120
+qwen3-4b-base,INV-BASE,X1 squared per time,0.95,120
+qwen3-4b-base,INV-BASE,X1 times length,0.8083333333333333,120
+qwen3-4b-base,INV-BASE-TWIN,X1 per length,1.0,120
+qwen3-4b-base,INV-BASE-TWIN,X1 rate,0.9583333333333334,120
+qwen3-4b-base,INV-BASE-TWIN,X1 squared per time,0.6916666666666667,120
+qwen3-4b-base,INV-BASE-TWIN,X1 times length,0.8,120
+qwen3-4b-base,INV-LEX,Q(L3/T5),0.9615384615384616,26
+qwen3-4b-base,INV-LEX,Q(LT),0.9615384615384616,26
+qwen3-4b-base,INV-LEX,Q(M/T2),0.9230769230769231,26
+qwen3-4b-base,INV-LEX,Q(M2/T),1.0,26
+qwen3-4b-base,INV-LEX,Q(M2L),0.8461538461538461,26
+qwen3-4b-base,INV-LEX,Q(ML3),0.7692307692307693,26
+qwen3-4b-base,INV-LEX,Q(T2/L),0.9615384615384616,26
+qwen3-4b-base,INV-LEX,acceleration,1.0,28
+qwen3-4b-base,INV-LEX,area,0.4642857142857143,28
+qwen3-4b-base,INV-LEX,density,0.9642857142857143,28
+qwen3-4b-base,INV-LEX,energy,0.9615384615384616,26
+qwen3-4b-base,INV-LEX,flow rate,1.0,26
+qwen3-4b-base,INV-LEX,force,1.0,28
+qwen3-4b-base,INV-LEX,momentum,1.0,26
+qwen3-4b-base,INV-LEX,power,1.0,26
+qwen3-4b-base,INV-LEX,pressure,0.8076923076923077,26
+qwen3-4b-base,INV-LEX,speed,1.0,28
+qwen3-4b-base,INV-LEX,volume,1.0,28
+qwen3-4b-base,INV-LEX-TWIN,Q(L3/T5),0.9615384615384616,26
+qwen3-4b-base,INV-LEX-TWIN,Q(LT),0.7307692307692307,26
+qwen3-4b-base,INV-LEX-TWIN,Q(M/T2),0.8846153846153846,26
+qwen3-4b-base,INV-LEX-TWIN,Q(M2/T),0.8461538461538461,26
+qwen3-4b-base,INV-LEX-TWIN,Q(M2L),0.4230769230769231,26
+qwen3-4b-base,INV-LEX-TWIN,Q(ML3),0.8076923076923077,26
+qwen3-4b-base,INV-LEX-TWIN,Q(T2/L),0.8076923076923077,26
+qwen3-4b-base,INV-LEX-TWIN,acceleration,0.8928571428571429,28
+qwen3-4b-base,INV-LEX-TWIN,area,0.5,28
+qwen3-4b-base,INV-LEX-TWIN,density,1.0,28
+qwen3-4b-base,INV-LEX-TWIN,energy,0.9230769230769231,26
+qwen3-4b-base,INV-LEX-TWIN,flow rate,0.9615384615384616,26
+qwen3-4b-base,INV-LEX-TWIN,force,1.0,28
+qwen3-4b-base,INV-LEX-TWIN,momentum,0.8846153846153846,26
+qwen3-4b-base,INV-LEX-TWIN,power,1.0,26
+qwen3-4b-base,INV-LEX-TWIN,pressure,0.9615384615384616,26
+qwen3-4b-base,INV-LEX-TWIN,speed,0.9642857142857143,28
+qwen3-4b-base,INV-LEX-TWIN,volume,1.0,28

@@ -54,6 +54,21 @@ ustr = {}
 for sp in Path(args.stimuli_dir).glob("*.jsonl"):
     for it in items_from_jsonl(str(sp)):
         ustr[it.item_id] = it.unit_strings
+# recompute generation correctness from stored generations with the current matcher
+from uot.lm.scoring import generation_matches  # noqa: E402
+from uot.parse_units import generation_dimension_correct  # noqa: E402
+prompts = {}
+for sp in Path(args.stimuli_dir).glob("*.jsonl"):
+    for it in items_from_jsonl(str(sp)):
+        prompts[it.item_id] = it.prompt
+if "generation" in df:
+    df["correct_gen"] = [generation_matches(g, ustr.get(i, [])) if isinstance(g, str) else np.nan
+                         for g, i in zip(df["generation"], df["item_id"])]
+    # dimension-level generation correctness: parsed dimension == answer dimension (None -> False)
+    df["correct_gen_dim"] = [(generation_dimension_correct(g, prompts.get(i, ""), ad) is True) if isinstance(g, str) else np.nan
+                             for g, i, ad in zip(df["generation"], df["item_id"], df["answer_dimension"])]
+    df["gen_parsed"] = [(generation_dimension_correct(g, prompts.get(i, ""), ad) is not None) if isinstance(g, str) else np.nan
+                        for g, i, ad in zip(df["generation"], df["item_id"], df["answer_dimension"])]
 if fc is not None:
     def lf(iid):
         ss = [s for s in ustr.get(iid, []) if s.strip() in fc.counts]
@@ -91,6 +106,8 @@ for (model, task, cond), g in df.groupby(["model", "task", "condition"]):
     rec = dict(model=model, task=task, condition=cond, n=len(g), acc=g[metric].mean(), ci_lo=lo, ci_hi=hi, chance=chance)
     if "correct_gen" in g and g["correct_gen"].notna().any():
         rec["acc_gen"] = g["correct_gen"].mean()
+        rec["acc_gen_dim"] = g["correct_gen_dim"].mean()
+        rec["gen_parsed"] = g["gen_parsed"].mean()
     if task == "T1":
         a = g[g.order_swapped == False][metric].mean() if (g.order_swapped == False).any() else np.nan
         b = g[g.order_swapped == True][metric].mean() if (g.order_swapped == True).any() else np.nan

@@ -2,6 +2,7 @@
 # E0.3 full battery on GPU. Usage: run_E0.3_gpu.sh <model-key> [gpu-index]
 # Picks an idle GPU (<1 GiB used) if none given; refuses to run on a busy one.
 cd /data/rbg/users/charlie/interp/uot/t1
+source /data/rbg/users/charlie/.config/ml-env.sh
 PY=/data/rbg/users/charlie/interp/uot/t1/env/bin/python
 MODEL=$1
 GPU=${2:-$(bash scripts/gpu_pick.sh | cut -d, -f1)}

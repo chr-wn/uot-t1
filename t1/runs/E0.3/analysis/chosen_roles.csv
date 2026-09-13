@@ -1,0 +1,7 @@
+model,condition,correct,exp_perturbed,exp_swapped,inverted,sign_flip
+qwen3-4b-base,FAM-NAMED,441,27,0,1,11
+qwen3-4b-base,FAM-UNNAMED,413,0,31,7,29
+qwen3-4b-base,INV-BASE,451,0,0,0,29
+qwen3-4b-base,INV-BASE-TWIN,414,0,23,0,43
+qwen3-4b-base,INV-LEX,443,15,11,7,4
+qwen3-4b-base,INV-LEX-TWIN,415,14,17,4,30

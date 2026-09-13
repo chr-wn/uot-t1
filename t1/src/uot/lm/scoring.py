@@ -85,16 +85,19 @@ def generate_greedy(model, tok, prompts: Sequence[str], *, max_new_tokens: int =
 
 def normalise_unit_text(s: str) -> str:
     s = s.strip().split("\n")[0].strip()
-    s = s.rstrip(".,;:!?)")
-    s = s.replace("²", "^2").replace("³", "^3").replace("⁻", "^-").replace("·", "*").replace("×", "*")
+    s = s.replace("²", "^2").replace("³", "^3").replace("⁻", "^-").replace("·", "*").replace("×", "*").replace(" * ", "*")
     s = " ".join(s.split())
     return s.lower()
 
 
 def generation_matches(gen: str, acceptable: Sequence[str]) -> bool:
+    """True iff the generation starts with an acceptable rendering followed by end/punctuation/space."""
+    import re
     g = normalise_unit_text(gen)
     for a in acceptable:
         a2 = normalise_unit_text(a)
-        if g == a2 or g.startswith(a2 + " ") or g.startswith(a2 + ","):
+        if not a2:
+            continue
+        if g == a2 or re.match(re.escape(a2) + r"(?=$|[\s.,;:!?)])", g):
             return True
     return False
