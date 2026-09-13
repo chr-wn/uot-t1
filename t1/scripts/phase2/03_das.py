@@ -20,6 +20,7 @@ ap.add_argument("--variable", default="alg"); ap.add_argument("--mode", default=
 ap.add_argument("--steps", type=int, default=300); ap.add_argument("--batch", type=int, default=16); ap.add_argument("--lr", type=float, default=1e-3)
 ap.add_argument("--seed", type=int, default=0); ap.add_argument("--set-seed", type=int, default=0); ap.add_argument("--tag", default=None)
 ap.add_argument("--alpha", type=float, default=1.0); ap.add_argument("--probe-basis", default=None, help="npy [k,d] rows for mode=probe")
+ap.add_argument("--calibrate", action="store_true", help="bias-corrected readout: yes iff (yes-no logit) > median over clean base prompts (for models with a constant yes/no bias)")
 args = ap.parse_args()
 root = Path(__file__).resolve().parents[2]
 torch.manual_seed(args.seed)
@@ -57,6 +58,15 @@ def make_batches(examples, items_map, label_key, batch, shuffle, seed=0):
 lab = "y_alg" if args.variable == "alg" else "y_heur"
 
 
+CAL_THR = {"thr": 0.0}
+
+
+def decide(a):
+    """a: [b,2] logits over (yes,no) -> 0/1 predictions, optionally bias-corrected."""
+    m = a[:, 0] - a[:, 1]
+    return (m <= CAL_THR["thr"]).long() if args.calibrate else a.argmax(1)
+
+
 @torch.no_grad()
 def base_predictions(items_map, ids_list):
     """Model's own yes/no prediction (0=yes, 1=no) per base item, no intervention."""
@@ -68,7 +78,8 @@ def base_predictions(items_map, ids_list):
         for r, (sq, _) in enumerate(encs): ids[r, :len(sq)] = torch.tensor(sq); m[r, :len(sq)] = 1
         lg = model(input_ids=ids.to(device), attention_mask=m.to(device)).logits.float()
         a = answer_logits(lg, torch.tensor([x[1]["last"] for x in encs]).to(device), ans_ids.to(device))
-        for i, p in zip(chunk, a.argmax(1).tolist()): preds[i] = p
+        if args.calibrate and "margins" in CAL_THR: CAL_THR["margins"] += (a[:, 0] - a[:, 1]).tolist()
+        for i, p in zip(chunk, decide(a).tolist()): preds[i] = p
     return preds
 train_ex = [e for e in EX["real"] if e["split"] == "train" and e[lab] is not None]
 eval_ex = [e for e in EX["real"] if e["split"] == "eval" and e[lab] is not None]
@@ -79,8 +90,11 @@ site, log = train_das(model, tok, args.layer, args.rank, train_b, steps=args.ste
                       mode=("fixed" if args.mode == "probe" else args.mode), basis=basis, device=device)
 if args.mode == "full":
     args.rank = model.config.hidden_size
-res = dict(model=args.model, layer=args.layer, position=args.position, variable=args.variable, mode=args.mode, rank=args.rank, steps=args.steps,
+res = dict(model=args.model, layer=args.layer, position=args.position, variable=args.variable, mode=args.mode, rank=args.rank, steps=args.steps, calibrated=bool(args.calibrate),
            train_time=time.time() - t0, final_train_acc=float(np.mean([l["acc"] for l in log[-20:]])) if log else None)
+if args.calibrate:
+    CAL_THR["margins"] = []; base_predictions(real, sorted({e["base"] for e in EX["real"]}))
+    CAL_THR["thr"] = float(np.median(CAL_THR["margins"])); del CAL_THR["margins"]; print("calibrated threshold", CAL_THR["thr"], flush=True)
 bp_real = base_predictions(real, sorted({e["base"] for e in EX["real"]})); bp_inv = base_predictions(inv, sorted({e["base"] for e in EX["inv"]}))
 res["base_acc_real"] = float(np.mean([bp_real[i] == (0 if real[i].same_dim else 1) for i in bp_real]))
 res["base_yes_rate_real"] = float(np.mean([bp_real[i] == 0 for i in bp_real]))
@@ -96,7 +110,7 @@ def predictions(examples, items_map, label_key, alpha=1.0):
     for b in make_batches(examples, items_map, label_key, args.batch, False):
         src = ivx.capture(b["src_ids"].to(device), b["src_mask"].to(device), b["src_pos"].to(device))
         out = ivx.intervene(b["base_ids"].to(device), b["base_mask"].to(device), b["base_pos"].to(device), src)
-        preds += answer_logits(out.logits.float(), b["base_last"].to(device), b["answer_token_ids"].to(device)).argmax(1).tolist()
+        preds += decide(answer_logits(out.logits.float(), b["base_last"].to(device), b["answer_token_ids"].to(device))).tolist()
     ivx.remove(); site.alpha = 1.0
     return preds
 
@@ -116,7 +130,7 @@ def ev(examples, items_map, label_key, name, alpha=1.0):
     out = {}
     for sub, nm in ((chg, "changing"), (prs, "preserving")):
         if sub:
-            r = eval_iia(model, args.layer, site, make_batches(sub, items_map, label_key, args.batch, False), device=device, alpha=alpha)
+            r = eval_iia(model, args.layer, site, make_batches(sub, items_map, label_key, args.batch, False), device=device, alpha=alpha, decide=decide)
             out[nm] = dict(iia=r["iia"], n=r["n"])
     out["balanced_iia"] = float(np.mean([out[k]["iia"] for k in ("changing", "preserving") if k in out]))
     res[name] = out

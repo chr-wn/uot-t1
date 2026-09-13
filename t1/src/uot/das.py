@@ -164,7 +164,7 @@ def train_das(model, tok, layer: int, k: int, batches, *, steps: int = 400, lr: 
 
 
 @torch.no_grad()
-def eval_iia(model, layer: int, site: SiteIntervention, batches, *, device: str = "cuda", alpha: float = 1.0) -> dict:
+def eval_iia(model, layer: int, site: SiteIntervention, batches, *, device: str = "cuda", alpha: float = 1.0, decide=None) -> dict:
     """Interchange-intervention accuracy and mean counterfactual log-odds over evaluation batches."""
     site.alpha = alpha
     iv = Intervener(model, layer, site)
@@ -175,7 +175,7 @@ def eval_iia(model, layer: int, site: SiteIntervention, batches, *, device: str 
         src = iv.capture(b["src_ids"].to(device), b["src_mask"].to(device), b["src_pos"].to(device))
         out = iv.intervene(b["base_ids"].to(device), b["base_mask"].to(device), b["base_pos"].to(device), src)
         lg = answer_logits(out.logits.float(), b["base_last"].to(device), b["answer_token_ids"].to(device))
-        pred = lg.argmax(1)
+        pred = lg.argmax(1) if decide is None else decide(lg)
         lab = b["cf_label"].to(device)
         correct += (pred == lab).sum().item(); n += len(lab)
         lp = F.log_softmax(lg, 1)
