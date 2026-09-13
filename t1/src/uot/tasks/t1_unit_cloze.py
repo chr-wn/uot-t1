@@ -156,6 +156,41 @@ INV_BASE_RELATIONS: list[Relation] = [
     )),
 ]
 
+# Definition-by-example ("arith") templates: the relation is given only as arithmetic over the
+# quantities; no relation name, no verbal formula (E1.0b, red-team Attack 1).
+ARITH_RELATIONS: list[Relation] = [
+    Relation("arith L/T", ("L", "T"), (1, -1), False, (
+        ("ar_div_a", "Compute: {q0} divided by {q1} equals {v}", False),
+        ("ar_div_b", "{q0} / {q1} = {v}", False),
+        ("ar_div_c", "Dividing {q0} by {q1} gives {v}", False),
+    )),
+    Relation("arith M*L", ("M", "L"), (1, 1), False, (
+        ("ar_mul_a", "Compute: {q0} multiplied by {q1} equals {v}", False),
+        ("ar_mul_b", "{q0} × {q1} = {v}", False),
+        ("ar_mul_c", "Multiplying {q0} by {q1} gives {v}", False),
+    )),
+    Relation("arith M/L3", ("M", "L"), (1, -3), False, (
+        ("ar_cube_a", "Compute: {q0} divided by the cube of {q1} equals {v}", False),
+        ("ar_cube_b", "{q0} / ({q1})^3 = {v}", False),
+    )),
+    Relation("arith L2", ("L",), (2,), False, (
+        ("ar_sq_a", "Compute: {q0} squared equals {v}", False),
+        ("ar_sq_b", "({q0})^2 = {v}", False),
+    )),
+    Relation("arith T/M", ("T", "M"), (1, -1), False, (
+        ("ar_div2_a", "Compute: {q0} divided by {q1} equals {v}", False),
+        ("ar_div2_b", "{q0} / {q1} = {v}", False),
+    )),
+    Relation("arith M2*T", ("M", "T"), (2, 1), False, (
+        ("ar_sqmul_a", "Compute: the square of {q0} multiplied by {q1} equals {v}", False),
+        ("ar_sqmul_b", "({q0})^2 × {q1} = {v}", False),
+    )),
+    Relation("arith L*T", ("L", "T"), (1, 1), False, (
+        ("ar_mul2_a", "Compute: {q0} multiplied by {q1} equals {v}", False),
+        ("ar_mul2_b", "{q0} × {q1} = {v}", False),
+    )),
+]
+
 CONDITIONS = ("FAM-NAMED", "FAM-UNNAMED", "INV-LEX", "INV-BASE")
 
 
@@ -169,13 +204,22 @@ def _composition_order(rel: Relation) -> tuple[int, ...]:
     return tuple(num + den)
 
 
-def _values(rng: random.Random, rel: Relation) -> tuple[list[int], float]:
-    """Input values and the (approximately) consistent output value."""
+def _values(rng: random.Random, rel: Relation, integer_output: bool = False) -> tuple[list[int], float]:
+    """Input values and the consistent output value. With integer_output, inputs are chosen so
+    that the output is an integer (free-generation readout: non-integer outputs make models
+    continue the digits instead of emitting a unit; Phase-0 anomaly A4)."""
     hi = 9 if max(abs(e) for e in rel.exps) >= 3 else 60
     vals = [rng.randint(2, hi) for _ in rel.slots]
     if len(rel.slots) == 2 and rel.exps == (1, -1):
         vals[1] = rng.randint(2, 12)
         vals[0] = vals[1] * rng.randint(2, 30)
+    elif integer_output and len(rel.slots) == 2 and any(e < 0 for e in rel.exps):
+        j = [i for i, e in enumerate(rel.exps) if e < 0][0]
+        i = 1 - j
+        k, p = -rel.exps[j], rel.exps[i]
+        vals[j] = rng.randint(2, 3)
+        base = vals[j] ** (-(-k // p))  # ceil(k/p)
+        vals[i] = base * rng.randint(1, 4)
     out = 1.0
     for v, e in zip(vals, rel.exps):
         out *= float(v) ** e
@@ -186,11 +230,11 @@ def _slot_units(rng: random.Random, rel: Relation, condition: str, pool: LexemeP
                 x_unit: Unit | None) -> list[UnitExpr]:
     """One UnitExpr per slot."""
     exprs: list[UnitExpr] = []
-    if condition.startswith("FAM"):
+    if condition.startswith("FAM") or condition == "ARITH-FAM":
         for s in rel.slots:
             exprs.append(pick_unit(rng, Dimension.parse(s), pool="natural"))
         return exprs
-    if condition == "INV-LEX":
+    if condition in ("INV-LEX", "ARITH-INV", "ARITH-INV-NODEF"):
         # every base symbol appearing in any slot gets one invented unit (shared across slots)
         syms: list[str] = []
         for s in rel.slots:
@@ -212,7 +256,7 @@ def _slot_units(rng: random.Random, rel: Relation, condition: str, pool: LexemeP
     raise ValueError(condition)
 
 
-def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=None) -> list[Item]:
+def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=None, integer_output: bool = False) -> list[Item]:
     rng = random.Random(seed)
     pool = LexemePool(seed)
     items: list[Item] = []
@@ -226,6 +270,10 @@ def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=N
             rels = list(RELATIONS)
         elif cond == "INV-BASE":
             rels = list(INV_BASE_RELATIONS)
+        elif cond == "ARITH-FAM":
+            rels = list(ARITH_RELATIONS)
+        elif cond in ("ARITH-INV", "ARITH-INV-NODEF"):
+            rels = list(ARITH_RELATIONS)
         else:
             raise ValueError(cond)
         for i in range(n_per_condition):
@@ -235,7 +283,7 @@ def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=N
             if cond == "INV-BASE":
                 name_dim, x_unit, qname = pool.invented_base("X")
             exprs = _slot_units(rng, rel, cond, pool, name_dim, x_unit)
-            vals, vout = _values(rng, rel)
+            vals, vout = _values(rng, rel, integer_output=integer_output)
             invented = any(u.invented for ex in exprs for u in ex.units)
             style = sample_style(rng, invented=invented) if styles is None else rng.choice(styles)
             qs = [Quantity(float(v), ex) for v, ex in zip(vals, exprs)]
@@ -249,7 +297,7 @@ def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=N
             if len(dstr) < 3:
                 raise RuntimeError(f"not enough non-prefix distractors for {cstr}")
             cands, idx, roles = finalize_candidates(rng, cstr, dstr)
-            prefix = definitions_prefix(lexemes)
+            prefix = "" if cond.endswith("NODEF") else definitions_prefix(lexemes)
             body = text.format(v=fmt_value(vout), name=qname or "", **rendered)
             prompt = (prefix + body).strip()
             surf, comp = _surface_order(text), _composition_order(rel)
@@ -272,7 +320,7 @@ def make_familiar_twins(items: list[Item], seed: int) -> list[Item]:
     """For every invented item, build a familiar twin: same relation/template/values/style, real units."""
     rng = random.Random(seed + 7)
     twins: list[Item] = []
-    rel_by_name = {r.name: r for r in RELATIONS + INV_BASE_RELATIONS}
+    rel_by_name = {r.name: r for r in RELATIONS + INV_BASE_RELATIONS + ARITH_RELATIONS}
     for it in items:
         if not it.meta.get("invented"):
             continue
