@@ -72,21 +72,30 @@ class MentionItem:
     meta: dict = field(default_factory=dict)
 
 
-def _lattice_exprs(rng: random.Random, max_abs: int = 2) -> list[tuple[Dimension, UnitExpr]]:
-    """Compound expressions over (L, M, T) core units for every lattice point with |e|<=max_abs (no origin)."""
+def _lattice_exprs(rng: random.Random, max_abs: int = 2, variants: int = 4) -> list[tuple[Dimension, UnitExpr]]:
+    """Compound expressions over (L, M, T) natural units for every lattice point with |e|<=max_abs (no
+    origin); `variants` distinct unit choices per point so that cross-lexeme folds exist at every point."""
     reg = get_registry()
     out = []
     for a, b, c in itertools.product(range(-max_abs, max_abs + 1), repeat=3):
         if (a, b, c) == (0, 0, 0):
             continue
         d = Dimension(L=a, M=b, T=c)
-        fs = []
-        for sym, e in (("M", b), ("L", a), ("T", c)):
-            if e:
-                fs.append((reg[rng.choice(CORE_UNITS[sym])], e))
-        # numerators first
-        fs = [f for f in fs if f[1] > 0] + [f for f in fs if f[1] < 0]
-        out.append((d, UnitExpr.of(*fs)))
+        seen = set()
+        tries = 0
+        while len(seen) < variants and tries < 50:
+            tries += 1
+            fs = []
+            for sym, e in (("M", b), ("L", a), ("T", c)):
+                if e:
+                    fs.append((reg[rng.choice(CORE_UNITS[sym])], e))
+            fs = [f for f in fs if f[1] > 0] + [f for f in fs if f[1] < 0]
+            ex = UnitExpr.of(*fs)
+            key = tuple(u.id for u, _ in ex.factors)
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append((d, ex))
     return out
 
 
@@ -111,7 +120,9 @@ def build(prompt_parts: list[tuple[str, str | None]]) -> tuple[str, dict]:
 
 
 def generate(n_per_condition: int, seed: int, *, conditions=("REAL-BASE", "REAL-NAMED", "REAL-LATTICE", "DIMLESS",
-                                                            "INV-LEX", "XLING"), families=("neutral", "revealing", "noun_only")) -> list[MentionItem]:
+                                                            "INV-LEX", "XLING"), families=("neutral", "revealing", "noun_only"),
+             n_override: dict | None = None) -> list[MentionItem]:
+    """n_override: per-condition item counts, e.g. {"REAL-LATTICE": 3000}."""
     rng = random.Random(seed)
     reg = get_registry()
     pool = LexemePool(seed + 11)
@@ -121,7 +132,8 @@ def generate(n_per_condition: int, seed: int, *, conditions=("REAL-BASE", "REAL-
     named_units = reg.units(named_derived=True)
     lattice = _lattice_exprs(rng)
     for cond in conditions:
-        for i in range(n_per_condition):
+        n_cond = (n_override or {}).get(cond, n_per_condition)
+        for i in range(n_cond):
             fam = families[i % len(families)]
             lang = "en"
             style = rng.choice(("symbol", "long", "slash"))
