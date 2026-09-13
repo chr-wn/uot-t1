@@ -244,3 +244,15 @@ Implanting the second slot's dimension into slot 1 (full residual of the unit to
 - Per-point (M_alg, seeds 1–2): implanted base dimension 0.57–0.58 vs derived 0.60; base→base 0.56, derived→derived 0.58 — **no base-vs-derived gradient** (graded branch not supported). Per operation: convert 0.70, compare 0.59–0.60, equate 0.55–0.56, add 0.52–0.53 — the effect is largest for the operation whose base judgment was best calibrated (convert, AUROC 0.98).
 - Controls: natural-distribution projection (LOO-lexeme D1 accuracy on the 64-dim projection) 0.69 for the learned subspaces vs 0.55 for a random 64-dim projection (majority 0.12): the learned subspaces are not dormant. Noising (mismatching source into a clean "yes" base): flips to "no" 49% (alg) / 36% (heur) vs 2% (random). Text-rewrite reference on the same examples: 42% lawful changes vs 25% (alg subspace) — the subspace reproduces ~60% of what editing the unit string does.
 - **Bug found in the value-preservation / binding checks:** the intervened downstream activations were read from `hidden_states[layer]` (= the *input* to block `layer`) while the hook patches the *output* of block `layer`; the clean/after mismatch produced R² ≈ −92 identically for every subspace, and the D2 check was read before the swap could propagate (1.00 trivially). Fixed: downstream probes now read block outputs 6 layers later, clean and intervened alike; re-running. **Convention note for the write-up:** Phase-1 cache "layer l" = `hidden_states[l]` = residual entering block l (embeddings at 0); Phase-2 "layer l" = residual leaving block l (= `hidden_states[l+1]`). Each analysis is internally consistent; cross-phase layer numbers differ by one.
+
+### E2.2 — corrected control battery (Qwen3-4B, u1 L8, rank 64, 3 seeds; downstream probes at block 14; 2026-09-13 18:30)
+| control | M_alg subspace | M_heur subspace | random rank-64 |
+|---|---|---|---|
+| natural-distribution projection, LOO-lexeme D1 accuracy (majority 0.12) | 0.69 | 0.69 | 0.47 (random 64-dim projection 0.55) |
+| value probe R² (quantity 1's numeral, answer token, block 14): clean → after D1 swap | 0.96 → **0.55** | 0.96 → **0.74** | 0.96 → 0.93 |
+| D2 readout at u2 (block 14): clean → after D1 swap | 1.00 → 0.99 | 1.00 → 1.00 | 1.00 → 1.00 |
+| noising: clean "yes" base + mismatching source → flips to "no" | 0.49 | 0.36 | 0.02 |
+| dose–response α = 0.25 / 0.5 / 0.75 / 1 | 0.50 / 0.53 / 0.57 / 0.60 | 0.51 / 0.53 / 0.55 / 0.62 | 0.50 |
+| text-rewrite reference (edit the unit string): lawful changes | 0.42 | — | — |
+| subspace lawful changes (same examples) | 0.25 | 0.17 | 0.02 |
+Interpretation: the effective subspace is real (not dormant; necessity via noising; monotone dose; no contamination of quantity 2) but it is **not value-free**: swapping 64 dimensions of the unit-1 token disturbs the downstream readout of quantity 1's *numeral* (R² 0.96 → 0.55). The pre-registered double-dissociation (P2.11: within 0.05) fails — the "unit" representation at u1 carries information the model also uses for the value, i.e. the swap moves a bound number–unit representation, not a pure dimension coordinate.
