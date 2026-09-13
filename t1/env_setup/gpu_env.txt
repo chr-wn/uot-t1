@@ -1,0 +1,2 @@
+NVIDIA A100-PCIE-40GB, 550.163.01
+python 3.11.16 torch 2.6.0+cu124 transformers 4.57.6
