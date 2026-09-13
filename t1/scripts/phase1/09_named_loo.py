@@ -31,7 +31,9 @@ print("items", sel.sum(), "points", len(pts), "lexemes", len(set(lex)), "evaluab
 out = Path(args.out); out.mkdir(parents=True, exist_ok=True); results = {}
 Yc = control_labels(list(lex), Y, 0)
 for site in args.sites.split(","):
-    pname, l = site.split(":"); l = int(l); pj, lj = C["position_names"].index(pname), C["layers"].index(l)
+    pname, l = site.split(":"); l = int(l)
+    if l < 0:
+        l = C["layers"][l]  # negative index = count from the last cached layer; pj, lj = C["position_names"].index(pname), C["layers"].index(l)
     Xall = C["resid"][sel, pj, lj].astype(np.float32); mu = Xall.mean(0)
     X = PCA(n_components=args.pca, random_state=0).fit_transform(Xall - mu)
     pred = np.zeros_like(Y, dtype=float); predc = np.zeros_like(Y, dtype=float); cat_pred = np.zeros(len(Y), dtype=int)

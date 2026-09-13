@@ -186,3 +186,12 @@ Interpretation (tentative until replicated on 4 more models and seed 1): H1 (dec
 - **Base-dimension code is shared across contexts:** a 3-way L/M/T probe trained on mention unit tokens classifies the T1 input-unit tokens at 0.89–0.99 (n ≈ 1000) — strong H1 evidence for base dimensions.
 - The `sem` sweep (REAL-BASE + REAL-NAMED, 5-fold group holdout by lexeme) shows weak selectivity (per-axis 0.30–0.44 vs control 0.28–0.34). Diagnosis: named derived dimensions have only 1–5 lexemes each, so 5-fold lexeme folds usually remove *all* lexemes of a point — the test degenerates into lattice holdout, which fails. Fix (E1.2c): leave-one-lexeme-out, evaluated only where the point retains another lexeme in training; reported per point. This is the cross-lexeme test the pre-registration intended for named units.
 - Compound-set (`main`) sweeps replicate on OLMo-3-7B and Gemma-2-9B (unit-token R² 0.59–0.66, held-out points R² 0.5–0.58): surface-exponent reading is model-general, as expected.
+
+### E1.3 replication across models and seeds (semantic set, P1; 2026-09-13 14:30)
+| model / seed | unit L16: linear exact / categorical | anaphor L12: linear exact / categorical | held-out named points: linear nearest / sign | additivity vs random |
+|---|---|---|---|---|
+| Qwen3-4B s0 | 0.75 / 0.89 | 0.18 / 0.76 | 0.15 / 0.61 | 1.27 / 1.38 |
+| Qwen3-4B s1 | 0.79 / 0.90 | 0.20 / 0.61 | 0.16 / 0.62 | 1.27 / 1.37 |
+| Qwen3-8B s0 | 0.80 / 0.92 | 0.24 / 0.75 | 0.18 / 0.66 | 1.30 / 1.41 |
+| Gemma-2-9B s0 | 0.73 / 0.87 | 0.23 / 0.71 | 0.14 / 0.60 | 1.26 / 1.38 |
+The pattern replicates: linear-in-exponent decoding is good in-distribution at the unit token, categorical decoding dominates at the referent, held-out named lattice points do not extrapolate (nearest ≤ 0.18; sign accuracy 0.56–0.66), and centroids are not additive. OLMo-7B re-run pending (layer-index bug: 32 layers). The P1b set (denser named lexemes) is being cached for the clean cross-lexeme test.

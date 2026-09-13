@@ -44,6 +44,8 @@ rng = np.random.default_rng(args.seed)
 results = {}
 for site in args.sites.split(","):
     pname, l = site.split(":"); l = int(l)
+    if l < 0:
+        l = C["layers"][l]  # negative index = count from the last cached layer
     pj, lj = C["position_names"].index(pname), C["layers"].index(l)
     Xall = C["resid"][:, pj, lj].astype(np.float32)
     pca = PCA(n_components=args.pca, random_state=0).fit(Xall[main] - Xall[main].mean(0))

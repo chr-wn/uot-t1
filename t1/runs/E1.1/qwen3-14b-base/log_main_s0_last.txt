@@ -1,0 +1,3 @@
+/data/rbg/users/charlie/interp/uot/t1/env/lib/python3.11/site-packages/sklearn/decomposition/_pca.py:779: RuntimeWarning: invalid value encountered in divide
+  self.explained_variance_ratio_ = self.explained_variance_ / total_var
+last         L  0 lex: nearest=0.017 axis=0.233 r2=-0.006 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.167 r2=-0.018
