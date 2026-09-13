@@ -1,4 +1,10 @@
 model,condition,correct,exp_perturbed,exp_swapped,inverted,sign_flip
+gemma2-9b,FAM-NAMED,222,12,0,0,6
+gemma2-9b,FAM-UNNAMED,208,0,14,5,13
+gemma2-9b,INV-BASE,215,0,1,0,24
+gemma2-9b,INV-BASE-TWIN,210,0,4,3,23
+gemma2-9b,INV-LEX,203,13,10,8,6
+gemma2-9b,INV-LEX-TWIN,213,6,4,4,13
 qwen3-4b-base,FAM-NAMED,441,27,0,1,11
 qwen3-4b-base,FAM-UNNAMED,413,0,31,7,29
 qwen3-4b-base,INV-BASE,451,0,0,0,29

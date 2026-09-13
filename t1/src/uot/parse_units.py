@@ -23,7 +23,9 @@ def _lexicon(extra: Iterable[Unit]) -> dict[str, Dimension]:
     reg = get_registry()
     lex: dict[str, Dimension] = {}
     for u in list(reg.units(invented=False)) + list(extra):
-        for f in (*u.short, u.long_sg, u.long_pl):
+        for f in u.short:
+            lex[f] = u.dim  # symbols are case-sensitive (T tesla vs t tonne)
+        for f in (u.long_sg, u.long_pl):
             lex[f] = u.dim
             lex[f.lower()] = u.dim
         for sg, pl in u.translations.values():
