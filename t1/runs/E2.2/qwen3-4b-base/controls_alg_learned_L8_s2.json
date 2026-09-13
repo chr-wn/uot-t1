@@ -1,0 +1,20 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 8,
+ "position": "u1",
+ "tag": "alg_learned_L8_s2",
+ "k": 64,
+ "natural_projection_loo_acc": 0.6816666666666666,
+ "random_projection_loo_acc": 0.5541666666666667,
+ "d1_majority": 0.1175,
+ "value_r2_clean": 0.9807710778163016,
+ "value_r2_after_swap": -91.99764243027268,
+ "d2_acc_clean": 1.0,
+ "d2_acc_after_swap": 1.0,
+ "noising_flip_rate": 0.4722222222222222,
+ "noising_n": 108,
+ "text_rewrite_iia_changing": 0.41875,
+ "text_rewrite_iia_preserving": 0.91875,
+ "subspace_iia_changing_alg": 0.24583333333333332,
+ "subspace_iia_preserving_alg": 0.9333333333333333
+}

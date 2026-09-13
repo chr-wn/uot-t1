@@ -26,6 +26,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--model", required=True); ap.add_argument("--layer", type=int, required=True); ap.add_argument("--position", default="u1")
 ap.add_argument("--basis", required=True, help="npy [k,d] (learned/probe) or 'random:<k>:<seed>'"); ap.add_argument("--tag", required=True)
 ap.add_argument("--set-seed", type=int, default=0); ap.add_argument("--batch", type=int, default=16)
+ap.add_argument("--probe-layer-offset", type=int, default=6, help="value/binding probes read block outputs at layer+offset (after the swap has propagated)")
 args = ap.parse_args(); root = Path(__file__).resolve().parents[2]; device = "cuda"
 spec, tok, model = load_model(args.model); d = model.config.hidden_size
 real = {it.item_id: it for it in from_jsonl(root / f"data/phase2/P2_real_s{args.set_seed}.jsonl")}
@@ -47,18 +48,22 @@ def batches(items, batch):
         for r, (sq, _) in enumerate(es): ids[r, :len(sq)] = torch.tensor(sq); m[r, :len(sq)] = 1
         yield ch, es, ids.to(device), m.to(device)
 iv = Intervener(model, args.layer, site)
-# ---- collect clean activations at u1 / u2 / last for all base items (via capture hook, three passes)
+LP = min(args.layer + args.probe_layer_offset, model.config.num_hidden_layers - 1)
+ivp = Intervener(model, LP, None)  # capture-only hook at the probe layer (block output)
+# ---- clean activations: u1 at the intervention layer (natural projection); u2/last at the probe layer
 items = [real[i] for i in sorted(real)]
-acts = {p: [] for p in ("u1", "u2", "last")}; logits_clean = []
+acts = {"u1": [], "u2": [], "last": []}; logits_clean = []
 with torch.no_grad():
-    for p in ("u1", "u2", "last"):
+    for ch, es, ids, m in batches(items, args.batch):
+        acts["u1"].append(iv.capture(ids, m, torch.tensor([[x[1]["u1"]] for x in es]).to(device))[:, 0].float().cpu().numpy())
+    for p in ("u2", "last"):
         for ch, es, ids, m in batches(items, args.batch):
-            acts[p].append(iv.capture(ids, m, torch.tensor([[x[1][p]] for x in es]).to(device))[:, 0].float().cpu().numpy())
+            acts[p].append(ivp.capture(ids, m, torch.tensor([[x[1][p]] for x in es]).to(device))[:, 0].float().cpu().numpy())
     for ch, es, ids, m in batches(items, args.batch):
         lg = model(input_ids=ids, attention_mask=m).logits.float(); logits_clean.append(answer_logits(lg, torch.tensor([x[1]["last"] for x in es]).to(device), ans_ids.to(device)).cpu().numpy())
 acts = {p: np.concatenate(v) for p, v in acts.items()}; logits_clean = np.concatenate(logits_clean)
 d1 = np.array([it.d1 for it in items]); d2 = np.array([it.d2 for it in items]); u1 = np.array([it.u1 for it in items]); v1 = np.log(np.array([it.meta["v1"] for it in items], dtype=float))
-res = dict(model=args.model, layer=args.layer, position=args.position, tag=args.tag, k=k)
+res = dict(model=args.model, layer=args.layer, position=args.position, tag=args.tag, k=k, probe_layer=LP)
 # ---- natural projection: LOO-lexeme logistic on the k-dim projection vs k random dims
 def loo_acc(Z, y, groups):
     pred = np.empty_like(y, dtype=object)
@@ -89,12 +94,14 @@ with torch.no_grad():
             return ids.to(device), m.to(device)
         bids, bm = pad(bi); sids, sm = pad(si)
         src = iv.capture(sids, sm, torch.tensor([[x[1][args.position]] for x in si]).to(device))
-        # intervene and capture downstream activations at last and u2 in the same pass via output_hidden_states
-        iv.state = __import__("uot.das", fromlist=["HookState"]).HookState(positions=torch.tensor([[x[1][args.position]] for x in bi]).to(device), src=src)
-        out = model(input_ids=bids, attention_mask=bm, output_hidden_states=True); iv.state = __import__("uot.das", fromlist=["HookState"]).HookState()
-        hs = out.hidden_states[args.layer]
-        for r, x in enumerate(bi):
-            after_last.append(hs[r, x[1]["last"]].float().cpu().numpy()); after_u2.append(hs[r, x[1]["u2"]].float().cpu().numpy())
+        HS = __import__("uot.das", fromlist=["HookState"]).HookState
+        # intervene at (layer, u1) and capture, in the same pass, the probe-layer block outputs at last and u2
+        for p, store in (("last", after_last), ("u2", after_u2)):
+            iv.state = HS(positions=torch.tensor([[x[1][args.position]] for x in bi]).to(device), src=src)
+            ivp.state = HS(positions=torch.tensor([[x[1][p]] for x in bi]).to(device), capture=[])
+            out = model(input_ids=bids, attention_mask=bm)
+            store += [a[0].float().cpu().numpy() for a in ivp.state.capture[0]]
+            iv.state = HS(); ivp.state = HS()
         after_logits.append(answer_logits(out.logits.float(), torch.tensor([x[1]["last"] for x in bi]).to(device), ans_ids.to(device)).cpu().numpy())
 after_last = np.array(after_last); after_u2 = np.array(after_u2); after_logits = np.concatenate(after_logits)
 bidx = np.array([idx[e["base"]] for e in ex])
@@ -120,4 +127,4 @@ chg = tr_labels != clean_pred; res["text_rewrite_iia_changing"] = float((tr_pred
 res["subspace_iia_changing_alg"] = float((after_pred[chg] == tr_labels[chg]).mean()); res["subspace_iia_preserving_alg"] = float((after_pred[~chg] == tr_labels[~chg]).mean())
 print(json.dumps({k_: (round(v, 3) if isinstance(v, float) else v) for k_, v in res.items()}, indent=0), flush=True)
 out = root / "runs/E2.2" / args.model; out.mkdir(parents=True, exist_ok=True); json.dump(res, open(out / f"controls_{args.tag}.json", "w"), indent=1)
-iv.remove()
+iv.remove(); ivp.remove()
