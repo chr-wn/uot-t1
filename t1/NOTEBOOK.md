@@ -66,7 +66,7 @@ See `DESIGN_phase0.md`, `decisions/DR-001-*.md` (adversarial pass on the design)
 
 | Phase | GPU-hours (approx) | Notes |
 |---|---|---|
-| 0 | 0 | env build only so far |
+| 0 | ≈ 12 GPU-h (A6000) | 8 models × 6 stimulus files + controls + T1 v2 re-runs; ≈ 3 CPU-h wasted on NFS stalls |
 
 ## 2026-09-13 — Day 1 (early): library built, E0.0 audits, infrastructure friction
 
@@ -133,3 +133,7 @@ Base models almost never choose option B in T5 (OLMo-7B picks B 27/720, Gemma 10
 
 ### Anomaly A6 (2026-09-13 11:00) — Qwen3-8B instruct "fails" T3/T1 for format reasons
 `08_debug_instruct_format.py`: after the (empty) think block, Qwen3-8B-instruct begins its answer with "Answer: **(B)**" or "To determine which expression…", so the bare-letter candidates all sit at log-prob −14 to −25 and the argmax is noise; for T1 it writes the unit without a leading space ("ft/s") while the candidates carried one. Qwen3-4B-instruct happens to comply with "only the letter", which is why it looked fine. Readout fix for instruct models (no stimulus change): candidates scored without leading space, and a generation-based readout for every task (greedy 24 tokens → extract letter / yes-no / unit expression via the dimension parser), reported as `acc_gen_choice` with its coverage. Instruct results are re-run into `runs/E0.3i/`; the earlier instruct runs in `runs/E0.3/` are kept but flagged as format-confounded.
+
+
+## 2026-09-13 — G0 gate closed: PASS (all six base models)
+Deliverables: `reports/G0_gate_report.md`, `reports/G0_red_team.md`, `decisions/DR-003-G0-decision.md`, `CLAIMS.md` C1–C6, `PREDICTIONS_phase1.md` (committed before any Phase-1 run). Calibration: I under-predicted T1 competence by 0.2–0.4 everywhere and predicted a distance/frequency gradient that does not exist under this readout; the red team's central point (a verbal route explains much of the competence) is carried into Phase 1 as the question to answer at the quantity positions. Pending: instruct re-runs with generation readout (A6) → appended to the gate report when done; they do not affect the decision.
