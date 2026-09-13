@@ -1,0 +1,614 @@
+{
+ "unit:8": {
+  "linear_nearest": 0.323,
+  "control_nearest": 0.054,
+  "categorical": 0.25,
+  "axis_acc": 0.589,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.43,
+    "categorical": 0.41
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.4,
+    "categorical": 0.06
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.2,
+    "categorical": 0.23
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.28,
+    "categorical": 0.28
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.65,
+    "categorical": 0.19
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.4,
+    "categorical": 0.39
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.3,
+    "categorical": 0.2
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.33,
+    "categorical": 0.02
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.3,
+    "categorical": 0.07
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.41,
+    "categorical": 0.03
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.41,
+    "categorical": 0.33
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.08,
+    "categorical": 0.29
+   }
+  }
+ },
+ "unit:16": {
+  "linear_nearest": 0.51,
+  "control_nearest": 0.043,
+  "categorical": 0.464,
+  "axis_acc": 0.68,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.62,
+    "categorical": 0.76
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.57,
+    "categorical": 0.22
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.54,
+    "categorical": 0.41
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.5,
+    "categorical": 0.52
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.57,
+    "categorical": 0.19
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.38,
+    "categorical": 0.59
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.68,
+    "categorical": 0.41
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.2,
+    "categorical": 0.16
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.44,
+    "categorical": 0.13
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.59,
+    "categorical": 0.21
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.59,
+    "categorical": 0.59
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.35,
+    "categorical": 0.53
+   }
+  }
+ },
+ "unit:28": {
+  "linear_nearest": 0.408,
+  "control_nearest": 0.063,
+  "categorical": 0.428,
+  "axis_acc": 0.625,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.56,
+    "categorical": 0.63
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.53,
+    "categorical": 0.32
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.32,
+    "categorical": 0.31
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.37,
+    "categorical": 0.49
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.81,
+    "categorical": 0.24
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.36,
+    "categorical": 0.56
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.3,
+    "categorical": 0.34
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.55,
+    "categorical": 0.22
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.26,
+    "categorical": 0.15
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.49,
+    "categorical": 0.39
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.41,
+    "categorical": 0.49
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.29,
+    "categorical": 0.45
+   }
+  }
+ },
+ "mention_end:12": {
+  "linear_nearest": 0.394,
+  "control_nearest": 0.068,
+  "categorical": 0.682,
+  "axis_acc": 0.633,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.48,
+    "categorical": 0.91
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.55,
+    "categorical": 0.75
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.37,
+    "categorical": 0.64
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.35,
+    "categorical": 0.68
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.51,
+    "categorical": 0.43
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.46,
+    "categorical": 0.78
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.6,
+    "categorical": 0.6
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.14,
+    "categorical": 0.49
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.2,
+    "categorical": 0.25
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.26,
+    "categorical": 0.72
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.5,
+    "categorical": 0.68
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.17,
+    "categorical": 0.69
+   }
+  }
+ },
+ "mention_end:20": {
+  "linear_nearest": 0.369,
+  "control_nearest": 0.07,
+  "categorical": 0.641,
+  "axis_acc": 0.617,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.39,
+    "categorical": 0.84
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.41,
+    "categorical": 0.61
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.48,
+    "categorical": 0.72
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.4,
+    "categorical": 0.65
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.3,
+    "categorical": 0.35
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.56,
+    "categorical": 0.74
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.51,
+    "categorical": 0.54
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.1,
+    "categorical": 0.49
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.39,
+    "categorical": 0.31
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.16,
+    "categorical": 0.54
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.36,
+    "categorical": 0.59
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.12,
+    "categorical": 0.71
+   }
+  }
+ },
+ "anaphor:12": {
+  "linear_nearest": 0.409,
+  "control_nearest": 0.061,
+  "categorical": 0.661,
+  "axis_acc": 0.643,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.53,
+    "categorical": 0.89
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.56,
+    "categorical": 0.55
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.47,
+    "categorical": 0.73
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.33,
+    "categorical": 0.56
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.35,
+    "categorical": 0.41
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.44,
+    "categorical": 0.63
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.68,
+    "categorical": 0.52
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.12,
+    "categorical": 0.61
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.15,
+    "categorical": 0.44
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.25,
+    "categorical": 0.71
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.49,
+    "categorical": 0.74
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.21,
+    "categorical": 0.71
+   }
+  }
+ },
+ "anaphor:20": {
+  "linear_nearest": 0.421,
+  "control_nearest": 0.073,
+  "categorical": 0.662,
+  "axis_acc": 0.648,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.5,
+    "categorical": 0.9
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.42,
+    "categorical": 0.6
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.44,
+    "categorical": 0.79
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.42,
+    "categorical": 0.53
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.51,
+    "categorical": 0.3
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.56,
+    "categorical": 0.67
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.66,
+    "categorical": 0.59
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.27,
+    "categorical": 0.63
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.21,
+    "categorical": 0.39
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.22,
+    "categorical": 0.61
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.44,
+    "categorical": 0.72
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.22,
+    "categorical": 0.69
+   }
+  }
+ },
+ "last:20": {
+  "linear_nearest": 0.302,
+  "control_nearest": 0.06,
+  "categorical": 0.589,
+  "axis_acc": 0.568,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.31,
+    "categorical": 0.8
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.41,
+    "categorical": 0.58
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.39,
+    "categorical": 0.61
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.36,
+    "categorical": 0.62
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.3,
+    "categorical": 0.32
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.39,
+    "categorical": 0.63
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.54,
+    "categorical": 0.47
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.1,
+    "categorical": 0.49
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.25,
+    "categorical": 0.31
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.11,
+    "categorical": 0.49
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.3,
+    "categorical": 0.62
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.03,
+    "categorical": 0.61
+   }
+  }
+ },
+ "last:-1": {
+  "linear_nearest": 0.428,
+  "control_nearest": 0.064,
+  "categorical": 0.649,
+  "axis_acc": 0.669,
+  "per_point": {
+   "(np.int64(-1), np.int64(1), np.int64(-2))": {
+    "n": 153,
+    "linear_nearest": 0.56,
+    "categorical": 0.82
+   },
+   "(np.int64(0), np.int64(0), np.int64(-1))": {
+    "n": 88,
+    "linear_nearest": 0.4,
+    "categorical": 0.56
+   },
+   "(np.int64(0), np.int64(0), np.int64(1))": {
+    "n": 142,
+    "linear_nearest": 0.41,
+    "categorical": 0.73
+   },
+   "(np.int64(0), np.int64(1), np.int64(0))": {
+    "n": 156,
+    "linear_nearest": 0.5,
+    "categorical": 0.65
+   },
+   "(np.int64(1), np.int64(0), np.int64(-1))": {
+    "n": 37,
+    "linear_nearest": 0.54,
+    "categorical": 0.59
+   },
+   "(np.int64(1), np.int64(0), np.int64(0))": {
+    "n": 144,
+    "linear_nearest": 0.62,
+    "categorical": 0.74
+   },
+   "(np.int64(1), np.int64(1), np.int64(-2))": {
+    "n": 101,
+    "linear_nearest": 0.46,
+    "categorical": 0.42
+   },
+   "(np.int64(2), np.int64(0), np.int64(-2))": {
+    "n": 49,
+    "linear_nearest": 0.12,
+    "categorical": 0.37
+   },
+   "(np.int64(2), np.int64(0), np.int64(0))": {
+    "n": 61,
+    "linear_nearest": 0.43,
+    "categorical": 0.43
+   },
+   "(np.int64(2), np.int64(1), np.int64(-3))": {
+    "n": 76,
+    "linear_nearest": 0.29,
+    "categorical": 0.66
+   },
+   "(np.int64(2), np.int64(1), np.int64(-2))": {
+    "n": 152,
+    "linear_nearest": 0.45,
+    "categorical": 0.64
+   },
+   "(np.int64(3), np.int64(0), np.int64(0))": {
+    "n": 146,
+    "linear_nearest": 0.16,
+    "categorical": 0.72
+   }
+  }
+ }
+}
