@@ -1,0 +1,1002 @@
+{
+ "4": {
+  "mention:unit->T1:last": {
+   "r2": -0.873,
+   "axis": 0.262,
+   "nearest": 0.02,
+   "exact": 0.02,
+   "by_condition": {
+    "FAM-NAMED": 0.243,
+    "FAM-UNNAMED": 0.299,
+    "INV-BASE-TWIN": 0.29,
+    "INV-LEX": 0.218,
+    "INV-LEX-TWIN": 0.258
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -4.866,
+   "axis": 0.349,
+   "nearest": 0.087,
+   "exact": 0.084,
+   "by_condition": {
+    "FAM-NAMED": 0.396,
+    "FAM-UNNAMED": 0.356,
+    "INV-BASE-TWIN": 0.447,
+    "INV-LEX": 0.15,
+    "INV-LEX-TWIN": 0.396
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -3.791,
+   "axis": 0.355,
+   "nearest": 0.059,
+   "exact": 0.051,
+   "by_condition": {
+    "FAM-NAMED": 0.41,
+    "FAM-UNNAMED": 0.325,
+    "INV-BASE-TWIN": 0.479,
+    "INV-LEX": 0.164,
+    "INV-LEX-TWIN": 0.396
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -19.653,
+   "axis": 0.086,
+   "nearest": 0.007,
+   "exact": 0.002,
+   "by_condition": {
+    "FAM-NAMED": 0.086,
+    "FAM-UNNAMED": 0.118,
+    "INV-BASE-TWIN": 0.072,
+    "INV-LEX": 0.083,
+    "INV-LEX-TWIN": 0.072
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -119.763,
+   "axis": 0.052,
+   "nearest": 0.003,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.072,
+    "FAM-UNNAMED": 0.036,
+    "INV-BASE-TWIN": 0.047,
+    "INV-LEX": 0.056,
+    "INV-LEX-TWIN": 0.051
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -154.72,
+   "axis": 0.065,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.071,
+    "FAM-UNNAMED": 0.065,
+    "INV-BASE-TWIN": 0.058,
+    "INV-LEX": 0.074,
+    "INV-LEX-TWIN": 0.057
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -33.903,
+   "axis": 0.058,
+   "nearest": 0.034,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.057,
+    "FAM-UNNAMED": 0.072,
+    "INV-BASE-TWIN": 0.054,
+    "INV-LEX": 0.056,
+    "INV-LEX-TWIN": 0.051
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -252.67,
+   "axis": 0.035,
+   "nearest": 0.006,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.042,
+    "FAM-UNNAMED": 0.025,
+    "INV-BASE-TWIN": 0.021,
+    "INV-LEX": 0.047,
+    "INV-LEX-TWIN": 0.039
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -394.204,
+   "axis": 0.04,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.039,
+    "FAM-UNNAMED": 0.046,
+    "INV-BASE-TWIN": 0.035,
+    "INV-LEX": 0.046,
+    "INV-LEX-TWIN": 0.036
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.107,
+   "axis": 0.388,
+   "nearest": 0.103,
+   "exact": 0.07
+  }
+ },
+ "8": {
+  "mention:unit->T1:last": {
+   "r2": -2.335,
+   "axis": 0.216,
+   "nearest": 0.007,
+   "exact": 0.007,
+   "by_condition": {
+    "FAM-NAMED": 0.214,
+    "FAM-UNNAMED": 0.181,
+    "INV-BASE-TWIN": 0.275,
+    "INV-LEX": 0.201,
+    "INV-LEX-TWIN": 0.207
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -3.212,
+   "axis": 0.384,
+   "nearest": 0.156,
+   "exact": 0.12,
+   "by_condition": {
+    "FAM-NAMED": 0.469,
+    "FAM-UNNAMED": 0.326,
+    "INV-BASE-TWIN": 0.517,
+    "INV-LEX": 0.181,
+    "INV-LEX-TWIN": 0.425
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -2.067,
+   "axis": 0.337,
+   "nearest": 0.077,
+   "exact": 0.068,
+   "by_condition": {
+    "FAM-NAMED": 0.457,
+    "FAM-UNNAMED": 0.338,
+    "INV-BASE-TWIN": 0.236,
+    "INV-LEX": 0.256,
+    "INV-LEX-TWIN": 0.399
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -38.455,
+   "axis": 0.052,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.037,
+    "FAM-UNNAMED": 0.069,
+    "INV-BASE-TWIN": 0.05,
+    "INV-LEX": 0.05,
+    "INV-LEX-TWIN": 0.054
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -158.167,
+   "axis": 0.042,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.042,
+    "FAM-UNNAMED": 0.04,
+    "INV-BASE-TWIN": 0.046,
+    "INV-LEX": 0.042,
+    "INV-LEX-TWIN": 0.042
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -187.933,
+   "axis": 0.044,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.053,
+    "FAM-UNNAMED": 0.033,
+    "INV-BASE-TWIN": 0.044,
+    "INV-LEX": 0.051,
+    "INV-LEX-TWIN": 0.037
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -174.498,
+   "axis": 0.031,
+   "nearest": 0.002,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.028,
+    "FAM-UNNAMED": 0.029,
+    "INV-BASE-TWIN": 0.029,
+    "INV-LEX": 0.036,
+    "INV-LEX-TWIN": 0.032
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -303.486,
+   "axis": 0.036,
+   "nearest": 0.007,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.039,
+    "FAM-UNNAMED": 0.025,
+    "INV-BASE-TWIN": 0.037,
+    "INV-LEX": 0.029,
+    "INV-LEX-TWIN": 0.047
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -267.851,
+   "axis": 0.033,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.037,
+    "FAM-UNNAMED": 0.019,
+    "INV-BASE-TWIN": 0.026,
+    "INV-LEX": 0.033,
+    "INV-LEX-TWIN": 0.05
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.268,
+   "axis": 0.333,
+   "nearest": 0.045,
+   "exact": 0.036
+  }
+ },
+ "12": {
+  "mention:unit->T1:last": {
+   "r2": -2.575,
+   "axis": 0.217,
+   "nearest": 0.003,
+   "exact": 0.004,
+   "by_condition": {
+    "FAM-NAMED": 0.204,
+    "FAM-UNNAMED": 0.224,
+    "INV-BASE-TWIN": 0.232,
+    "INV-LEX": 0.218,
+    "INV-LEX-TWIN": 0.207
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -1.091,
+   "axis": 0.455,
+   "nearest": 0.14,
+   "exact": 0.107,
+   "by_condition": {
+    "FAM-NAMED": 0.524,
+    "FAM-UNNAMED": 0.451,
+    "INV-BASE-TWIN": 0.439,
+    "INV-LEX": 0.357,
+    "INV-LEX-TWIN": 0.504
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -0.806,
+   "axis": 0.511,
+   "nearest": 0.182,
+   "exact": 0.149,
+   "by_condition": {
+    "FAM-NAMED": 0.451,
+    "FAM-UNNAMED": 0.592,
+    "INV-BASE-TWIN": 0.556,
+    "INV-LEX": 0.458,
+    "INV-LEX-TWIN": 0.496
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -4.993,
+   "axis": 0.145,
+   "nearest": 0.002,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.149,
+    "FAM-UNNAMED": 0.136,
+    "INV-BASE-TWIN": 0.172,
+    "INV-LEX": 0.126,
+    "INV-LEX-TWIN": 0.143
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -21.449,
+   "axis": 0.136,
+   "nearest": 0.01,
+   "exact": 0.003,
+   "by_condition": {
+    "FAM-NAMED": 0.151,
+    "FAM-UNNAMED": 0.122,
+    "INV-BASE-TWIN": 0.093,
+    "INV-LEX": 0.186,
+    "INV-LEX-TWIN": 0.126
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -26.071,
+   "axis": 0.131,
+   "nearest": 0.003,
+   "exact": 0.003,
+   "by_condition": {
+    "FAM-NAMED": 0.156,
+    "FAM-UNNAMED": 0.097,
+    "INV-BASE-TWIN": 0.101,
+    "INV-LEX": 0.165,
+    "INV-LEX-TWIN": 0.135
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -14.006,
+   "axis": 0.09,
+   "nearest": 0.001,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.079,
+    "FAM-UNNAMED": 0.094,
+    "INV-BASE-TWIN": 0.101,
+    "INV-LEX": 0.085,
+    "INV-LEX-TWIN": 0.092
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -88.235,
+   "axis": 0.06,
+   "nearest": 0.002,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.047,
+    "FAM-UNNAMED": 0.074,
+    "INV-BASE-TWIN": 0.049,
+    "INV-LEX": 0.075,
+    "INV-LEX-TWIN": 0.057
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -109.069,
+   "axis": 0.08,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.069,
+    "FAM-UNNAMED": 0.085,
+    "INV-BASE-TWIN": 0.082,
+    "INV-LEX": 0.094,
+    "INV-LEX-TWIN": 0.071
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.088,
+   "axis": 0.383,
+   "nearest": 0.071,
+   "exact": 0.057
+  }
+ },
+ "16": {
+  "mention:unit->T1:last": {
+   "r2": -2.267,
+   "axis": 0.184,
+   "nearest": 0.001,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.171,
+    "FAM-UNNAMED": 0.206,
+    "INV-BASE-TWIN": 0.19,
+    "INV-LEX": 0.168,
+    "INV-LEX-TWIN": 0.188
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -0.802,
+   "axis": 0.466,
+   "nearest": 0.143,
+   "exact": 0.133,
+   "by_condition": {
+    "FAM-NAMED": 0.458,
+    "FAM-UNNAMED": 0.464,
+    "INV-BASE-TWIN": 0.562,
+    "INV-LEX": 0.376,
+    "INV-LEX-TWIN": 0.467
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -1.082,
+   "axis": 0.396,
+   "nearest": 0.053,
+   "exact": 0.048,
+   "by_condition": {
+    "FAM-NAMED": 0.358,
+    "FAM-UNNAMED": 0.433,
+    "INV-BASE-TWIN": 0.385,
+    "INV-LEX": 0.411,
+    "INV-LEX-TWIN": 0.394
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -5.213,
+   "axis": 0.131,
+   "nearest": 0.006,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.133,
+    "FAM-UNNAMED": 0.125,
+    "INV-BASE-TWIN": 0.15,
+    "INV-LEX": 0.115,
+    "INV-LEX-TWIN": 0.131
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -14.783,
+   "axis": 0.172,
+   "nearest": 0.006,
+   "exact": 0.003,
+   "by_condition": {
+    "FAM-NAMED": 0.156,
+    "FAM-UNNAMED": 0.151,
+    "INV-BASE-TWIN": 0.207,
+    "INV-LEX": 0.175,
+    "INV-LEX-TWIN": 0.174
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -17.026,
+   "axis": 0.146,
+   "nearest": 0.004,
+   "exact": 0.004,
+   "by_condition": {
+    "FAM-NAMED": 0.132,
+    "FAM-UNNAMED": 0.144,
+    "INV-BASE-TWIN": 0.158,
+    "INV-LEX": 0.158,
+    "INV-LEX-TWIN": 0.135
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -14.672,
+   "axis": 0.117,
+   "nearest": 0.013,
+   "exact": 0.002,
+   "by_condition": {
+    "FAM-NAMED": 0.106,
+    "FAM-UNNAMED": 0.118,
+    "INV-BASE-TWIN": 0.135,
+    "INV-LEX": 0.126,
+    "INV-LEX-TWIN": 0.1
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -157.329,
+   "axis": 0.028,
+   "nearest": 0.013,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.021,
+    "FAM-UNNAMED": 0.053,
+    "INV-BASE-TWIN": 0.017,
+    "INV-LEX": 0.018,
+    "INV-LEX-TWIN": 0.029
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -379.932,
+   "axis": 0.049,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.028,
+    "FAM-UNNAMED": 0.075,
+    "INV-BASE-TWIN": 0.058,
+    "INV-LEX": 0.042,
+    "INV-LEX-TWIN": 0.043
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.094,
+   "axis": 0.397,
+   "nearest": 0.086,
+   "exact": 0.065
+  }
+ },
+ "20": {
+  "mention:unit->T1:last": {
+   "r2": -1.64,
+   "axis": 0.229,
+   "nearest": 0.008,
+   "exact": 0.009,
+   "by_condition": {
+    "FAM-NAMED": 0.217,
+    "FAM-UNNAMED": 0.246,
+    "INV-BASE-TWIN": 0.258,
+    "INV-LEX": 0.2,
+    "INV-LEX-TWIN": 0.225
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -1.195,
+   "axis": 0.448,
+   "nearest": 0.109,
+   "exact": 0.103,
+   "by_condition": {
+    "FAM-NAMED": 0.496,
+    "FAM-UNNAMED": 0.446,
+    "INV-BASE-TWIN": 0.497,
+    "INV-LEX": 0.357,
+    "INV-LEX-TWIN": 0.443
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -1.55,
+   "axis": 0.337,
+   "nearest": 0.043,
+   "exact": 0.041,
+   "by_condition": {
+    "FAM-NAMED": 0.329,
+    "FAM-UNNAMED": 0.315,
+    "INV-BASE-TWIN": 0.282,
+    "INV-LEX": 0.411,
+    "INV-LEX-TWIN": 0.347
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -16.151,
+   "axis": 0.124,
+   "nearest": 0.013,
+   "exact": 0.004,
+   "by_condition": {
+    "FAM-NAMED": 0.117,
+    "FAM-UNNAMED": 0.125,
+    "INV-BASE-TWIN": 0.171,
+    "INV-LEX": 0.128,
+    "INV-LEX-TWIN": 0.082
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -23.304,
+   "axis": 0.104,
+   "nearest": 0.001,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.093,
+    "FAM-UNNAMED": 0.111,
+    "INV-BASE-TWIN": 0.119,
+    "INV-LEX": 0.097,
+    "INV-LEX-TWIN": 0.101
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -48.549,
+   "axis": 0.069,
+   "nearest": 0.001,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.083,
+    "FAM-UNNAMED": 0.06,
+    "INV-BASE-TWIN": 0.065,
+    "INV-LEX": 0.068,
+    "INV-LEX-TWIN": 0.071
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -8.791,
+   "axis": 0.144,
+   "nearest": 0.004,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.114,
+    "FAM-UNNAMED": 0.157,
+    "INV-BASE-TWIN": 0.154,
+    "INV-LEX": 0.154,
+    "INV-LEX-TWIN": 0.14
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -57.678,
+   "axis": 0.067,
+   "nearest": 0.01,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.065,
+    "FAM-UNNAMED": 0.04,
+    "INV-BASE-TWIN": 0.043,
+    "INV-LEX": 0.139,
+    "INV-LEX-TWIN": 0.047
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -78.105,
+   "axis": 0.056,
+   "nearest": 0.001,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.04,
+    "FAM-UNNAMED": 0.057,
+    "INV-BASE-TWIN": 0.037,
+    "INV-LEX": 0.103,
+    "INV-LEX-TWIN": 0.04
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.127,
+   "axis": 0.375,
+   "nearest": 0.088,
+   "exact": 0.068
+  }
+ },
+ "24": {
+  "mention:unit->T1:last": {
+   "r2": -1.413,
+   "axis": 0.218,
+   "nearest": 0.013,
+   "exact": 0.011,
+   "by_condition": {
+    "FAM-NAMED": 0.229,
+    "FAM-UNNAMED": 0.158,
+    "INV-BASE-TWIN": 0.267,
+    "INV-LEX": 0.233,
+    "INV-LEX-TWIN": 0.204
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -1.903,
+   "axis": 0.362,
+   "nearest": 0.068,
+   "exact": 0.051,
+   "by_condition": {
+    "FAM-NAMED": 0.393,
+    "FAM-UNNAMED": 0.307,
+    "INV-BASE-TWIN": 0.458,
+    "INV-LEX": 0.287,
+    "INV-LEX-TWIN": 0.362
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -2.234,
+   "axis": 0.378,
+   "nearest": 0.046,
+   "exact": 0.043,
+   "by_condition": {
+    "FAM-NAMED": 0.374,
+    "FAM-UNNAMED": 0.393,
+    "INV-BASE-TWIN": 0.342,
+    "INV-LEX": 0.404,
+    "INV-LEX-TWIN": 0.379
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -6.447,
+   "axis": 0.141,
+   "nearest": 0.059,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.143,
+    "FAM-UNNAMED": 0.158,
+    "INV-BASE-TWIN": 0.149,
+    "INV-LEX": 0.107,
+    "INV-LEX-TWIN": 0.146
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -24.523,
+   "axis": 0.122,
+   "nearest": 0.004,
+   "exact": 0.004,
+   "by_condition": {
+    "FAM-NAMED": 0.111,
+    "FAM-UNNAMED": 0.147,
+    "INV-BASE-TWIN": 0.142,
+    "INV-LEX": 0.096,
+    "INV-LEX-TWIN": 0.115
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -24.934,
+   "axis": 0.092,
+   "nearest": 0.001,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.111,
+    "FAM-UNNAMED": 0.071,
+    "INV-BASE-TWIN": 0.078,
+    "INV-LEX": 0.11,
+    "INV-LEX-TWIN": 0.09
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -8.143,
+   "axis": 0.125,
+   "nearest": 0.063,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.118,
+    "FAM-UNNAMED": 0.153,
+    "INV-BASE-TWIN": 0.093,
+    "INV-LEX": 0.125,
+    "INV-LEX-TWIN": 0.136
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -44.685,
+   "axis": 0.103,
+   "nearest": 0.031,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.124,
+    "FAM-UNNAMED": 0.096,
+    "INV-BASE-TWIN": 0.089,
+    "INV-LEX": 0.101,
+    "INV-LEX-TWIN": 0.107
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -118.692,
+   "axis": 0.087,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.1,
+    "FAM-UNNAMED": 0.1,
+    "INV-BASE-TWIN": 0.078,
+    "INV-LEX": 0.079,
+    "INV-LEX-TWIN": 0.078
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": 0.019,
+   "axis": 0.411,
+   "nearest": 0.144,
+   "exact": 0.108
+  }
+ },
+ "28": {
+  "mention:unit->T1:last": {
+   "r2": -3.179,
+   "axis": 0.217,
+   "nearest": 0.007,
+   "exact": 0.007,
+   "by_condition": {
+    "FAM-NAMED": 0.24,
+    "FAM-UNNAMED": 0.182,
+    "INV-BASE-TWIN": 0.261,
+    "INV-LEX": 0.169,
+    "INV-LEX-TWIN": 0.232
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -2.467,
+   "axis": 0.34,
+   "nearest": 0.063,
+   "exact": 0.044,
+   "by_condition": {
+    "FAM-NAMED": 0.331,
+    "FAM-UNNAMED": 0.403,
+    "INV-BASE-TWIN": 0.382,
+    "INV-LEX": 0.24,
+    "INV-LEX-TWIN": 0.346
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -4.392,
+   "axis": 0.301,
+   "nearest": 0.038,
+   "exact": 0.034,
+   "by_condition": {
+    "FAM-NAMED": 0.317,
+    "FAM-UNNAMED": 0.293,
+    "INV-BASE-TWIN": 0.204,
+    "INV-LEX": 0.379,
+    "INV-LEX-TWIN": 0.312
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -2.839,
+   "axis": 0.205,
+   "nearest": 0.055,
+   "exact": 0.012,
+   "by_condition": {
+    "FAM-NAMED": 0.233,
+    "FAM-UNNAMED": 0.151,
+    "INV-BASE-TWIN": 0.207,
+    "INV-LEX": 0.225,
+    "INV-LEX-TWIN": 0.208
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -7.692,
+   "axis": 0.232,
+   "nearest": 0.018,
+   "exact": 0.01,
+   "by_condition": {
+    "FAM-NAMED": 0.212,
+    "FAM-UNNAMED": 0.285,
+    "INV-BASE-TWIN": 0.253,
+    "INV-LEX": 0.193,
+    "INV-LEX-TWIN": 0.215
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -8.151,
+   "axis": 0.209,
+   "nearest": 0.003,
+   "exact": 0.003,
+   "by_condition": {
+    "FAM-NAMED": 0.204,
+    "FAM-UNNAMED": 0.289,
+    "INV-BASE-TWIN": 0.189,
+    "INV-LEX": 0.133,
+    "INV-LEX-TWIN": 0.229
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -7.076,
+   "axis": 0.155,
+   "nearest": 0.023,
+   "exact": 0.003,
+   "by_condition": {
+    "FAM-NAMED": 0.132,
+    "FAM-UNNAMED": 0.168,
+    "INV-BASE-TWIN": 0.131,
+    "INV-LEX": 0.185,
+    "INV-LEX-TWIN": 0.16
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -15.576,
+   "axis": 0.181,
+   "nearest": 0.011,
+   "exact": 0.004,
+   "by_condition": {
+    "FAM-NAMED": 0.133,
+    "FAM-UNNAMED": 0.239,
+    "INV-BASE-TWIN": 0.157,
+    "INV-LEX": 0.208,
+    "INV-LEX-TWIN": 0.168
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -19.339,
+   "axis": 0.139,
+   "nearest": 0.002,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.132,
+    "FAM-UNNAMED": 0.114,
+    "INV-BASE-TWIN": 0.125,
+    "INV-LEX": 0.172,
+    "INV-LEX-TWIN": 0.15
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.075,
+   "axis": 0.365,
+   "nearest": 0.063,
+   "exact": 0.052
+  }
+ },
+ "36": {
+  "mention:unit->T1:last": {
+   "r2": -1.155,
+   "axis": 0.285,
+   "nearest": 0.038,
+   "exact": 0.022,
+   "by_condition": {
+    "FAM-NAMED": 0.368,
+    "FAM-UNNAMED": 0.226,
+    "INV-BASE-TWIN": 0.315,
+    "INV-LEX": 0.211,
+    "INV-LEX-TWIN": 0.304
+   }
+  },
+  "mention:unit->T1:u0_unit": {
+   "r2": -2.259,
+   "axis": 0.328,
+   "nearest": 0.058,
+   "exact": 0.053,
+   "by_condition": {
+    "FAM-NAMED": 0.379,
+    "FAM-UNNAMED": 0.237,
+    "INV-BASE-TWIN": 0.438,
+    "INV-LEX": 0.283,
+    "INV-LEX-TWIN": 0.303
+   }
+  },
+  "mention:unit->T1:u1_unit": {
+   "r2": -3.255,
+   "axis": 0.342,
+   "nearest": 0.052,
+   "exact": 0.051,
+   "by_condition": {
+    "FAM-NAMED": 0.333,
+    "FAM-UNNAMED": 0.361,
+    "INV-BASE-TWIN": 0.368,
+    "INV-LEX": 0.328,
+    "INV-LEX-TWIN": 0.319
+   }
+  },
+  "mention:mention_end->T1:last": {
+   "r2": -2.305,
+   "axis": 0.22,
+   "nearest": 0.017,
+   "exact": 0.012,
+   "by_condition": {
+    "FAM-NAMED": 0.203,
+    "FAM-UNNAMED": 0.229,
+    "INV-BASE-TWIN": 0.26,
+    "INV-LEX": 0.178,
+    "INV-LEX-TWIN": 0.232
+   }
+  },
+  "mention:mention_end->T1:u0_unit": {
+   "r2": -9.204,
+   "axis": 0.199,
+   "nearest": 0.009,
+   "exact": 0.005,
+   "by_condition": {
+    "FAM-NAMED": 0.182,
+    "FAM-UNNAMED": 0.229,
+    "INV-BASE-TWIN": 0.2,
+    "INV-LEX": 0.179,
+    "INV-LEX-TWIN": 0.204
+   }
+  },
+  "mention:mention_end->T1:u1_unit": {
+   "r2": -15.173,
+   "axis": 0.154,
+   "nearest": 0.002,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.165,
+    "FAM-UNNAMED": 0.121,
+    "INV-BASE-TWIN": 0.135,
+    "INV-LEX": 0.185,
+    "INV-LEX-TWIN": 0.167
+   }
+  },
+  "mention:last->T1:last": {
+   "r2": -15.367,
+   "axis": 0.085,
+   "nearest": 0.007,
+   "exact": 0.001,
+   "by_condition": {
+    "FAM-NAMED": 0.133,
+    "FAM-UNNAMED": 0.057,
+    "INV-BASE-TWIN": 0.04,
+    "INV-LEX": 0.106,
+    "INV-LEX-TWIN": 0.089
+   }
+  },
+  "mention:last->T1:u0_unit": {
+   "r2": -45.298,
+   "axis": 0.092,
+   "nearest": 0.003,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.082,
+    "FAM-UNNAMED": 0.09,
+    "INV-BASE-TWIN": 0.081,
+    "INV-LEX": 0.106,
+    "INV-LEX-TWIN": 0.1
+   }
+  },
+  "mention:last->T1:u1_unit": {
+   "r2": -24.192,
+   "axis": 0.091,
+   "nearest": 0.0,
+   "exact": 0.0,
+   "by_condition": {
+    "FAM-NAMED": 0.115,
+    "FAM-UNNAMED": 0.051,
+    "INV-BASE-TWIN": 0.078,
+    "INV-LEX": 0.115,
+    "INV-LEX-TWIN": 0.097
+   }
+  },
+  "T1:last cross-relation": {
+   "r2": -0.1,
+   "axis": 0.394,
+   "nearest": 0.092,
+   "exact": 0.071
+  }
+ }
+}

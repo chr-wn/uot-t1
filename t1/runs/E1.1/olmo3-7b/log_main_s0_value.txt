@@ -2,3 +2,13 @@ value        L  0 lex: nearest=0.018 axis=0.233 r2=-0.009 ctrl_axis=0.206 | latt
 value        L  4 lex: nearest=0.039 axis=0.233 r2=-0.009 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.022
 value        L  8 lex: nearest=0.043 axis=0.235 r2=-0.010 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.169 r2=-0.024
 value        L 12 lex: nearest=0.043 axis=0.234 r2=-0.009 ctrl_axis=0.207 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.024
+value        L 16 lex: nearest=0.042 axis=0.233 r2=-0.012 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.025
+value        L 20 lex: nearest=0.042 axis=0.232 r2=-0.011 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.024
+value        L 24 lex: nearest=0.040 axis=0.233 r2=-0.012 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.025
+value        L 28 lex: nearest=0.043 axis=0.233 r2=-0.010 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.023
+value        L 32 lex: nearest=0.041 axis=0.234 r2=-0.008 ctrl_axis=0.206 | lattice-holdout: nearest=0.000 axis=0.168 r2=-0.021
+Traceback (most recent call last):
+  File "/data/rbg/users/charlie/interp/uot/t1/scripts/phase1/03_probe.py", line 56, in <module>
+    lj = C["layers"].index(l)
+         ^^^^^^^^^^^^^^^^^^^^
+ValueError: 36 is not in list

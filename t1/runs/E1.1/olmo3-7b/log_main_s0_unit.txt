@@ -2,3 +2,13 @@ unit         L  0 lex: nearest=0.047 axis=0.371 r2=0.185 ctrl_axis=0.198 | latti
 unit         L  4 lex: nearest=0.101 axis=0.394 r2=0.352 ctrl_axis=0.206 | lattice-holdout: nearest=0.082 axis=0.361 r2=0.354
 unit         L  8 lex: nearest=0.126 axis=0.442 r2=0.513 ctrl_axis=0.209 | lattice-holdout: nearest=0.097 axis=0.409 r2=0.487
 unit         L 12 lex: nearest=0.155 axis=0.484 r2=0.607 ctrl_axis=0.203 | lattice-holdout: nearest=0.102 axis=0.424 r2=0.557
+unit         L 16 lex: nearest=0.167 axis=0.496 r2=0.660 ctrl_axis=0.202 | lattice-holdout: nearest=0.106 axis=0.431 r2=0.577
+unit         L 20 lex: nearest=0.170 axis=0.500 r2=0.650 ctrl_axis=0.209 | lattice-holdout: nearest=0.122 axis=0.451 r2=0.584
+unit         L 24 lex: nearest=0.158 axis=0.489 r2=0.619 ctrl_axis=0.203 | lattice-holdout: nearest=0.105 axis=0.434 r2=0.562
+unit         L 28 lex: nearest=0.160 axis=0.479 r2=0.595 ctrl_axis=0.207 | lattice-holdout: nearest=0.108 axis=0.427 r2=0.536
+unit         L 32 lex: nearest=0.137 axis=0.452 r2=0.536 ctrl_axis=0.202 | lattice-holdout: nearest=0.101 axis=0.414 r2=0.486
+Traceback (most recent call last):
+  File "/data/rbg/users/charlie/interp/uot/t1/scripts/phase1/03_probe.py", line 56, in <module>
+    lj = C["layers"].index(l)
+         ^^^^^^^^^^^^^^^^^^^^
+ValueError: 36 is not in list

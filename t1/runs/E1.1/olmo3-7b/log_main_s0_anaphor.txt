@@ -2,3 +2,13 @@ anaphor      L  0 lex: nearest=0.029 axis=0.233 r2=-0.005 ctrl_axis=0.206 | latt
 anaphor      L  4 lex: nearest=0.061 axis=0.361 r2=0.428 ctrl_axis=0.202 | lattice-holdout: nearest=0.042 axis=0.335 r2=0.407
 anaphor      L  8 lex: nearest=0.082 axis=0.393 r2=0.499 ctrl_axis=0.200 | lattice-holdout: nearest=0.064 axis=0.353 r2=0.450
 anaphor      L 12 lex: nearest=0.082 axis=0.396 r2=0.516 ctrl_axis=0.206 | lattice-holdout: nearest=0.064 axis=0.353 r2=0.465
+anaphor      L 16 lex: nearest=0.090 axis=0.405 r2=0.536 ctrl_axis=0.205 | lattice-holdout: nearest=0.063 axis=0.358 r2=0.490
+anaphor      L 20 lex: nearest=0.082 axis=0.387 r2=0.509 ctrl_axis=0.206 | lattice-holdout: nearest=0.062 axis=0.351 r2=0.458
+anaphor      L 24 lex: nearest=0.077 axis=0.376 r2=0.472 ctrl_axis=0.206 | lattice-holdout: nearest=0.048 axis=0.321 r2=0.428
+anaphor      L 28 lex: nearest=0.067 axis=0.349 r2=0.454 ctrl_axis=0.206 | lattice-holdout: nearest=0.032 axis=0.292 r2=0.386
+anaphor      L 32 lex: nearest=0.059 axis=0.337 r2=0.436 ctrl_axis=0.206 | lattice-holdout: nearest=0.031 axis=0.286 r2=0.375
+Traceback (most recent call last):
+  File "/data/rbg/users/charlie/interp/uot/t1/scripts/phase1/03_probe.py", line 56, in <module>
+    lj = C["layers"].index(l)
+         ^^^^^^^^^^^^^^^^^^^^
+ValueError: 36 is not in list

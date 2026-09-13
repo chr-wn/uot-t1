@@ -2,3 +2,13 @@ mention_end  L  0 lex: nearest=0.021 axis=0.233 r2=-0.005 ctrl_axis=0.206 | latt
 mention_end  L  4 lex: nearest=0.103 axis=0.409 r2=0.512 ctrl_axis=0.205 | lattice-holdout: nearest=0.081 axis=0.378 r2=0.495
 mention_end  L  8 lex: nearest=0.091 axis=0.415 r2=0.547 ctrl_axis=0.197 | lattice-holdout: nearest=0.073 axis=0.376 r2=0.525
 mention_end  L 12 lex: nearest=0.082 axis=0.392 r2=0.503 ctrl_axis=0.206 | lattice-holdout: nearest=0.065 axis=0.355 r2=0.470
+mention_end  L 16 lex: nearest=0.097 axis=0.414 r2=0.554 ctrl_axis=0.206 | lattice-holdout: nearest=0.066 axis=0.372 r2=0.523
+mention_end  L 20 lex: nearest=0.104 axis=0.422 r2=0.582 ctrl_axis=0.204 | lattice-holdout: nearest=0.071 axis=0.375 r2=0.523
+mention_end  L 24 lex: nearest=0.090 axis=0.396 r2=0.507 ctrl_axis=0.200 | lattice-holdout: nearest=0.063 axis=0.350 r2=0.447
+mention_end  L 28 lex: nearest=0.092 axis=0.398 r2=0.504 ctrl_axis=0.202 | lattice-holdout: nearest=0.065 axis=0.360 r2=0.440
+mention_end  L 32 lex: nearest=0.078 axis=0.387 r2=0.474 ctrl_axis=0.203 | lattice-holdout: nearest=0.060 axis=0.347 r2=0.428
+Traceback (most recent call last):
+  File "/data/rbg/users/charlie/interp/uot/t1/scripts/phase1/03_probe.py", line 56, in <module>
+    lj = C["layers"].index(l)
+         ^^^^^^^^^^^^^^^^^^^^
+ValueError: 36 is not in list
