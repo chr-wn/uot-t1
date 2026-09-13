@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 4,
+ "position": "u2",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.034967660903930664,
+ "final_train_acc": null,
+ "base_acc_real": 0.67,
+ "base_yes_rate_real": 0.18666666666666668,
+ "iia_all": {
+  "changing": {
+   "iia": 0.3956043956043956,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9112081513828238,
+   "n": 687
+  },
+  "balanced_iia": 0.6534062734936097
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.53125,
+   "n": 32
+  },
+  "preserving": {
+   "iia": 0.9330543933054394,
+   "n": 239
+  },
+  "balanced_iia": 0.7321521966527197
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.2647058823529412,
+   "n": 68
+  },
+  "preserving": {
+   "iia": 0.7791411042944786,
+   "n": 163
+  },
+  "balanced_iia": 0.5219234933237099
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.3963963963963964,
+   "n": 111
+  },
+  "preserving": {
+   "iia": 0.9019607843137255,
+   "n": 255
+  },
+  "balanced_iia": 0.649178590355061
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.10125,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.8975,
+   "n": 800
+  },
+  "balanced_iia": 0.499375
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.22291666666666668,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.8708333333333333,
+   "n": 480
+  },
+  "balanced_iia": 0.546875
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.014652014652014652,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9956331877729258,
+   "n": 687
+  },
+  "balanced_iia": 0.5051426012124702
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.14285714285714285,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9665211062590975,
+   "n": 687
+  },
+  "balanced_iia": 0.5546891245581201
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.3663003663003663,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9155749636098981,
+   "n": 687
+  },
+  "balanced_iia": 0.6409376649551322
+ }
+}

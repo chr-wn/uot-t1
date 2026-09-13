@@ -6,7 +6,7 @@ import argparse, itertools, json, sys
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from uot.tasks.p2_interchange import LEXEMES, OPS, _render
+from uot.tasks.p2_interchange import LEXEMES, OPS, _render, unit_form
 from uot.units import get_registry
 from uot.lm.models import load_model
 from uot.lm.scoring import score_candidates
@@ -22,7 +22,7 @@ for op, temps in OPS.items():
         for a, b in itertools.product(lex, lex):
             ua, ub = reg[a], reg[b]
             q1, q2 = _render(ua, 25, "long"), _render(ub, 40, "long")
-            prompts.append(text.format(q1=q1, q2=q2, u2=ub.long_pl) + " Answer yes or no.\nAnswer:"); keys.append((op, ti, a, b))
+            prompts.append(text.format(q1=q1, q2=q2, u2=unit_form(ub, 'long')) + " Answer yes or no.\nAnswer:"); keys.append((op, ti, a, b))
 print(len(prompts), "prompts", flush=True)
 sc = score_candidates(model, tok, prompts, [[" yes", " no"]] * len(prompts), batch_size=args.batch)
 table = {}

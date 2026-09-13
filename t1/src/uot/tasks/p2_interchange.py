@@ -26,14 +26,19 @@ LEXEMES = {
     "L": ["meter", "kilometer", "centimeter", "mile", "foot", "inch", "yard"],
     "M": ["kilogram", "gram", "pound", "tonne", "ounce", "milligram"],
     "T": ["second", "minute", "hour", "day", "week", "year"],
-    "L M/T2": ["newton", "kilonewton", "pound_force", "dyne", "kip"],
-    "L2 M/T2": ["joule", "kilojoule", "calorie", "kilowatt_hour", "british_thermal_unit", "erg"],
+    "L M/T2": ["newton", "dyne"],
+    "L2 M/T2": ["joule", "calorie", "kilowatt_hour", "erg"],
     "L2 M/T3": ["watt", "kilowatt", "horsepower", "megawatt"],
-    "M/(L T2)": ["pascal", "kilopascal", "psi", "bar", "torr", "atmosphere"],
-    "1/T": ["hertz", "kilohertz", "becquerel", "rpm"],
-    "L3": ["liter", "milliliter", "gallon", "pint", "barrel"],
-    "L/T": ["knot", "mph", "kph"],
+    "M/(L T2)": ["pascal", "psi", "bar", "atmosphere"],
+    "1/T": ["hertz", "kilohertz", "rpm"],
+    "L3": ["liter", "gallon", "barrel", "milliliter", "pint"],
+    "L/T": ["knot", "mph"],
 }
+# Single-token surface form per lexeme (Qwen3/OLMo-3 tokeniser audit, 2026-09-13): 'long' = long plural word,
+# 'symbol' = symbol.  Multi-token lexemes were dropped so that patching the unit token patches the whole unit.
+FORM = {u: "long" for us in LEXEMES.values() for u in us}
+FORM.update({u: "symbol" for u in ("centimeter", "milligram", "newton", "dyne", "joule", "kilowatt_hour", "erg", "kilowatt", "megawatt",
+                                   "pascal", "psi", "atmosphere", "hertz", "kilohertz", "rpm", "milliliter", "pint", "mph")})
 
 
 @dataclass
@@ -51,8 +56,16 @@ class PItem:
     meta: dict = field(default_factory=dict)
 
 
+def unit_form(u: Unit, style: str) -> str:
+    """Surface form of a unit: invented units use their lexeme; real units use their single-token form."""
+    if u.invented:
+        return u.long_pl
+    f = FORM.get(u.id, style)
+    return u.symbol if f == "symbol" else u.long_pl
+
+
 def _render(u: Unit, v: int, style: str) -> str:
-    return f"{v} {u.symbol}" if style == "symbol" else f"{v} {u.long_pl if v != 1 else u.long_sg}"
+    return f"{v} {unit_form(u, style)}"
 
 
 def generate(n: int, seed: int, *, styles=("long",), invented: bool = False, ops=("add", "compare", "equate", "convert")) -> list[PItem]:
@@ -73,7 +86,7 @@ def generate(n: int, seed: int, *, styles=("long",), invented: bool = False, ops
             defs = ""; style = rng.choice(styles)
         v1, v2 = rng.randint(2, 99), rng.randint(2, 99)
         q1, q2 = _render(u1, v1, style), _render(u2, v2, style)
-        u2s = u2.long_pl if style == "long" else u2.symbol
+        u2s = unit_form(u2, style)
         body = text.format(q1=q1, q2=q2, u2=u2s) + " Answer yes or no.\nAnswer:"
         prompt = defs + body
         s1 = prompt.find(q1) + len(str(v1)) + 1; e1 = s1 + len(q1) - len(str(v1)) - 1
