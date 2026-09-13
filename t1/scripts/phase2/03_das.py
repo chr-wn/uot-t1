@@ -115,4 +115,6 @@ for a in (0.25, 0.5, 0.75):
 out = root / "runs/E2.1" / args.model; out.mkdir(parents=True, exist_ok=True)
 tag = args.tag or f"{args.variable}_{args.mode}_L{args.layer}_{args.position}_k{args.rank}_s{args.seed}"
 json.dump(res, open(out / f"das_{tag}.json", "w"), indent=1)
+if args.mode != "full":
+    np.save(out / f"basis_{tag}.npy", site.basis().detach().cpu().numpy().astype(np.float32))
 print("wrote", out / f"das_{tag}.json")
