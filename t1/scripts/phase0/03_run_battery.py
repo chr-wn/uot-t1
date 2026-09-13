@@ -55,7 +55,8 @@ for sp in todo:
         prompts = [wrap_chat(spec, tok, it.prompt, INSTRUCT_SUFFIX.get(task, "")) for it in items]
         # after the chat template the assistant turn is open; candidates keep their leading space for
         # T1 (unit) and use bare tokens for yes/no/letters, both variants scored
-        cands = [[c if task == "T1" else c.strip() for c in it.candidates] for it in items]
+        # the assistant turn starts at line start: no leading space on any candidate
+        cands = [[c.strip() for c in it.candidates] for it in items]
         add_bos = False
     else:
         prompts = [it.prompt for it in items]
@@ -63,8 +64,9 @@ for sp in todo:
         add_bos = True
     scores = score_candidates(model, tok, prompts, cands, batch_size=args.batch, add_bos=add_bos, device=device)
     gens = None
-    if args.generate and task == "T1":
-        gens = generate_greedy(model, tok, prompts, max_new_tokens=12, batch_size=args.batch, add_bos=add_bos, device=device)
+    if args.generate and (task == "T1" or spec.kind == "instruct"):
+        gens = generate_greedy(model, tok, prompts, max_new_tokens=24 if spec.kind == "instruct" else 12,
+                               batch_size=args.batch, add_bos=add_bos, device=device)
     with open(out_dir / (Path(sp).stem + ".results.jsonl"), "w") as f:
         for i, it in enumerate(items):
             mean = [s["mean_logprob"] for s in scores[i]]

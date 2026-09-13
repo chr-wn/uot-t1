@@ -24,6 +24,8 @@ root = Path(__file__).resolve().parents[2]
 runs, ctrl, out = root / args.runs, root / args.controls, root / args.out
 out.mkdir(parents=True, exist_ok=True)
 tab = pd.read_csv(runs / "analysis" / "accuracy_by_condition.csv")
+tab_all = tab.copy()
+tab = tab[(tab.task != "T1") | (tab.version == "v2")]  # T1 figures use v2 (prefix-free) stimuli
 MODEL_ORDER = ["qwen3-4b-base", "qwen3-8b-base", "qwen3-14b-base", "olmo3-7b", "olmo3-32b", "gemma2-9b", "qwen3-4b", "qwen3-8b"]
 models = [m for m in MODEL_ORDER if m in set(tab.model)]
 plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
@@ -57,7 +59,7 @@ rows = []
 for mdir in sorted(ctrl.glob("*")):
     if not mdir.is_dir():
         continue
-    for rf in mdir.glob("T1_s*.*.results.jsonl"):
+    for rf in mdir.glob("T1v2_s*.*.results.jsonl"):
         variant = rf.name.split(".")[1]
         for line in open(rf):
             r = json.loads(line)
@@ -93,7 +95,7 @@ fr = []
 for mdir in runs.glob("*"):
     if not mdir.is_dir() or mdir.name == "analysis":
         continue
-    for rf in mdir.glob("T1_s*.results.jsonl"):
+    for rf in mdir.glob("T1v2_s*.results.jsonl"):
         for line in open(rf):
             r = json.loads(line)
             if r["condition"].startswith("FAM"):
@@ -105,7 +107,7 @@ except ImportError:
 from uot.tasks import items_from_jsonl
 fc = FrequencyCache(root / "data" / "frequency" / "counts.json")
 ustr = {}
-for sp in (root / "data" / "phase0").glob("T1_s*.jsonl"):
+for sp in (root / "data" / "phase0").glob("T1v2_s*.jsonl"):
     for it in items_from_jsonl(str(sp)):
         ustr[it.item_id] = it.unit_strings
 if fr:
@@ -141,6 +143,8 @@ fig.tight_layout(); fig.savefig(out / "fig5_T2_T5.pdf"); fig.savefig(out / "fig5
 
 # --- markdown tables
 md = ["## Accuracy by condition (candidate readout; bootstrap 95% CI over templates × items)\n",
-      tab[["model", "task", "condition", "n", "acc", "ci_lo", "ci_hi", "chance", "acc_gen_dim|parsed", "acc_inorder", "acc_swapped"]].round(3).to_markdown(index=False)]
+      tab[["model", "task", "version", "condition", "n", "acc", "ci_lo", "ci_hi", "chance", "acc_gen_dim|parsed", "acc_inorder", "acc_swapped", "acc_length_matched"]].round(3).to_markdown(index=False),
+      "\n\n## T1 v1 vs v2 (prefix bug fixed in v2)\n",
+      tab_all[tab_all.task == "T1"].pivot_table(index=["model", "condition"], columns="version", values="acc").round(3).to_markdown()]
 open(out / "tables.md", "w").write("\n".join(md))
 print("wrote", out, list(p.name for p in out.glob("*.png")))

@@ -41,6 +41,7 @@ for mdir in sorted(runs.iterdir()):
 df = pd.DataFrame(rows)
 if df.empty:
     sys.exit("no results")
+df["version"] = df["stimfile"].apply(lambda f: "v2" if "v2" in f else "v1")
 df["order_swapped"] = df["meta"].apply(lambda m: m.get("order_swapped", None))
 df["style"] = df["meta"].apply(lambda m: m.get("style"))
 df["invented"] = df["meta"].apply(lambda m: m.get("invented"))
@@ -51,9 +52,11 @@ df["l1"] = df["meta"].apply(lambda m: m.get("l1"))
 # frequency of the answer unit string (T1 only) — use stimulus files for unit_strings
 fc = FrequencyCache(args.freq_cache) if Path(args.freq_cache).exists() else None
 ustr = {}
+cands_by_id = {}
 for sp in Path(args.stimuli_dir).glob("*.jsonl"):
     for it in items_from_jsonl(str(sp)):
         ustr[it.item_id] = it.unit_strings
+        cands_by_id[it.item_id] = it.candidates
 # recompute generation correctness from stored generations with the current matcher
 from uot.lm.scoring import generation_matches  # noqa: E402
 from uot.parse_units import generation_dimension_correct  # noqa: E402
@@ -61,9 +64,32 @@ prompts = {}
 for sp in Path(args.stimuli_dir).glob("*.jsonl"):
     for it in items_from_jsonl(str(sp)):
         prompts[it.item_id] = it.prompt
+import re as _re
+
+
+def gen_choice(task, gen, cands):
+    """Extract a choice from free generation: letter (T3/T5), yes/no (T2/T4); None if absent."""
+    if not isinstance(gen, str):
+        return None
+    g = gen.strip()
+    if task in ("T3", "T5"):
+        m = _re.search(r"\b([A-D])\b", g.replace("*", " ").replace("(", " ").replace(")", " "))
+        if m:
+            letters = [c.strip() for c in cands]
+            return letters.index(m.group(1)) if m.group(1) in letters else None
+        return None
+    if task in ("T2", "T4"):
+        m = _re.search(r"\b(yes|no)\b", g.lower())
+        return (0 if m.group(1) == "yes" else 1) if m else None
+    return None
+
+
 if "generation" in df:
     df["correct_gen"] = [generation_matches(g, ustr.get(i, [])) if isinstance(g, str) else np.nan
                          for g, i in zip(df["generation"], df["item_id"])]
+    ch = [gen_choice(t, g, cands_by_id.get(i, [])) for t, g, i in zip(df["task"], df["generation"], df["item_id"])]
+    df["gen_choice"] = ch
+    df["correct_gen_choice"] = [(c == a) if c is not None else np.nan for c, a in zip(ch, df["answer_index"])]
     # dimension-level generation correctness: parsed dimension == answer dimension (None -> False)
     df["correct_gen_dim"] = [(generation_dimension_correct(g, prompts.get(i, ""), ad) is True) if isinstance(g, str) else np.nan
                              for g, i, ad in zip(df["generation"], df["item_id"], df["answer_dimension"])]
@@ -131,10 +157,19 @@ def position_calibrated_acc(g):
 
 
 tab = []
-for (model, task, cond), g in df.groupby(["model", "task", "condition"]):
+for (model, task, ver, cond), g in df.groupby(["model", "task", "version", "condition"]):
     lo, hi = cluster_boot_ci(g, "template_id", metric)
     chance = 1 / len(g.iloc[0]["candidate_roles"])
-    rec = dict(model=model, task=task, condition=cond, n=len(g), acc=g[metric].mean(), ci_lo=lo, ci_hi=hi, chance=chance)
+    rec = dict(model=model, task=task, version=ver, condition=cond, n=len(g), acc=g[metric].mean(), ci_lo=lo, ci_hi=hi, chance=chance)
+    if task == "T1":
+        # length-matched subset: correct candidate neither strictly shortest nor strictly longest
+        def not_extreme(r):
+            L = [len(c) for c in cands_by_id.get(r["item_id"], r["candidate_roles"])]
+            a = r["answer_index"]; o = [l for i, l in enumerate(L) if i != a]
+            return not (L[a] < min(o) or L[a] > max(o))
+        lm = g[g.apply(not_extreme, axis=1)]
+        rec["acc_length_matched"] = lm[metric].mean() if len(lm) else np.nan
+        rec["n_length_matched"] = len(lm)
     if len(g.iloc[0]["candidate_roles"]) == 2:
         rec.update(calibrated_metrics(g))
     elif task in ("T3", "T5"):
@@ -143,6 +178,9 @@ for (model, task, cond), g in df.groupby(["model", "task", "condition"]):
     if "correct_gen" in g and g["correct_gen"].notna().any():
         rec["acc_gen"] = g["correct_gen"].mean()
         rec["acc_gen_dim"] = g["correct_gen_dim"].mean()
+    if "correct_gen_choice" in g and g["correct_gen_choice"].notna().any():
+        rec["acc_gen_choice"] = g["correct_gen_choice"].mean()
+        rec["gen_choice_rate"] = g["correct_gen_choice"].notna().mean()
         rec["gen_parsed"] = g["gen_parsed"].mean()
         gp = g[g["gen_parsed"] == True]
         rec["acc_gen_dim|parsed"] = gp["correct_gen_dim"].mean() if len(gp) else np.nan
@@ -160,13 +198,13 @@ pd.set_option("display.width", 200)
 print(tab.round(3).to_string())
 
 # per-template spread (prompt brittleness)
-tpl = df.groupby(["model", "task", "condition", "template_id"])[metric].mean().reset_index()
-spread = tpl.groupby(["model", "task", "condition"])[metric].agg(["min", "max"]).reset_index()
+tpl = df.groupby(["model", "task", "version", "condition", "template_id"])[metric].mean().reset_index()
+spread = tpl.groupby(["model", "task", "version", "condition"])[metric].agg(["min", "max"]).reset_index()
 spread["range"] = spread["max"] - spread["min"]
 spread.to_csv(out / "template_spread.csv", index=False)
 
 # distance / frequency (T1)
-t1 = df[df.task == "T1"].copy()
+t1 = df[(df.task == "T1") & (df.version == "v2")].copy()
 if len(t1):
     from scipy.stats import spearmanr
     recs = []
