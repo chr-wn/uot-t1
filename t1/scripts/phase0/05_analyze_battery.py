@@ -122,6 +122,14 @@ def calibrated_metrics(g):
     return out
 
 
+def position_calibrated_acc(g):
+    """K-way: subtract, per candidate position, the median mean-log-prob across items (Zhao et al. 2021),
+    then take the argmax. Removes a constant letter/position preference (T3/T5)."""
+    S = np.array([[c["mean_logprob"] for c in r["scores"]] for _, r in g.iterrows()])
+    S = S - np.median(S, axis=0, keepdims=True)
+    return float((S.argmax(1) == g["answer_index"].to_numpy()).mean())
+
+
 tab = []
 for (model, task, cond), g in df.groupby(["model", "task", "condition"]):
     lo, hi = cluster_boot_ci(g, "template_id", metric)
@@ -129,6 +137,9 @@ for (model, task, cond), g in df.groupby(["model", "task", "condition"]):
     rec = dict(model=model, task=task, condition=cond, n=len(g), acc=g[metric].mean(), ci_lo=lo, ci_hi=hi, chance=chance)
     if len(g.iloc[0]["candidate_roles"]) == 2:
         rec.update(calibrated_metrics(g))
+    elif task in ("T3", "T5"):
+        rec["acc_calibrated"] = position_calibrated_acc(g)
+        rec["pred_dist"] = json.dumps(np.bincount(g["pred_mean"], minlength=len(g.iloc[0]["candidate_roles"])).tolist())
     if "correct_gen" in g and g["correct_gen"].notna().any():
         rec["acc_gen"] = g["correct_gen"].mean()
         rec["acc_gen_dim"] = g["correct_gen_dim"].mean()
