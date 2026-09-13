@@ -14,7 +14,7 @@ from ..dims import Dimension
 from ..units import Unit, UnitExpr, get_registry
 from ..quantity import Quantity, fmt_value, sample_style
 from ..lexicon import LexemePool
-from .base import Item, dim_fields, pick_unit, compose_from_base, lattice_neighbours, finalize_candidates, definitions_prefix
+from .base import Item, dim_fields, pick_unit, compose_from_base, lattice_neighbours, finalize_candidates, definitions_prefix, select_distractor_renderings
 
 
 @dataclass(frozen=True)
@@ -243,9 +243,12 @@ def generate(n_per_condition: int, seed: int, *, conditions=CONDITIONS, styles=N
             # correct answer: product of slot units ^ exps
             correct = UnitExpr.of(*[(u, e * k) for ex, k in zip(exprs, rel.exps) for u, e in ex.factors]).canonical()
             lexemes = list(dict.fromkeys(u for ex in exprs for u in ex.units))
-            distractors = lattice_neighbours(lexemes, correct, rng, k=3)
-            cands, idx, roles = finalize_candidates(rng, correct.render(style, plural=vout != 1),
-                                                    [(d.render(style, plural=vout != 1), r) for d, r in distractors])
+            distractors = lattice_neighbours(lexemes, correct, rng, k=8)
+            cstr = correct.render(style, plural=vout != 1)
+            dstr = select_distractor_renderings(cstr, [(d.render(style, plural=vout != 1), r) for d, r in distractors])
+            if len(dstr) < 3:
+                raise RuntimeError(f"not enough non-prefix distractors for {cstr}")
+            cands, idx, roles = finalize_candidates(rng, cstr, dstr)
             prefix = definitions_prefix(lexemes)
             body = text.format(v=fmt_value(vout), name=qname or "", **rendered)
             prompt = (prefix + body).strip()
@@ -288,9 +291,12 @@ def make_familiar_twins(items: list[Item], seed: int) -> list[Item]:
         rendered = {f"q{k}": q.render(style) for k, q in enumerate(qs)}
         correct = UnitExpr.of(*[(u, e * k) for ex, k in zip(exprs, rel.exps) for u, e in ex.factors]).canonical()
         lexemes = list(dict.fromkeys(u for ex in exprs for u in ex.units))
-        distractors = lattice_neighbours(lexemes, correct, rng, k=3)
-        cands, idx, roles = finalize_candidates(rng, correct.render(style, plural=vout != 1),
-                                                [(d.render(style, plural=vout != 1), r) for d, r in distractors])
+        distractors = lattice_neighbours(lexemes, correct, rng, k=8)
+        cstr = correct.render(style, plural=vout != 1)
+        dstr = select_distractor_renderings(cstr, [(d.render(style, plural=vout != 1), r) for d, r in distractors])
+        if len(dstr) < 3:
+            raise RuntimeError(f"not enough non-prefix distractors for {cstr}")
+        cands, idx, roles = finalize_candidates(rng, cstr, dstr)
         body = text.format(v=fmt_value(vout), name="mass", **rendered)
         d = correct.dim
         twins.append(Item(

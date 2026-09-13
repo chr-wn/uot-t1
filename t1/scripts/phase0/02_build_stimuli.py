@@ -15,6 +15,7 @@ ap.add_argument("--n", type=int, default=240, help="items per (task, condition)"
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--out", default=None)
 ap.add_argument("--tasks", default="T1,T2,T3,T4,T5")
+ap.add_argument("--suffix", default="", help="filename suffix, e.g. v2 -> T1v2_s0.jsonl")
 args = ap.parse_args()
 
 out = Path(args.out or (Path(__file__).resolve().parents[2] / "data" / "phase0"))
@@ -23,7 +24,7 @@ for t in args.tasks.split(","):
     items = GENERATORS[t](args.n, seed=args.seed)
     if t == "T1":
         items = items + make_familiar_twins(items, seed=args.seed)
-    p = out / f"{t}_s{args.seed}.jsonl"
+    p = out / f"{t}{args.suffix}_s{args.seed}.jsonl"
     items_to_jsonl(items, str(p))
     c = Counter(it.condition for it in items)
     print(t, len(items), dict(c), "->", p)

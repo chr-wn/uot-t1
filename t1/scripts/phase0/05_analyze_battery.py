@@ -99,11 +99,36 @@ def cluster_boot_ci(sub, key, col, n=2000, seed=0):
 
 
 metric = args.metric
+
+
+def margin_yes(r):
+    """log-prob margin of candidate 0 minus candidate 1 (two-way tasks)."""
+    s = r["scores"]
+    return s[0]["mean_logprob"] - s[1]["mean_logprob"]
+
+
+def calibrated_metrics(g):
+    """For two-way tasks: AUROC of the margin vs label and accuracy after subtracting the median margin
+    (removes a constant yes/no bias; Zhao et al. 2021 / Feng & Steinhardt 2023)."""
+    from sklearn.metrics import roc_auc_score
+    m = np.array([margin_yes(r) for _, r in g.iterrows()])
+    y = (g["answer_index"].to_numpy() == 0).astype(int)
+    out = {}
+    if len(set(y)) == 2:
+        out["auroc"] = float(roc_auc_score(y, m))
+        thr = np.median(m)
+        out["acc_calibrated"] = float(((m > thr).astype(int) == y).mean())
+        out["yes_rate"] = float((m > 0).mean())
+    return out
+
+
 tab = []
 for (model, task, cond), g in df.groupby(["model", "task", "condition"]):
     lo, hi = cluster_boot_ci(g, "template_id", metric)
     chance = 1 / len(g.iloc[0]["candidate_roles"])
     rec = dict(model=model, task=task, condition=cond, n=len(g), acc=g[metric].mean(), ci_lo=lo, ci_hi=hi, chance=chance)
+    if len(g.iloc[0]["candidate_roles"]) == 2:
+        rec.update(calibrated_metrics(g))
     if "correct_gen" in g and g["correct_gen"].notna().any():
         rec["acc_gen"] = g["correct_gen"].mean()
         rec["acc_gen_dim"] = g["correct_gen_dim"].mean()

@@ -180,6 +180,24 @@ def lattice_neighbours(units: Sequence[Unit], correct: UnitExpr, rng: random.Ran
     return out
 
 
+def select_distractor_renderings(correct: str, distractors: list[tuple[str, str]], k: int = 3) -> list[tuple[str, str]]:
+    """Keep the first k rendered distractors that are distinct and not prefix-related to the
+    correct rendering or to each other (a prefix candidate is favoured by per-token log-prob readouts)."""
+    keep: list[tuple[str, str]] = []
+    strs = [correct]
+
+    def related(a: str, b: str) -> bool:
+        return a == b or a.startswith(b) or b.startswith(a)
+
+    for s, r in distractors:
+        if any(related(s, t) for t in strs):
+            continue
+        keep.append((s, r)); strs.append(s)
+        if len(keep) >= k:
+            break
+    return keep
+
+
 def finalize_candidates(rng: random.Random, correct: str, distractors: list[tuple[str, str]]) -> tuple[list[str], int, list[str]]:
     cands = [(" " + correct, "correct")] + [(" " + s, r) for s, r in distractors]
     rng.shuffle(cands)
