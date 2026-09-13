@@ -176,8 +176,12 @@ def lattice_neighbours(units: Sequence[Unit], correct: UnitExpr, rng: random.Ran
             new = [(uu, ne if j == i else ee) for j, (uu, ee) in enumerate(fs)]
             push(UnitExpr.of(*new), "exp_perturbed")
     if len(out) < k:
-        raise RuntimeError("could not build enough distractors")
-    return out
+        # widen: any other exponent assignment over the same lexemes (magnitudes up to 3)
+        tries = 0
+        while len(out) < k and tries < 500:
+            tries += 1
+            push(UnitExpr.of(*[(u, rng.choice(exps)) for u, _ in fs]), "random_point")
+    return out  # may be shorter than k; callers check after rendering/prefix filtering
 
 
 def select_distractor_renderings(correct: str, distractors: list[tuple[str, str]], k: int = 3) -> list[tuple[str, str]]:
