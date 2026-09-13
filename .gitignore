@@ -1,0 +1,19 @@
+# conda envs live inside attempts
+t*/env/
+# papers: keep the reading notes, not the PDFs/text dumps
+t*/papers/*.pdf
+t*/papers/*.txt
+# caches / large artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+t*/runs/**/*.pt
+t*/runs/**/*.npy
+t*/runs/**/*.npz
+t*/runs/**/*.safetensors
+t*/runs/**/*.h5
+t*/cache/
+t*/data/generated/**/*.jsonl.gz
+*.log
+nohup.out
