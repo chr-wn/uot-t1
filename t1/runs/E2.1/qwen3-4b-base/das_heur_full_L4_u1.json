@@ -1,0 +1,112 @@
+{
+ "model": "qwen3-4b-base",
+ "layer": 4,
+ "position": "u1",
+ "variable": "heur",
+ "mode": "full",
+ "rank": 2560,
+ "steps": 300,
+ "train_time": 0.028110980987548828,
+ "final_train_acc": null,
+ "base_acc_real": 0.67,
+ "base_yes_rate_real": 0.18666666666666668,
+ "iia_all": {
+  "changing": {
+   "iia": 0.663003663003663,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9679767103347889,
+   "n": 687
+  },
+  "balanced_iia": 0.8154901866692259
+ },
+ "iia_disagree": {
+  "changing": {
+   "iia": 0.5625,
+   "n": 32
+  },
+  "preserving": {
+   "iia": 0.9497907949790795,
+   "n": 239
+  },
+  "balanced_iia": 0.7561453974895398
+ },
+ "iia_same_dim_swap": {
+  "changing": {
+   "iia": 0.6029411764705882,
+   "n": 68
+  },
+  "preserving": {
+   "iia": 0.9447852760736196,
+   "n": 163
+  },
+  "balanced_iia": 0.7738632262721039
+ },
+ "iia_heldout_lex": {
+  "changing": {
+   "iia": 0.6396396396396397,
+   "n": 111
+  },
+  "preserving": {
+   "iia": 0.9607843137254902,
+   "n": 255
+  },
+  "balanced_iia": 0.8002119766825649
+ },
+ "iia_invented_alg": {
+  "changing": {
+   "iia": 0.05375,
+   "n": 800
+  },
+  "preserving": {
+   "iia": 0.94,
+   "n": 800
+  },
+  "balanced_iia": 0.49687499999999996
+ },
+ "iia_other_labels(y_alg)": {
+  "changing": {
+   "iia": 0.37083333333333335,
+   "n": 480
+  },
+  "preserving": {
+   "iia": 0.9416666666666667,
+   "n": 480
+  },
+  "balanced_iia": 0.65625
+ },
+ "iia_all_alpha0.25": {
+  "changing": {
+   "iia": 0.03663003663003663,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9912663755458515,
+   "n": 687
+  },
+  "balanced_iia": 0.5139482060879441
+ },
+ "iia_all_alpha0.5": {
+  "changing": {
+   "iia": 0.23076923076923078,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9854439592430859,
+   "n": 687
+  },
+  "balanced_iia": 0.6081065950061584
+ },
+ "iia_all_alpha0.75": {
+  "changing": {
+   "iia": 0.6190476190476191,
+   "n": 273
+  },
+  "preserving": {
+   "iia": 0.9737991266375546,
+   "n": 687
+  },
+  "balanced_iia": 0.7964233728425869
+ }
+}

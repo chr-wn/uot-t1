@@ -41,6 +41,11 @@ class SiteIntervention(nn.Module):
             q, _ = torch.linalg.qr(torch.randn(d, k, generator=g))
             self.register_buffer("B_fixed", q.T.contiguous())  # k × d orthonormal rows
             self.rot = None
+        elif mode == "full":
+            # ceiling control: replace the whole residual vector at the site
+            self.register_buffer("B_fixed", torch.eye(d))
+            self.rot = None
+            self.k = d
         elif mode == "fixed":
             assert basis is not None and basis.shape[1] == d
             q, _ = torch.linalg.qr(basis.T.float())  # orthonormalise the span

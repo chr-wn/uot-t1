@@ -77,6 +77,8 @@ t0 = time.time()
 basis = torch.tensor(np.load(args.probe_basis)) if args.mode == "probe" else None
 site, log = train_das(model, tok, args.layer, args.rank, train_b, steps=args.steps if args.mode == "learned" else 0, lr=args.lr, seed=args.seed,
                       mode=("fixed" if args.mode == "probe" else args.mode), basis=basis, device=device)
+if args.mode == "full":
+    args.rank = model.config.hidden_size
 res = dict(model=args.model, layer=args.layer, position=args.position, variable=args.variable, mode=args.mode, rank=args.rank, steps=args.steps,
            train_time=time.time() - t0, final_train_acc=float(np.mean([l["acc"] for l in log[-20:]])) if log else None)
 bp_real = base_predictions(real, sorted({e["base"] for e in EX["real"]})); bp_inv = base_predictions(inv, sorted({e["base"] for e in EX["inv"]}))
