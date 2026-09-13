@@ -5,7 +5,7 @@ Researcher: Claude (autonomous). PI: Charlie (async).
 
 ## FLAGS (PI must see; none block work)
 
-- **F1 (2026-09-12) Gated models.** `google/gemma-2-9b`, `google/gemma-scope-9b-pt-res`, `meta-llama/Llama-3.1-8B` return 403 for the cached HF token (user `charliewang314`). Assumption adopted: third family = `mistralai/Mistral-7B-v0.3` (ungated). If Gemma access is granted, Gemma-2-9B + Gemma Scope SAEs are added in Phase 1/3 (DR-002).
+- **F1 (2026-09-12) Gated models — RESOLVED same day.** Gemma-2-9B / Gemma Scope were 403 at audit; the PI accepted the Gemma license within the hour and access now works. Third family = Gemma-2-9B as the brief specifies. `meta-llama/Llama-3.1-8B` remains gated and is not needed. Mistral-7B-v0.3 kept as an optional fourth family for Phase 3 scaling/robustness (DR-002).
 - **F2 (2026-09-12) No infini-gram index for OLMo-3's corpus (Dolma 3).** Only `v4_dolma-v1_7_llama` (OLMo-1.7 pretraining corpus) is served. Assumption adopted: Dolma-1.7 counts are the corpus-frequency instrument, treated as a *proxy* for OLMo-3's corpus; all frequency claims are worded accordingly (DR-002).
 - **F3 (2026-09-12) Node driver.** rosetta4 has driver 550 (CUDA 12.4), so torch must be a cu124 build (README in home says 560 — that was a different node). Env uses torch 2.6.0+cu124.
 

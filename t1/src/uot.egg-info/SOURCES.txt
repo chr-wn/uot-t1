@@ -1,0 +1,13 @@
+pyproject.toml
+src/uot/__init__.py
+src/uot/dims.py
+src/uot/lexicon.py
+src/uot/quantity.py
+src/uot/units.py
+src/uot.egg-info/PKG-INFO
+src/uot.egg-info/SOURCES.txt
+src/uot.egg-info/dependency_links.txt
+src/uot.egg-info/requires.txt
+src/uot.egg-info/top_level.txt
+tests/test_dims.py
+tests/test_units.py

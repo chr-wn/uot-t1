@@ -42,7 +42,7 @@ Instruct models get the same items wrapped in the chat template with an "answer 
 - Invented ↔ familiar twins (requirement 6) in every task.
 
 ## 2. Behavioural battery (E0.3)
-Models (base): Qwen3-4B-Base, Qwen3-8B-Base, Qwen3-14B-Base, Olmo-3-1025-7B, Olmo-3-1125-32B, Mistral-7B-v0.3 (third family; see F1). Instruct: Qwen3-4B, Qwen3-8B. Cells: task × condition × template; N = 240 items per (task, condition) (≈ 40 per template), sampled with a fixed seed; two seeds of stimulus sampling for the headline T1 cell.
+Models (base): Qwen3-4B-Base, Qwen3-8B-Base, Qwen3-14B-Base, Olmo-3-1025-7B, Olmo-3-1125-32B, Gemma-2-9B (third family; Mistral-7B-v0.3 optional fourth). Instruct: Qwen3-4B, Qwen3-8B. Cells: task × condition × template; N = 240 items per (task, condition) (≈ 40 per template), sampled with a fixed seed; two seeds of stimulus sampling for the headline T1 cell.
 Analyses (E0.5): accuracy by condition (with twin deltas); accuracy vs. lattice distance (per condition); accuracy vs. log corpus frequency of the answer unit string (infini-gram, Dolma-1.7; FAM only — INV strings have zero count by construction, which we verify); ordinal regressions with both predictors; order-swap penalty; base-vs-instruct comparison.
 
 ## 3. Readout definitions
@@ -58,7 +58,7 @@ infini-gram `v4_dolma-v1_7_llama` counts for every unit string used (short/long/
 Pre-registered in `PREDICTIONS_phase0.md` (thresholds, decision rules, and what would reverse them). Shape: at least one base model well above chance on compositional unit-of-answer with *novel combinations* (INV-LEX and FAM-UNNAMED), where "well above chance" survives the order-swap control.
 
 ## 6. Amendments to the brief (with reasons)
-1. Third family: Mistral-7B-v0.3 instead of Gemma-2-9B/Llama-3.1-8B (gated on this account; F1). Gemma Scope SAE analysis becomes conditional on access.
+1. Third family: Gemma-2-9B (access granted same day after a 403 at audit; F1 resolved). Mistral-7B-v0.3 optional fourth family.
 2. Frequency instrument: Dolma-1.7 infini-gram index (no OLMo-3 index exists); claims about "training-corpus support" are phrased as Dolma-1.7 support and treated as a proxy (F2).
 3. G0 criterion refined: "novel combinations" must be tested with surface-order-swapped items and a template-copy distractor in the candidate set; otherwise a model that copies "A in B → A per B" passes G0 without any dimension variable (DR-001).
 4. Position classes for Phase 1 include the *pre-answer* token of a cloze (where the derived dimension must exist if the model composes), not only unit/numeral/end-of-mention/anaphor.

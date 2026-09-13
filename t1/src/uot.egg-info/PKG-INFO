@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: uot
+Version: 0.1.0
+Summary: Units of thought: do LMs have an internal algebra of physical units?
+Requires-Python: >=3.10
+Requires-Dist: pint
+Requires-Dist: numpy
+Requires-Dist: pyyaml

@@ -2,7 +2,7 @@
 
 | # | Date | Question | Assumption adopted |
 |---|---|---|---|
-| Q1 | 2026-09-12 | Gemma-2-9B / Llama-3.1-8B are gated for the HF account; accept licenses? | Use Mistral-7B-v0.3 as third family; add Gemma if access appears (F1). |
+| Q1 | 2026-09-12 | Gemma-2-9B / Llama-3.1-8B are gated for the HF account; accept licenses? | Resolved same day: PI accepted the Gemma license; Gemma-2-9B is the third family. Llama not needed. |
 | Q2 | 2026-09-12 | No infini-gram index for OLMo-3's corpus; acceptable to use Dolma-1.7 as the frequency proxy? | Yes, with explicit proxy wording in every frequency claim (F2). |
 | Q3 | 2026-09-12 | Which node/GPUs may I use? | rosetta4 A100s when idle (checked before each launch); fall back to rosetta11 A6000s. Never more than 4 GPUs at once without an explicit OK. |
 | Q4 | 2026-09-12 | Storage budget for residual caches? | ≤ 1.5 TB under `t1/cache/` (9.9 TB free on NFS); caches store selected positions only, fp16. |

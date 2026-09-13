@@ -5,6 +5,7 @@
 - Observed: both are gated for the HF account whose token is on this machine (403 on `config.json` with the token; `whoami` succeeds). No other credentials available; using third-party mirrors of gated weights is not acceptable without the license acceptance.
 - Decision: third family = **Mistral-7B-v0.3** (ungated; different pretraining corpus and tokenizer from Qwen3 and OLMo-3). Gemma-2-9B is added if access is granted (FLAG F1). Cost: no SAE-based latent reconnaissance in Phase 1 unless Gemma arrives; substitute = probe-derived subspaces only.
 - Reversal condition: PI accepts the Gemma license → Gemma-2-9B joins the suite in Phase 1.
+- **UPDATE 2026-09-12 (same day):** license accepted; Gemma-2-9B is the third family as the brief specified; Mistral-7B-v0.3 demoted to optional fourth family (Phase 3 robustness only). Section 1's decision is superseded.
 
 ## 2. Corpus-frequency instrument
 - Brief: OLMo + infini-gram, verify index coverage for the OLMo version used.
