@@ -67,6 +67,9 @@ See `DESIGN_phase0.md`, `decisions/DR-001-*.md` (adversarial pass on the design)
 | Phase | GPU-hours (approx) | Notes |
 |---|---|---|
 | 0 | ≈ 12 GPU-h (A6000) | 8 models × 6 stimulus files + controls + T1 v2 re-runs; ≈ 3 CPU-h wasted on NFS stalls |
+| 1 | ≈ 6 GPU-h + ≈ 25 CPU-h | caches for 5 models × 2 sets × 2 seeds; probe sweeps; geometry; LOO |
+| 2 | ≈ 12 GPU-h | pair tables, ceilings, DAS sweeps (rank/layer/position), 4 seeds, controls, 2 replicates |
+| 3 | ≈ 1.5 GPU-h + mining | natural cache/transfer, CoT generation + detector |
 
 ## 2026-09-13 — Day 1 (early): library built, E0.0 audits, infrastructure friction
 
