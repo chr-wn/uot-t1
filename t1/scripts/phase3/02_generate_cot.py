@@ -30,7 +30,9 @@ for it, p, g in zip(items, prompts, gens):
     # final answer unit: last '<number> <unit-expr>' in the generation
     ms = list(re.finditer(r"(\d+(?:\.\d+)?)\s+([A-Za-z][^\n.,;]{0,40}?)(?=[\n.,;]|$)", g))
     if not ms: continue
-    m = ms[-1]; ustr = m.group(2).strip(); extra = invented_units_from_prompt(it.prompt)
+    # prefer the first '<number> <unit>' after an "answer"/"=" cue in the last line that has one; else the last match
+    cue = [m_ for m_ in ms if re.search(r"(answer|therefore|so|=)", g[max(0, m_.start() - 40): m_.start()], re.I)]
+    m = cue[0] if cue else ms[-1]; ustr = m.group(2).strip(); extra = invented_units_from_prompt(it.prompt)
     d = parse_unit_expression(ustr, extra)
     expected = Dimension.parse(it.answer_dimension)
     full = p + g; s0 = len(p) + m.start(2); s1 = s0 + len(ustr)
