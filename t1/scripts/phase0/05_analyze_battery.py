@@ -178,12 +178,12 @@ for (model, task, ver, cond), g in df.groupby(["model", "task", "version", "cond
     if "correct_gen" in g and g["correct_gen"].notna().any():
         rec["acc_gen"] = g["correct_gen"].mean()
         rec["acc_gen_dim"] = g["correct_gen_dim"].mean()
-    if "correct_gen_choice" in g and g["correct_gen_choice"].notna().any():
-        rec["acc_gen_choice"] = g["correct_gen_choice"].mean()
-        rec["gen_choice_rate"] = g["correct_gen_choice"].notna().mean()
         rec["gen_parsed"] = g["gen_parsed"].mean()
         gp = g[g["gen_parsed"] == True]
         rec["acc_gen_dim|parsed"] = gp["correct_gen_dim"].mean() if len(gp) else np.nan
+    if "correct_gen_choice" in g and g["correct_gen_choice"].notna().any():
+        rec["acc_gen_choice"] = g["correct_gen_choice"].mean()
+        rec["gen_choice_rate"] = g["correct_gen_choice"].notna().mean()
     if task == "T1":
         a = g[g.order_swapped == False][metric].mean() if (g.order_swapped == False).any() else np.nan
         b = g[g.order_swapped == True][metric].mean() if (g.order_swapped == True).any() else np.nan
